@@ -1,0 +1,6 @@
+@charset "utf-8";
+:root{
+    --color-main-body : #333;
+    --color-main-point : #F29A2E;
+    --color-hover-point: #F26D3D;
+}
