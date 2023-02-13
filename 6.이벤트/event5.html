@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트리스너 등록방법 3가지</title>
+</head>
+<body>
+    <!-- 1)인라인 방식 -->
+    <input id="input1" type="text"
+        onkeydown="console.log('click1'); console.log('click2');f1(event);"
+        onkeyup="console.log('keyup')";
+        onkeypress="console.log('keypress');">
+
+    <!-- 2)이벤트타겟.on이벤트명 -->
+    <input id="input2" type="text">
+
+    <!-- 3)이벤트타겟.addEventListener(): 사용권장 -->
+    <input id="input3" type="text">
+
+    <script>
+        function f1(evt){
+            console.log('click3');
+            console.log('click4');
+            console.dir(evt);
+        }
+
+        const $input2 = document.querySelector('#input2');
+        $input2.onclick = function(){
+            console.log('input2 click!');
+        }
+        $input2.onkeydown = function(){
+            console.log('input2 keydown!');
+        }
+
+        const $input3 = document.querySelector('#input3');
+        // 화살표 함수: 매개변수O -> 괄호 생략가능, 매개변수x -> 괄호 생략불가
+        $input3.addEventListener('click', evt =>{
+            console.log('input3 click! capturing');
+            console.dir(evt);
+        },false);
+        $input3.addEventListener('click', (evt)=>{
+            console.log('input3 click! bubbling');
+            console.dir(evt);
+        },true);
+
+        $input3.addEventListener('keydown', ()=>{
+            console.log('input3 keydown!');
+        });
+    
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버킷리스트2</title>
+    <style>
+         body{margin: 0; padding: 0;}
+        .wrap{
+            display: flex;
+            width: 100vw;   height: 100vh;
+            justify-content: center;
+        }
+        .wrap section{
+            margin-top: 100px;
+        }        
+        .wrap section .title{
+            padding-left: 1rem;
+        }
+        #object{
+            margin-right: 10px;    
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <section>
+            <h3 class="title">버킷리스트</h3>
+            <p>
+                <input type="text" id="object"><button class="btn" id="addBtn">추가</button>
+            </p>
+            <ul id="bucketList"></ul>
+        </section>
+    </div>
+</body>
+<script>
+    const $addBtn = document.getElementById('addBtn');
+
+    const addElement = text => {
+        const $ul = document.getElementById('bucketList');
+        const $li = document.createElement('li');
+        $li.textContent = text;
+
+        // li 추가
+        $li.innerHTML = `<span>${$li.textContent}</span><button>삭제</button>`;
+        $ul.insertAdjacentElement('beforeEnd',$li);
+
+        // 삭제버튼 이벤트
+        const $button = $li.querySelector('button');
+        $button.addEventListener('click',evt => {
+            console.log('삭제');
+            if(!confirm('삭제하시겠습니까?')) return;
+
+            const $child = evt.target.closest('li');
+            $ul.removeChild($child);
+        }, false);
+
+        // 입력창 포커스
+        const $input = document.getElementById('object');
+        $input.value= '';
+        $input.focus();
+    }
+
+    // 추가 버튼 이벤트
+    const addBtn_h = evt => {
+            const $input = evt.target.previousElementSibling;
+            const item = $input.value;
+            addElement(item);
+    }
+
+    // 입력창 엔터 이벤트
+    const input_h = evt => {
+            if(evt.key  != "Enter") return;
+            const item = evt.target.value;
+            addElement(item);
+    }
+
+    const $input = document.getElementById('object');
+    $input.addEventListener('keydown',input_h,false);
+    $addBtn.addEventListener('click',addBtn_h,false);
+</script>
+</html>

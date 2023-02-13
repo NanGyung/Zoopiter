@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="fruit">
+        <button class="btn">추가</button>
+    </div>
+    <h3>과일목록</h3>
+    <hr>
+    <ul id="items">
+        <li id="apple"  class="item item1">Apple</li>
+        <li id="banana" class="item item2">Banner</li>
+        <li id="orange" class="item item3">Orange</li>
+    </ul>
+    <script>
+        // 1) banner요소의 배경색을 노란색으로 스타일주기
+        const $banner = document.querySelector('#banana');
+        $banner.style.backgroundColor = 'yellow';
+        
+        // 2) 모든 과일요소 전경색을 파랑색으로 스타일주기 
+        const $items = document.querySelectorAll('.item');
+        for(let ele of $items){
+            ele.style.color = 'blue';
+        }
+
+        // 3) 텍스트 입력된 과일 항목 추가하기 
+        const $btn = document.querySelector('.btn');
+        const click_handler = function(){
+            const fruit = document.querySelector('#fruit').value;
+            const $li = document.createElement('li');
+            $li.textContent = fruit;
+            const $parent = document.querySelector('#items');
+            $parent.appendChild($li);
+        }
+
+        $btn.addEventListener(
+            'click',
+            click_handler
+        );
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>간단한 지도 표시하기</title>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=83k8992bai"></script>
+    <style>
+        body{
+            margin: 0; padding: 0;
+        }
+        #map{
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+<div id="map" ></div>
+
+<script>
+    
+var position = new naver.maps.LatLng(35.53500121181886, 129.31079361584645);
+var mapOptions = {
+    // 입력한 위도와 경도를 중심으로 지도 표시
+    center: position,
+    zoom: 17
+};
+
+var map = new naver.maps.Map('map', mapOptions);
+
+var marker = new naver.maps.Marker({
+    position: position,
+    map: map
+});
+
+naver.maps.Event.addListener(map, 'click', function(e) {
+    marker.setPosition(e.coord);
+});
+</script>
+</body>
+</html>
