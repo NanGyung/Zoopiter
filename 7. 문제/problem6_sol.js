@@ -127,8 +127,34 @@ const result = JSON.parse(data);
 
 // 6. 여성회원중 나이가 가장 많은 회원의 이름은?
 {
+  { //case1)
+    // 1)여성회원 추출
+    const women = [];
+    for(let i = 0; i < result.members.length; i++){
+      if(result.members[i].gender == '여'){
+        women.push(result.members[i]);
+      }
+    }
+    // 2)여성회원 중 나이가 가장 많은 회원의 이름
+      let maxAgeOfWomen = women[0].age;
+      let idxOfMaxAgeOfWomen = 0;
+      for(let i = 0; i < women.length; i++){
+        if(women[i].age > maxAgeOfWomen){
+          maxAgeOfWomen = women[i].age;
+          idxOfMaxAgeOfWomen = i;
+        }
+      }
 
-}
+      console.log(`이름 = ${women[idxOfMaxAgeOfWomen].name}`);
+    }
+
+    { //case2) 고차함수 filter, sort
+      console.log(result.members.filter( m => m.gender == '여' )
+                                .sort((m1,m2) => (m2.age - m1.age))[0].name
+      );
+    }
+  }
+
 
 // 7. 모든 회원이 여성회원들로만 이뤄져있는지 판단하시오
 {
