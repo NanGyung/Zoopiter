@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버킷리스트</title>
+    <style>
+        /* *{outline: 1px solid red;} */
+        body{margin: 0; padding: 0;}
+        .wrap{
+            display: flex;
+            width: 100vw;   height: 100vh;
+            justify-content: center;
+        }
+        .wrap section{
+            margin-top: 100px;
+        }        
+        .wrap section .title{
+            padding-left: 1rem;
+        }
+        #object{
+            margin-right: 10px;    
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <section>
+            <h3 class="title">버킷리스트</h3>
+            <p><input id= "object" type="text" ><button class="btn" id="addBtn">추가</button></p>
+            <ul id="bucketList">
+            </ul>
+        </section>
+    </div>
+    <script>
+        const $addBtn = document.getElementById('addBtn');
+
+       const addElement = text => {
+            // li 생성
+            const $li = document.createElement('li');
+            // li text 추가
+            $li.textContent = text;
+
+            // ul에 자식으로 추가
+            const $ul = document.getElementById('bucketList');
+            $ul.appendChild($li);
+
+            // input요소에 포커스 & 클리어
+            const $input = document.getElementById('object');
+            $input.value = '';
+            $input.focus();
+        }
+
+        const addBtn_h = evt => {
+            // console.log('click!');
+            const $input = evt.target.previousElementSibling;
+            const item = $input.value;
+            addElement(item);
+
+            // const $li = document.createElement('li');
+            // $li.textContent = item;
+            // console.log($li);
+
+            // const $bucketList = document.getElementById('bucketList');
+            // $bucketList.appendChild($li);
+
+            // $input.value = '';
+            // $input.focus();
+        }
+        const input_h = evt => {
+            if(evt.key  != "Enter") return;
+            const item = evt.target.value;
+            addElement(item);
+            
+            // const $li = document.createElement('li');
+            // const $input =  evt.target;
+            // const item = $input.value;
+            // $li.textContent = item;
+
+            // const $bucketList = document.getElementById('bucketList');
+            // $bucketList.appendChild($li);
+
+            // $input.value = '';
+            // $input.focus();
+
+        }
+        const $input = document.getElementById('object');
+        $input.addEventListener('keydown',input_h,false);
+        $addBtn.addEventListener('click',addBtn_h,false);
+    </script>
+</body>
+</html>

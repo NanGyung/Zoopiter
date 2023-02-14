@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            box-shadow: 5px 5px 3px 3px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container" >
+        <div>
+            <input type="text"id="msg">
+            <button class="btn">클릭</button>
+        </div>
+        <div id="output">
+            
+        </div>
+    </div>
+</body>
+
+<script>
+    // 이벤트 소스 지정
+    const $btn = document.querySelector('.btn');
+    const click_handler = function(evt){
+        console.log('클릭됨!'+evt);
+        console.dir(evt);
+        // 1) input 필드 값을 읽어온다
+        const text = document.querySelector('#msg').value;
+        // 2) p 엘리먼트 생성
+        const $p = document.createElement('p'); // <p></p>
+        // 3) p 엘리먼트의 컨텐츠생성
+        $p.textContent = text;  //<p>text</p>
+        // 4) div .output 엘리먼트 자식요소로 추가
+        const $parent = document.querySelector('#output');
+        $parent.appendChild($p);
+    }
+    // 이벤트 리스너 등록 
+    $btn.addEventListener(
+    'click',    //이벤트 종류 
+    click_handler   //이벤트핸들러(처리기)
+    );
+</script>
+</html>

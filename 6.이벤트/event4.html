@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {outline: 1px solid red;}
+        body {
+            height: 100vh;
+            background-color: lightyellow;
+        }
+        form {
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <button type="button">클릭</button>
+    </form>
+    <script>
+        // addEventListener('이벤트 종류', 이벤트핸들러, 이벤트흐름)
+        // -이벤트 흐름 = false : 캡처링 단계 
+        // -이벤트 흐름 = true : 버블링 단계
+
+        const $button = document.querySelector('[type]');
+        $button.addEventListener('click',function(){
+            console.log('capture button click!');
+        }, true);
+        $button.addEventListener('click',function(){
+            console.log('bubble button click!');
+        }, false);
+
+        const $body = document.querySelector('body');
+        $body.addEventListener('click',function(){
+            console.log('capture body click!');
+        }, true);
+        $body.addEventListener('click',function(){
+            console.log('bubble body click!');
+        }, false);
+
+        const $form = document.querySelector('form');
+        $form.addEventListener('click',function(){
+            console.log('capture form click!');
+        }, true);
+        $form.addEventListener('click',function(){
+            console.log('bubble form click!');
+        }, false);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버킷리스트</title>
+    <style>
+        /* *{outline: 1px solid red;} */
+        body{margin: 0; padding: 0;}
+        .wrap{
+            display: flex;
+            width: 100vw;   height: 100vh;
+            justify-content: center;
+        }
+        .wrap section{
+            margin-top: 100px;
+        }        
+        .wrap section .title{
+            padding-left: 1rem;
+        }
+        #object{
+            margin-right: 10px;    
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <section>
+            <h3 class="title">버킷리스트</h3>
+            <p><input id= "object" type="text" ><button class="btn" id="addBtn">추가</button></p>
+            <ul id="bucketList">
+                
+            </ul>
+        </section>
+    </div>
+    <script>
+        const $object = document.getElementById('object');
+
+        const createItem = text => {
+            const $bucketList = document.getElementById('bucketList');
+            const $li = document.createElement('li');
+            $li.innerHTML = `<span>${text}</span><button>삭제</button>`;
+
+            const $button = $li.querySelector('button');
+            $button.addEventListener('click',function(evt){
+                console.log('삭제');
+                if(!confirm('삭제하시겠습니까?')) return;
+                
+                const $child = evt.target.closest('li');
+                $bucketList.removeChild($child);
+            },false);
+
+            $bucketList.insertAdjacentElement('beforeEnd',$li);
+            console.log($bucketList);
+            
+        }
+
+        const event_h = evt => {
+            if(evt.key != 'Enter') return;
+            const $bucketList = document.getElementById('bucketList');
+            const inputText = evt.target.value;
+            // $bucketList.innerHTML = `<li><span>${inputText}</span><button>삭제</button></li>`;
+            createItem(inputText);
+        }
+        $object.addEventListener('keydown', event_h,false);
+    </script>
+</body>
+</html>

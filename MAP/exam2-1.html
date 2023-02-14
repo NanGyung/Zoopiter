@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>지도 생성하기</title>
+    <style>
+      body {
+        padding:0; margin:0;
+      }
+      #map {
+        width:100vw;
+        height:100vh;
+      }
+
+    </style>
+</head>
+<body>
+<!-- 지도를 표시할 div 입니다 -->
+<div id="map"></div>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f7a8928bfd98ac187fdf1d5c84603904"></script>
+<!-- services와 clusterer, drawing 라이브러리 불러오기 -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f7a8928bfd98ac187fdf1d5c84603904&libraries=services,clusterer,drawing"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(35.535084864872445, 129.31089522893828), // 지도의 중심좌표
+        level: 2 // 지도의 확대 레벨
+    };
+
+// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+// 마커가 표시될 위치입니다 
+var markerPosition  = new kakao.maps.LatLng(35.535084864872445, 129.31089522893828); 
+
+// 마커를 생성합니다
+var marker = new kakao.maps.Marker({
+    position: markerPosition
+});
+
+// 마커가 지도 위에 표시되도록 설정합니다
+marker.setMap(map);
+
+
+    //카테고리 검색
+    var places = new kakao.maps.services.Places();
+    
+
+    var callback = function(result, status) {
+        if (status === kakao.maps.services.Status.OK) {
+            console.log(result);
+        }
+    };
+
+    // 공공기관 코드 검색
+    // MT1 대형마트
+    // CS2 편의점
+    // PS3 어린이집, 유치원
+    // SC4 학교
+    // AC5 학원
+    // PK6 주차장
+    // OL7 주유소, 충전소
+    // SW8 지하철역
+    // BK9 은행
+    // CT1 문화시설
+    // AG2 중개업소
+    // PO3 공공기관
+    // AT4 관광명소
+    // AD5 숙박
+    // FD6 음식점
+    // CE7 카페
+    // HP8 병원
+    // PM9 약국
+    places.categorySearch('HP8', callback, {
+        // Map 객체를 지정하지 않았으므로 좌표객체를 생성하여 넘겨준다.
+        location: new kakao.maps.LatLng(35.535084864872445,  129.31089522893828)
+    });
+</script>
+</body>
+</html>
