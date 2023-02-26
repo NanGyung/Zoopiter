@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인레이아웃수정</title>
+    <link rel="stylesheet" href="css/layout2.css">
+    <!--  폰트 어썸 : 로고 -->
+    <script src="https://kit.fontawesome.com/6631aa96e6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="hd-l"></div>
+        <header class="hd">
+            <nav class="hd_menu">
+                <ul class="hd_menu-list1">
+                    <li id="logo">
+                        <i class="fa-solid fa-dog fa-2x"></i>
+                        <a href="#"><h3>슬기로운 반려생활</h3></a>
+                    </li>
+                    <li class="menu-list1_item">
+                        <a href="#">펫병원</a>
+                        <ul class="hd_menu-list2">
+                            <li><a href="#">병원찾기</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-list1_item">
+                        <a href="#">게시판</a>
+                        <ul class="hd_menu-list2">
+                            <li><a href="#">커뮤니티</a></li>
+                            <li><a href="#">병원후기</a></li>
+                            <li><a href="#">펫가이드</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-list1_item"><a href="#">마이페이지</a></li>
+                    <div class="menu-list1_item" id="join">
+                        <li><a href="#">로그인</a></li>
+                        |
+                        <li><a href="#">회원가입</a></li>
+                    </div>
+                    
+                </ul>
+                <a href="#" id="hamburger">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </nav>
+        </header>
+        <div class="hd-r"></div>
+    
+        <div class="fg-l"></div>
+        <figure class="fg">배너이미지</figure>
+        <div class="fg-r"></div>
+    
+        <div class="mn-l"></div>
+        <main class="mn">
+            <section class="content item1">
+                <article>
+                    본문1
+                </article>
+                <aside>
+                    본문 이미지1
+                </aside>
+            </section>
+            <section class="content item2">
+                <article>
+                 본문2   
+                </article>
+                <aside>
+                    본문 이미지2
+                </aside>
+            </section>
+            <section class="content item3">
+                <article>
+                    본문3
+                </article>
+                <aside>
+                    본문 이미지3
+                </aside>
+            </section>
+        </main>
+        <div class="mn-r"></div>
+    
+        <div class="ft-l"></div>
+        <footer class="ft">
+            푸터
+        </footer>
+        <div class="ft-r"></div>
+</div>
+<script>
+    const $hamburger = document.getElementById('hamburger');
+    
+    $hamburger.addEventListener('click', e => {
+        const $nav = document.querySelector('.hd');
+        const $menu = document.querySelector('.hd .hd_menu');
+        const $menuList1 = document.querySelector('.hd_menu .hd_menu-list1');
+        const $menuItem1 = document.querySelectorAll('.hd_menu-list1 .menu-list1_item');
+        const join = document.getElementById("join");
+        $menuItem1[0].style.position = 'block';
+        $menuItem1[1].style.position = 'block';
+        console.log(' 햄버거 클릭!');
+
+        $nav.classList.toggle('active');
+        $menu.classList.toggle('active');
+        $menuList1.classList.toggle('active');
+        $menuItem1[0].classList.toggle('active');
+        $menuItem1[1].classList.toggle('active');
+        $menuItem1[2].classList.toggle('active');
+        join.style.display = 'block';
+        // join.innerText = '';
+        // join.insertAdjacentHTML('afterBegin',`
+        //                 <li><a href="#">로그인</a></li>
+        //                 <li><a href="#">회원가입</a></li>`);
+                        
+                        const $item1 = document.querySelectorAll('.menu-list1_item.active ');
+                        const $menuList2 = document.querySelectorAll('.menu-list1_item.active .hd_menu-list2');
+                        for(const ele of $item1){
+                                ele.addEventListener('click', e => {
+                                        for(const ele2 of $menuList2){
+                                                if(ele2.style.display === "none"){
+                                                    ele2.style.display = 'block';
+                                                }else{
+                                                        ele2.style.display = 'none';
+                                                    }
+                                                    }
+                                                });
+                                            }
+                                        });
+                                        // // console.log($item1[0]);
+                                        // // console.log($item1[1]);
+                                        // // console.log($menuList2[0]);
+                                        // // console.log($menuList2[1]);
+                                        // $item1[0].addEventListener('click', e => {
+                                        //     if($menuList2[0].style.display === "none"){
+                                        //         $menuList2[0].style.display == "block"
+                                        //     }else{
+                                        //         $menuList2[0].style.display == "none"
+                                        //     }
+                                        // });
+                    
+</script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 @charset "utf-8";
  /* reset css : 기본 요소의 css 초기화*/
- body,ul {
+ body,figure,ul {
     margin:0; padding:0;
   }
 

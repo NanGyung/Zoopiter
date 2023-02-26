@@ -1,0 +1,217 @@
+/* *{outline: 1px solid red;} */
+body, ul, li, h3{
+    margin: 0; padding: 0;
+    list-style-type: none;
+}
+
+body{
+    padding-bottom: 30px;
+    border-bottom: 1px solid #000;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 전체레이아웃 */
+.wrap{
+    display: grid;
+    grid-template-areas: 
+    "top-l top top-r"
+    "l hd r"
+    "l nv r"
+    "mn-l mn mn-r"
+    "ft-l ft ft-r";
+    grid-template-columns:  1fr  minmax(600px, auto) 1fr; ;
+    grid-template-rows: auto ; 
+}
+
+.hd-l, .nv-l{
+    grid-area: l;
+}
+
+.hd-r, .nv-r{
+    grid-area: r;
+}
+
+/* 최상단 메뉴 */
+.top-l, .top-r{
+    background-color: #000;
+}
+
+.top{
+    grid-area: top;
+    background-color: #000;
+}
+
+.top-menu{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 20px;
+}
+
+.top-menu p{
+    margin: 0 10px;
+}   
+
+/* 헤더 */
+.hd{
+    grid-area: hd;
+    width: 600px;
+    height: 150px;
+    background-image: url(https://cdn.pixabay.com/photo/2022/12/05/05/20/cat-7635983_960_720.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* 메인메뉴 */
+.nv{
+    grid-area: nv;
+    width: 600px;
+    height: 50px;
+    background-color: #000;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.nv .main-menu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    line-height: 2rem;
+    margin: 0.5rem 0;
+
+}
+
+.nv .main-menu .item:hover{
+    text-decoration: underline;
+}
+
+.nv .main-menu .item.item1{
+    margin-left: 2rem;
+}
+
+.nv .main-menu .item.item5{
+    margin-right: 2rem;
+}
+
+/* 메인 */
+.mn{
+    grid-area: mn;
+    width: 100%; height: 560px;
+    display: flex;
+}
+
+.mn .left{
+    width: 20%; height: 100%;
+    background-color: lightskyblue;
+}
+
+.mn .right{
+    width: 80%;  height: 100%;
+    background-color: lightcyan;
+    text-align: center;
+   
+}
+
+.mn .right h3{
+    letter-spacing: 0.5em;
+    margin: 10px;
+    margin-top: 20px;
+}
+
+/* 회원가입 */
+.mn .join{
+    width: 250px;
+    line-height: 1.5em;
+    background-color: #fff;
+    text-align: left;
+    padding: 10px;
+    margin:  0 100px;
+    font-size: 0.9em;
+}
+
+.mn .join label{
+    display: block;
+    font-weight: bold;
+}
+
+.mn .join input:nth-of-type(1),
+input:nth-of-type(2),
+input:nth-of-type(3),
+input:nth-of-type(4),
+input:nth-of-type(5){
+    width: 96%;
+}
+
+#gender, #hobby{
+    margin: 0 0.3px;
+}
+
+.mn .join input[type = "date"]{
+    width: 96%;
+}
+
+/* 입력 문자 모양 변경*/
+/* input[type="password" i] {
+    -webkit-text-security: "\2a" !important;
+    padding: 1px 2px;
+} */
+
+/* 캘린더 선택 영역 확장 */
+input[type="date"]{position: relative;}
+
+input[type="date"]::-webkit-clear-button,
+input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+}
+
+
+#joinBtn{
+    width: 100%;
+    border: inherit;
+    background-color: green;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* 푸터 */
+.ft{
+   grid-area: ft;
+   width: 600px;
+   height: 70px; 
+   background-color: #444444;
+   color: #fff;
+   font-size: 0.8rem;
+   font-weight: bold;
+   text-align: center;
+}
+
+.ft p{
+   margin: 1.5rem 0;
+}
+
