@@ -136,9 +136,7 @@ body{
         justify-content: space-around;
         align-items: center;
     }
-    /* .hd_menu-list1{
-        display: block;
-    } */
+    
     #logo{
         width: 150px;
         text-align: center;
@@ -168,18 +166,21 @@ body{
 .hd_menu-list1.active{
     flex-direction: column;
     width: 300px;
-    /* position: relative; */
 }
 .menu-list1_item.active{
     display: block;
 }
+
 .menu-list1_item.active:hover .hd_menu-list2{
     display: none;
 }
 .menu-list1_item.active .hd_menu-list2{
     position: absolute;
-    /* top: 0;  */
     z-index: 100;
+    /* top: 0px;
+    right: -100%; */
+    box-shadow: 2px 2px 3px 3px rgba(0,0,0,.2);
+
 }
 
 

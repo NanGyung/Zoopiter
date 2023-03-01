@@ -91,14 +91,11 @@
     const $hamburger = document.getElementById('hamburger');
     
     $hamburger.addEventListener('click', e => {
+        const join = document.getElementById("join");
         const $nav = document.querySelector('.hd');
         const $menu = document.querySelector('.hd .hd_menu');
         const $menuList1 = document.querySelector('.hd_menu .hd_menu-list1');
         const $menuItem1 = document.querySelectorAll('.hd_menu-list1 .menu-list1_item');
-        const join = document.getElementById("join");
-        $menuItem1[0].style.position = 'block';
-        $menuItem1[1].style.position = 'block';
-        console.log(' 햄버거 클릭!');
 
         $nav.classList.toggle('active');
         $menu.classList.toggle('active');
@@ -106,38 +103,33 @@
         $menuItem1[0].classList.toggle('active');
         $menuItem1[1].classList.toggle('active');
         $menuItem1[2].classList.toggle('active');
-        join.style.display = 'block';
-        // join.innerText = '';
-        // join.insertAdjacentHTML('afterBegin',`
-        //                 <li><a href="#">로그인</a></li>
-        //                 <li><a href="#">회원가입</a></li>`);
-                        
-                        const $item1 = document.querySelectorAll('.menu-list1_item.active ');
-                        const $menuList2 = document.querySelectorAll('.menu-list1_item.active .hd_menu-list2');
-                        for(const ele of $item1){
-                                ele.addEventListener('click', e => {
-                                        for(const ele2 of $menuList2){
-                                                if(ele2.style.display === "none"){
-                                                    ele2.style.display = 'block';
-                                                }else{
-                                                        ele2.style.display = 'none';
-                                                    }
-                                                    }
-                                                });
-                                            }
-                                        });
-                                        // // console.log($item1[0]);
-                                        // // console.log($item1[1]);
-                                        // // console.log($menuList2[0]);
-                                        // // console.log($menuList2[1]);
-                                        // $item1[0].addEventListener('click', e => {
-                                        //     if($menuList2[0].style.display === "none"){
-                                        //         $menuList2[0].style.display == "block"
-                                        //     }else{
-                                        //         $menuList2[0].style.display == "none"
-                                        //     }
-                                        // });
-                    
+
+        if( join.style.display === "flex"){
+         join.style.display = 'none';
+        }else{
+                join.style.display = 'flex';
+        }              
+         
+       
+        const $item1 = document.querySelectorAll('.menu-list1_item.active ');
+       
+        for(const ele of $item1){
+                ele.addEventListener('click', e => {
+                        const target = e.target.parentElement;
+                        const $menuList2 = target.querySelector('.hd_menu-list2');
+
+                                if( $menuList2.style.display === "none"){
+                                     $menuList2.style.display = 'block';
+                                }else{
+                                         $menuList2.style.display = 'none';
+                                    }
+                                 
+                });
+         }
+                     
+    });               
+    
+             
 </script>
 </body>
 </html>
