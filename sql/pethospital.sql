@@ -1,12 +1,12 @@
 drop user c##petHospital;
---∞Ë¡§ª˝º∫
-CREATE USER c##petHospital IDENTIFIED BY pethospita1234
+--Í≥ÑÏ†ïÏÉùÏÑ±
+CREATE USER c##petHospital IDENTIFIED BY pethospital
     DEFAULT TABLESPACE users
     TEMPORARY TABLESPACE temp
     PROFILE DEFAULT;
---±««—∫Œø©
+--Í∂åÌïúÎ∂ÄÏó¨
 GRANT CONNECT, RESOURCE TO c##petHospital;
 GRANT CREATE VIEW, CREATE SYNONYM TO c##petHospital;
 GRANT UNLIMITED TABLESPACE TO c##petHospital;
---∂Ù «Æ±‚
+--ÎùΩ ÌíÄÍ∏∞
 ALTER USER c##petHospital ACCOUNT UNLOCK;
