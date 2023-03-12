@@ -1,0 +1,34 @@
+@charset "utf-8";
+@import 'layout2.css';
+
+/* top-banner */
+.fg img {
+  width: 100%;
+  height: 280px;
+}
+.wrap .fg {
+  width: 100% -50px;
+  height: 280px;
+  aspect-ratio: 5 / 3;
+  background-color: #ffd88f;
+  position: relative;
+  z-index: 1;
+}
+
+.wrap .fg div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.wrap .fg .slick-dots {
+  bottom: 0;
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+
+/* main */
+
+/* FNB*/

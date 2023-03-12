@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메인레이아웃수정</title>
-    <link rel="stylesheet" href="css/layout2.css">
+    <!--  메인화면 css -->
+    <link rel="stylesheet" href="css/main2.css">
+    <!--  이미지슬라이더 js -->
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <!--  폰트 어썸 : 로고 -->
     <script src="https://kit.fontawesome.com/6631aa96e6.js" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $('.fg').slick({
+                autoplay: true,
+                autoplaySpeed: 5000,
+                dots: true,
+                slidesToShow: 1,
+                arrows: false
+            })
+        });
+    </script>
 </head>
+
 <body>
-<div class="wrap">
-    <div class="hd-l"></div>
+    <div class="wrap">
+        <div class="hd-l"></div>
         <header class="hd">
             <nav class="hd_menu">
                 <ul class="hd_menu-list1">
                     <li id="logo">
                         <i class="fa-solid fa-dog fa-2x"></i>
-                        <a href="#"><h3>슬기로운 반려생활</h3></a>
+                        <a href="#">
+                            <h3>슬기로운 반려생활</h3>
+                        </a>
                     </li>
                     <li class="menu-list1_item">
                         <a href="#">펫병원</a>
@@ -39,7 +60,7 @@
                         |
                         <li><a href="#">회원가입</a></li>
                     </div>
-                    
+
                 </ul>
                 <a href="#" id="hamburger">
                     <i class="fa-solid fa-bars"></i>
@@ -47,11 +68,16 @@
             </nav>
         </header>
         <div class="hd-r"></div>
-    
+
         <div class="fg-l"></div>
-        <figure class="fg">배너이미지</figure>
+        <figure class="fg">
+            <div><img src="img/test_banner1.jpg" alt=""></div>
+            <div><img src="img/test_banner2.jpg" alt=""></div>
+            <div><img src="img/test_banner3.png" alt=""></div>
+            <div><img src="img/test_banner4.png" alt=""></div>
+        </figure>
         <div class="fg-r"></div>
-    
+
         <div class="mn-l"></div>
         <main class="mn">
             <section class="content item1">
@@ -64,7 +90,7 @@
             </section>
             <section class="content item2">
                 <article>
-                 본문2   
+                    본문2
                 </article>
                 <aside>
                     본문 이미지2
@@ -80,56 +106,79 @@
             </section>
         </main>
         <div class="mn-r"></div>
-    
+
         <div class="ft-l"></div>
         <footer class="ft">
-            푸터
+            <div class="fnb__buttons f-item1">
+                <a href="#">슬기로운 반려생활</a>
+            </div>
+            <div class="fnb-mid-area">
+                <div class="fnb__buttons  f-item2">
+                    <a href="#">개인정보처리방침</a>
+                </div>
+                <div class="fnb__buttons  f-item3">
+                    <a href="#">이용약관</a>
+                </div>
+                <div class="fnb__buttons  f-item4">
+                    <a href="#">광고문의</a>
+                </div>
+            </div>
+            <div class="fnb__info">
+                <p>슬기로운 반려생활</p>
+                <p>주소 : 울산시 자바 개발구 KH빌딩 5층 502호</p>
+                <p>광고문의 052-123-4567</p>
+            </div>
+            <div class="fnb__copy">
+                Copyright© 2023 슬반생.All right reserved. Designed by 슬반생
+            </div>
         </footer>
         <div class="ft-r"></div>
-</div>
-<script>
-    const $hamburger = document.getElementById('hamburger');
-    
-    $hamburger.addEventListener('click', e => {
+    </div>
+
+    <script>
+        const $hamburger = document.getElementById('hamburger');
+
         const join = document.getElementById("join");
-        const $nav = document.querySelector('.hd');
-        const $menu = document.querySelector('.hd .hd_menu');
-        const $menuList1 = document.querySelector('.hd_menu .hd_menu-list1');
-        const $menuItem1 = document.querySelectorAll('.hd_menu-list1 .menu-list1_item');
+        $hamburger.addEventListener('click', e => {
+            const $nav = document.querySelector('.hd');
+            const $menu = document.querySelector('.hd .hd_menu');
+            const $menuList1 = document.querySelector('.hd_menu .hd_menu-list1');
+            const $menuItem1 = document.querySelectorAll('.hd_menu-list1 .menu-list1_item');
 
-        $nav.classList.toggle('active');
-        $menu.classList.toggle('active');
-        $menuList1.classList.toggle('active');
-        $menuItem1[0].classList.toggle('active');
-        $menuItem1[1].classList.toggle('active');
-        $menuItem1[2].classList.toggle('active');
+            $nav.classList.toggle('active');
+            $menu.classList.toggle('active');
+            $menuList1.classList.toggle('active');
+            $menuItem1[0].classList.toggle('active');
+            $menuItem1[1].classList.toggle('active');
+            $menuItem1[2].classList.toggle('active');
 
-        if( join.style.display === "flex"){
-         join.style.display = 'none';
-        }else{
+            if (join.style.display === "flex") {
+                join.style.display = 'none';
+            } else {
                 join.style.display = 'flex';
-        }              
-         
-       
-        const $item1 = document.querySelectorAll('.menu-list1_item.active ');
-       
-        for(const ele of $item1){
-                ele.addEventListener('click', e => {
-                        const target = e.target.parentElement;
-                        const $menuList2 = target.querySelector('.hd_menu-list2');
+            }
 
-                                if( $menuList2.style.display === "none"){
-                                     $menuList2.style.display = 'block';
-                                }else{
-                                         $menuList2.style.display = 'none';
-                                    }
-                                 
+
+            const $item1 = document.querySelectorAll('.menu-list1_item.active ');
+
+            for (const ele of $item1) {
+                ele.addEventListener('click', e => {
+                    const target = e.target.parentElement;
+                    const $menuList2 = target.querySelector('.hd_menu-list2');
+
+                    if ($menuList2.style.display === "none") {
+                        $menuList2.style.display = 'block';
+                    } else {
+                        $menuList2.style.display = 'none';
+                    }
+
                 });
-         }
-                     
-    });               
-    
-             
-</script>
+            }
+
+        });
+
+
+    </script>
 </body>
+
 </html>
