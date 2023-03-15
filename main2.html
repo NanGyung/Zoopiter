@@ -16,6 +16,7 @@
     <!--  폰트 어썸 : 로고 -->
     <script src="https://kit.fontawesome.com/6631aa96e6.js" crossorigin="anonymous"></script>
     <script>
+        // banner slider
         $(function () {
             $('.fg').slick({
                 autoplay: true,
@@ -25,6 +26,39 @@
                 arrows: false
             })
         });
+
+        // item2 slider
+        $(function () {
+            $('.item2_slider').slick({
+                autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true,
+                centerMode: true,
+                centerPadding: '60px',
+                slidesToShow: 3,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            arrows: false,
+                            centerMode: true,
+                            centerPadding: '40px',
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            arrows: false,
+                            centerMode: true,
+                            centerPadding: '40px',
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            })
+        });
+
     </script>
 </head>
 
@@ -82,26 +116,78 @@
         <main class="mn">
             <section class="content item1">
                 <article>
-                    본문1
+                    <p style="font-size: 1.2em;">펫 병원</p>
+                    <div class="item1_title">
+                        <p>우리 반려동물의</p>
+                        <p>병원을 찾아줄 수 있어요.</p>
+                    </div>
+                    <p style="margin: 60px 0px;">우리 집 주변에 동물병원이 이렇게 많은지 몰랐죠? 하지만 소동물까지 진료하는 곳을 찾기가 쉽지 않답니다. 슬기로운 반려생활에선
+                        다양한 품종을 진료하는 병원을
+                        보여드려요.</p>
+                    <div class="item1_button">
+                        <a href="#">병원 더 찾아보기</a>
+                    </div>
                 </article>
                 <aside>
-                    본문 이미지1
+                    <div class="item1_contents content1">
+                        <img src="img/img_hospital01.png" alt="hospital_img1">
+                    </div>
+                    <div class="item1_contents content2">
+                        <img src="img/img_hospital02.png" alt="hospital_img2">
+                    </div>
                 </aside>
             </section>
             <section class="content item2">
                 <article>
-                    본문2
+                    <p style="font-size: 1.2em;">펫 병원 후기</p>
+                    <div class="item2_title">
+                        <p>우리 아기가 방문한</p>
+                        <p>생생한 병원후기!!</p>
+                    </div>
+                    <p style="margin: 30px 0px;">정확한 후기로 펫오너님들과 아이들의 건강과 안전을 지켜드릴게요! </p>
+                    <div class="item2_button">
+                        <a href="#">펫 병원후기 더보기</a>
+                    </div>
                 </article>
                 <aside>
-                    본문 이미지2
+                    <div class="item2_slider">
+                        <div>
+                            <a href="#">
+                                <img src="img/img_review01.jpg" alt="review01">
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <img src="img/img_review02.jpg" alt="review02">
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <img src="img/img_review03.jpg" alt="review03">
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#">
+                                <img src="img/img_review04.jpg" alt="review04">
+                            </a>
+                        </div>
+                    </div>
                 </aside>
             </section>
             <section class="content item3">
                 <article>
-                    본문3
+                    <p style="font-size: 1.2em;">펫 커뮤니티</p>
+                    <div class="item3_title">
+                        <p>슬기로운 반려생활에서</p>
+                        <p>우리 아이와의 추억을 저장해요 :)</p>
+                    </div>
+                    <p style="margin: 30px 0px;">슬기로운 반려생활에서는 펫오너분들의 이야기를 공유할 수 있어요! 우리 아이들과의 이야기를 함께 나눠보세요 !</p>
+                    <div class="item3_button">
+                        <a href="#">추억 엿보기</a>
+                    </div>
                 </article>
                 <aside>
-                    본문 이미지3
+                    <div class="item3_img"></div>
                 </aside>
             </section>
         </main>

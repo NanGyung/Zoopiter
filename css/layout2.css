@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #333333;
+  background-color: var(--color-grey1);
 }
 
 /* 기본레이아웃 */
@@ -30,14 +30,14 @@ body {
 .mn-l,
 .ft-l {
   grid-area: l;
-  background-color: #dfdfdf;
+  background-color: var(--color-background2);
 }
 
 .fg-r,
 .mn-r,
 .ft-r {
   grid-area: r;
-  background-color: #dfdfdf;
+  background-color: var(--color-background2);
 }
 
 /* gnb */
@@ -80,6 +80,7 @@ body {
   width: 100%;
   position: absolute;
   background-color: var(--color-background);
+  z-index: 100;
 }
 
 .hd_menu-list2 li a {
@@ -121,10 +122,13 @@ body {
   }
 }
 
-@media screen and (width < 790px) {
+@media screen and (width < 880px) {
   #logo {
     width: 150px;
     text-align: center;
+  }
+  .ft .fnb-mid-area {
+    flex-direction: column;
   }
 }
 
@@ -208,55 +212,24 @@ body {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  background-color: var(--color-main-point);
-}
-
-.mn .content {
-  width: 100%;
-  height: 340px;
-  margin-bottom: 20px;
-  display: flex;
-  background-color: var(--color-background2);
-}
-
-.item2 {
-  flex-direction: column;
-  height: auto;
-}
-
-.item2 article {
-  flex: 4;
-}
-
-.item2 aside {
-  flex: 6;
-}
-
-.item1 article,
-.item3 article {
-  flex: 2;
-}
-
-.item1 aside,
-.item3 aside {
-  flex: 8;
+  background-color: var(--color-grey3);
 }
 
 /* footer */
 
 .wrap .ft {
   grid-area: ft;
-  width: 100%;
+  width: auto;
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background-color: var(--color-background2);
+  background-color: var(--color-grey1);
   text-align: center;
 }
-.wrap .ft .fnb {
+.wrap .ft .fnb__buttons {
   max-width: 100%;
 }
 
@@ -267,7 +240,7 @@ body {
   line-height: 30px;
 }
 .fnb__buttons:hover a {
-  background-color: #ffc47b;
+  background-color: var(--color-grey3);
 }
 
 .fnb__buttons.f-item1 {
