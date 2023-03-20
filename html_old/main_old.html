@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬기로운 반려생활</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://kit.fontawesome.com/6631aa96e6.js" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+        $('.banner').slick({
+            autoplay: true,
+            autoplaySpeed: 5000,
+            dots: true,
+            slidesToShow: 1,
+            arrows: false
+        })
+    });
+        $(function(){
+            $('.review_slider').slick({
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: true,
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 3,
+            responsive: [
+                {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 2
+                }
+                },
+                {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1
+                }
+                }
+            ]
+            })
+                    });
+     </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="gnb-l"></div>
+        <div class="header__menu">
+            <nav class="menu">
+                <ul class="menu__list1">
+                    <li class="menu__item1" id="gnbLogo">
+                        <i class="fa-solid fa-dog fa-2x"></i>
+                        <a href="#"><h1>슬기로운 반려생활</h1></a>
+                    </li>
+                    <div class="menu__middle">
+                        <li class="menu__item1"><a href="#">펫 병원</a>
+                            <ul class="menu__list2">
+                                <li class="menu__item2"><a href="#">병원 찾기</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu__item1"><a href="#">게시판</a>
+                            <ul class="menu__list2">
+                                <li class="menu__item2"><a href="#">커뮤니티</a></li>
+                                <li class="menu__item2"><a href="#">병원후기</a></li>
+                                <li class="menu__item2"><a href="#">펫가이드</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu__item1"><a href="#">마이페이지</a>
+                            <ul class="menu__list2">
+                                <li class="menu__item2"><a href="#">정보수정</a></li>
+                            </ul>
+                        </li>
+                    </div>
+                    <div class="menu__right">
+                        <li class="menu__item1">
+                            <a href="#">로그인</a> 
+                        </li>
+                        | 
+                        <li class="menu__item1">
+                            <a href="#"> 회원가입</a>
+                        </li>
+                    </div>
+                </ul>
+               
+            </nav>
+        </div>
+        <div class="gnb-r"></div>
+        <div class="banner-l"></div>
+        <div class="main__top-banner">
+            <header class="banner">
+                <div><img src="img/img_banner01.jpg" alt=""></div>
+                <div><img src="img/img_banner02.jpg" alt=""></div>
+                <div><img src="img/img_banner03.jpg" alt=""></div>
+                <div><img src="img/img_banner04.jpg" alt=""></div>
+              </header>
+        </div>
+        <div class="banner-r"></div>
+        <div class="main1-l"></div>
+        <div class="main__pet-hospital">
+            <div class="pet-hospital__item1">
+                <p style="font-size: 1.2em;">펫 병원</p>
+                <p class="pet-hospital__title">우리 반려동물의</p>
+                <p class="pet-hospital__title">병원을 찾아줄 수 있어요.</p>
+                <p style="margin: 60px 0px;">우리 집 주변에 동물병원이 이렇게 많은지 몰랐죠? 하지만 소동물까지 진료하는 곳을 찾기가 쉽지 않답니다. 슬기로운 반려생활에선 다양한 품종을 진료하는 병원을 보여드려요.</p>
+                <div class="pet-hospital__button">
+                    <a href="#">병원 더 찾아보기</a>
+                </div>
+            </div>
+            <div class="pet-hospital__item2">
+                <div class="pet-hospital__contents content1">
+                    <img src="img/img_hospital01.png" alt="hospital_img">
+                </div>
+                <div class="pet-hospital__contents content2">
+                    <img src="img/img_hospital02.png" alt="hospital_img">
+                </div>
+            </div>
+        </div>
+        <div class="main1-r"></div>
+        <div class="main2-l"></div>
+        <div class="main__review">
+            <div class="review_items r-item1">
+                <p style="font-size: 1.2em;">펫 병원 후기</p>
+                <p class="review__title">우리 아기가 방문한</p>
+                <p class="review__title">생생한 병원후기!!</p>
+                <p style="margin: 30px 0px;">정확한 후기로 펫오너님들과 아이들의 건강과 안전을 지켜드릴게요! </p>
+                <div class="review__button">
+                    <a href="#">펫 병원후기 더보기</a>
+                </div>
+            </div>
+            <div class="review_items r-item2">
+                <div class="review_slider">
+                            <div>
+                            <a href="#">
+                                <img src="img/img_review01.jpg" alt="review01">
+                            </a>
+                            </div>
+                            <div>
+                            <a href="#">
+                                <img src="img/img_review02.jpg" alt="review02">
+                            </a>
+                            </div>
+                            <div>
+                            <a href="#">
+                                <img src="img/img_review03.jpg" alt="review03">
+                            </a>
+                            </div>
+                            <div>
+                            <a href="#">
+                                <img src="img/img_review04.jpg" alt="review04">
+                            </a>
+                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="main2-r"></div>
+        <div class="main3-l"></div>
+        <div class="main__community"> 
+            <div class="community c-item1">
+            <p style="font-size: 1.2em;">펫 커뮤니티</p>
+            <p class="community_title">슬기로운 반려생활에서</p>
+            <p class="community_title">우리 아이와의 추억을 저장해요 :)</p>
+            <p style="margin: 30px 0px;">슬기로운 반려생활에서는 펫오너분들의 이야기를 공유할 수 있어요! 우리 아이들과의 이야기를 함께 나눠보세요 !</p>
+            <div class="community__button">
+                <a href="#">추억 엿보기</a>
+            </div>
+        </div>
+        <div class="community c-item2">
+        </div>
+    </div>
+        <div class="main3-r"></div>
+        <div class="footer-l"></div>
+        <div class="footer__fnb">
+            <footer class="fnb">
+                <div class="fnb__buttons f-item1">
+                    <a href="#">슬기로운 반려생활</a>
+                </div>
+                <div class="fnb-mid-area">
+                    <div class="fnb__buttons  f-item2">
+                        <a href="#">개인정보처리방침</a>
+                    </div>
+                    <div class="fnb__buttons  f-item3">
+                        <a href="#">이용약관</a></div>
+                    <div class="fnb__buttons  f-item4">
+                        <a href="#">광고문의</a></div>
+                </div>
+                <div class="fnb__info">
+                    <p>슬기로운 반려생활</p>
+                    <p>주소 : 울산시 자바 개발구 KH빌딩 5층 502호</p>
+                    <p>광고문의 052-123-4567</p>
+                </div>
+                <div class="fnb__copy">
+                    Copyright© 2023 슬반생.All right reserved. Designed by 슬반생
+                </div>
+            </footer>
+        </div>
+        <div class="footer-r"></div>
+    </div>
+</body>
+</html>

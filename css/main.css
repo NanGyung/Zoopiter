@@ -1,229 +1,270 @@
 @charset "utf-8";
-@import 'layout.css';
+@import 'theme/layout.css';
 
 /* top-banner */
-.banner img {
+.fg-banner img {
   width: 100%;
-  height: 100%;
+  height: 280px;
 }
-.wrap .main__top-banner {
+.wrap .fg-banner {
+  position: relative;
+  z-index: 1;
   width: 100% -50px;
-  aspect-ratio: 5 / 3;
-  background-color: #ffd88f;
+  height: 280px;
   margin-top: 20px;
-  position: relative;
-}
-
-.main__top-banner .banner {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-}
-
-.banner img {
-  max-width: 100%;
   aspect-ratio: 5 / 3;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.main__top-banner .slick-dots {
-  bottom: 25px;
-}
-
-/* main1 */
-.wrap .main__pet-hospital {
+.wrap .fg-banner div {
+  position: relative;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+}
+
+.wrap .fg-banner .slick-dots {
+  bottom: 0;
+}
+
+.fg-banner.slick-initialized.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+
+/* main content 레이아웃 */
+.container__content {
+  width: auto;
+  height: auto;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-image: url(../img/img_hospital-bg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  z-index: 1;
-}
-.main__pet-hospital::after {
-  content: '';
-  opacity: 0.3;
-  position: absolute;
-  z-index: -1;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: #fff;
+  background-color: var(--color-background2);
 }
 
-.pet-hospital__item1 {
-  width: 30%;
-  height: 60%;
-  margin-left: 5%;
+.container__content article,
+.container__content aside {
+  margin: 40px;
 }
 
-.pet-hospital__title {
-  font-weight: bold;
-  font-size: 1.8em;
-  line-height: 1.2em;
+.container__content aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
-.pet-hospital__button {
+.container__content.item1 article {
+  flex: 3;
+}
+
+.container__content.item1 aside {
+  flex: 7;
+}
+
+.container__content.item2 {
+  flex-direction: column;
+  height: auto;
+  background-color: var(--color-main-background);
+}
+
+.container__content.item2 article {
+  flex: 4;
+}
+
+.container__content.item2 aside {
+  flex: 6;
+}
+
+.container__content.item3 article {
+  flex: 4;
+}
+.container__content.item3 aside {
+  flex: 6;
+}
+
+.item1__button,
+.item2__button,
+.item3__button {
+  border-radius: 40px;
+  border: 2px solid var(--color-main-point);
+  color: var(--color-main-text);
+  background-color: var(--color-background2);
   font-size: 1em;
   font-weight: bold;
   text-align: center;
   max-width: 300px;
   height: 40px;
-  background-color: #e1e2e1;
   line-height: 40px;
 }
 
-.pet-hospital__button a {
+.item2__button,
+.item3__button {
+  margin: 6em 0;
+}
+
+.item1__button a,
+.item2__button a,
+.item3__button a {
   display: inline-block;
   width: 100%;
   height: 100%;
 }
 
-.pet-hospital__button:hover a {
-  background-color: #f29a2e;
-  color: #ffffff;
+.item1__button a:hover,
+.item2__button a:hover,
+.item3__button a:hover {
+  border-radius: 40px;
+  background-color: var(--color-main-point);
+  color: var(--color-background2);
 }
 
-.pet-hospital__item2 {
-  width: 60%;
-  height: 70%;
+#subTitle {
+  width: 150px;
+  font-size: 1.2em;
+  background-color: var(--color-grey1);
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px;
+}
+
+/* main1 */
+.container__content.item1 {
+  margin-bottom: 20px;
+}
+
+.container__content.item1 article {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.pet-hospital__contents {
+.container__content.item1 .item1__title {
+  font-weight: bold;
+  font-size: 1.8em;
+  line-height: 1em;
+  margin-top: 10px;
+}
+
+.item1__button a {
+  display: inline-block;
+  width: 100%;
+}
+
+.item1__contents {
   width: 50%;
-  height: 45%;
+  height: 40%;
   margin: 10px 0px;
 }
 
-.pet-hospital__contents.content2 {
-  margin-top: 40%;
-}
-
-.pet-hospital__contents img {
+.item1__contents img {
   width: 100%;
   height: 100%;
   margin-bottom: 5%;
 }
 
+.item1__contents.content2 {
+  align-self: flex-end;
+}
+
 /* main2 */
-.wrap .main__review {
+.container__content.item2 {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: #f29a2e;
-  color: #f1f1f1;
-  padding: 5%;
-  background-image: url(../img/img_bird01.png);
-  background-position: right 0 top 0;
+  margin-bottom: 20px;
+  /* 배경이미지 */
+  background-color: var(--color-main-background);
+  background-image: url('../img/img_content3-background.svg');
+  background-size: 40% 40%;
   background-repeat: no-repeat;
+  background-position: top 60px right 0;
 }
 
-.review_items {
-  width: 100%;
-  height: 100%;
-}
-
-.review_items.r-item1 {
+.container__content.item2 article {
   max-width: 45%;
   height: 45%;
+  margin-bottom: 0;
 }
 
-.review_items.r-item2 {
-  width: 100%;
+.container__content.item2 aside {
+  width: auto;
   height: 30%;
-  margin: 40px 20px 0 20px;
 }
 
-.review__title {
+.container__content.item2 article #subTitle {
+  background-color: var(--color-background2);
+  border: 1px solid var(--color-main-point);
+}
+
+.item2__title {
   font-weight: bold;
   font-size: 1.8em;
   line-height: 1em;
+  margin-top: 10px;
 }
 
-.review__button {
-  font-size: 1em;
-  font-weight: bold;
-  text-align: center;
-  width: 300px;
-  height: 40px;
-  color: #333333;
-  background-color: #f1f1f1;
-  line-height: 40px;
-  margin: 6em 0;
-}
-
-.review__button a {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-}
-
-.review__button:hover {
-  color: #f29a2e;
-}
-
-.review_slider {
+.item2__slider {
   width: 100%;
   height: 400px;
 }
-.slick-slider {
-  height: 100%;
-}
 
-.review_slider img {
+.item2__slider img {
   max-width: 410px;
+  min-width: 200px;
   max-height: 400px;
   margin: 0px 10px;
   border-radius: 0.5rem;
-  box-shadow: 5px 5px 5px rgba(63, 63, 63, 0.199);
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.slick-track {
+  margin-bottom: 20px;
+}
+
+.slick-slider {
+  height: 100%;
 }
 
 .slick-list {
   padding: 0 20px;
 }
 
+.slick-prev,
+.slick-next {
+  z-index: 1000;
+}
+
+.slick-prev.slick-arrow {
+  left: 5px;
+}
+
+.slick-next.slick-arrow {
+  right: 5px;
+}
+
 /* main3 */
-.wrap .main__community {
+.container__content.item3 {
   display: flex;
   flex-direction: row;
-  background-color: rgb(250, 250, 246);
-  padding: 5%;
-  background-image: linear-gradient(
-      to top,
-      rgba(250, 250, 246, 0) 10%,
-      rgba(250, 250, 246, 0.25) 25%,
-      rgba(250, 250, 246, 0.5) 50%,
-      rgba(250, 250, 246, 0.75) 75%,
-      rgb(250, 250, 246) 100%
-    ),
-    url(../img/img_c-background.png);
-  background-repeat: no-repeat;
-  background-size: 70% 100%;
-  background-position: left;
 }
 
-.community {
+.item3__title {
+  font-weight: bold;
+  font-size: 1.8em;
+  line-height: 1em;
+  margin-top: 10px;
+}
+
+.item3__button a {
+  display: inline-block;
   width: 100%;
-  height: 100%;
 }
 
-.community.c-item1 {
-  width: 70%;
-  height: 45%;
+.container__content.item3 aside {
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+  height: 600px;
 }
-
-.community.c-item2 {
+.container__content.item3 aside .item3__img {
   width: 50%;
   height: 100%;
-  margin-left: 100px;
 
   background: linear-gradient(
       to bottom,
@@ -238,31 +279,56 @@
   background-repeat: no-repeat;
 }
 
-.community_title {
-  font-weight: bold;
-  font-size: 1.8em;
-  line-height: 1em;
+/* main 컨텐츠 반응형 */
+@media screen and (768px <= width <= 1440px) {
+  .container__content.item1,
+  .container__content.item3 {
+    flex-direction: column;
+  }
+
+  .container__content.item3 aside {
+    margin-left: 10px;
+    flex-basis: fit-content;
+    align-items: flex-end;
+  }
+
+  .container__content.item3 aside .item3__img {
+    width: 40%;
+    height: 40rem;
+  }
 }
 
-.community__button {
-  font-size: 1em;
-  font-weight: bold;
-  text-align: center;
-  width: 300px;
-  height: 40px;
-  background-color: #e1e2e1;
-  line-height: 40px;
-  margin: 6em 0;
-  box-shadow: 5px 5px 5px #55555588;
+@media screen and (width <= 768px) {
+  .container__content.item1 aside {
+    display: none;
+  }
+
+  .container__content.item2 article {
+    max-width: 100%;
+  }
+
+  /* .container__content.item2 article .item2__button {
+    max-width: 300px;
+  } */
+
+  .item2__button {
+    width: 100%;
+  }
+
+  .container__content.item1,
+  .container__content.item3 {
+    flex-direction: column;
+  }
+
+  .container__content.item3 aside {
+    display: none;
+  }
 }
 
-.community__button a {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-}
+/* 화면 폭 1240이하 일 때 item2 이미지 영역 안보이게 */
 
-.community__button:hover {
-  background-color: #f29a2e;
-  color: #f5f5f6;
+@media screen and (width <=1240px) {
+  .container__content.item2 aside {
+    display: none;
+  }
 }
