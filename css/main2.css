@@ -167,6 +167,7 @@
 
 .item2__slider img {
   max-width: 410px;
+  min-width: 200px;
   max-height: 400px;
   margin: 0px 10px;
   border-radius: 0.5rem;
@@ -192,14 +193,6 @@
 
 .slick-next.slick-arrow {
   right: 5px;
-}
-
-/* 화면 폭 1240이하 일 때  */
-
-@media screen and (width <= 1240px) {
-  .container__content.item2 aside {
-    display: none;
-  }
 }
 
 /* main3 */
@@ -253,21 +246,9 @@
   background-repeat: no-repeat;
 }
 
-/* @media screen and (width <= 800px) {
-  .container__content.item3 aside .item3__img {
-    width: 100%;
-  }
-} */
 
-@media screen and (width <= 700px) {
-  .container__content.item3 {
-    flex-direction: column;
-  }
-  .item2__button {
-    width: 100%;
-  }
-}
 
+/* main 컨텐츠 반응형 */
 @media screen and (width <= 1440px) {
   .container__content.item1,
   .container__content.item3 {
@@ -285,3 +266,30 @@
     height: 40rem;
   }
 }
+
+@media screen and (width <= 700px) {
+  .container__content.item3 {
+    flex-direction: column;
+  }
+  .item2__button {
+    width: 100%;
+  }
+}
+
+@media screen and(width < 768px){
+  .container__content.item3 aside {
+      flex-basis: 0;
+  }
+  .container__content.item3 aside .item3__img{
+    height: 0;
+  }
+}
+
+/* 화면 폭 1240이하 일 때 item2 이미지 영역 안보이게 */
+
+@media screen and (width <=1240px) {
+  .container__content.item2 aside {
+    display: none;
+  }
+}
+
