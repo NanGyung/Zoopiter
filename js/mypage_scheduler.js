@@ -1,4 +1,7 @@
-$(document).ready(function () {
+// $(document).ready(function () {
+//   calendarInit();
+// });
+document.addEventListener('DOMContentLoaded', function() {
   calendarInit();
 });
 /*

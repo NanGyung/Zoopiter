@@ -117,19 +117,20 @@ body {
   margin: 0 10px;
 }
 
-#join {
+.list1-item4 {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-#join a:hover {
+.list1-item4 a:hover {
   color: var(--color-main-point2);
 }
 
 #hamburger {
   display: none;
 }
+
 
 /* 반응형 header */
 
@@ -188,6 +189,12 @@ body {
     display: block;
     cursor: pointer;
   }
+}
+
+@media screen and (width > 590px) {
+  #join {
+      display: flex;
+    }
 }
 
 .hd.active {

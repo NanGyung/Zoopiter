@@ -1,8 +1,9 @@
 @charset "utf-8";
-@import 'theme/layout.css';
+@import '../theme/layout.css';
 /* * {
   outline: 1px solid green;
 } */
+
 button {
   cursor: pointer;
 }
@@ -45,6 +46,7 @@ button {
   padding: 10px;
 }
 
+
 .main-gnb .pc > a {
   display: inline-block;
   width: 100%;
@@ -59,6 +61,7 @@ button {
   justify-content: center;
   position: relative;
   margin: 10px;
+  width: 100%;
 }
 .user-profile .profile-area {
   display: flex;
