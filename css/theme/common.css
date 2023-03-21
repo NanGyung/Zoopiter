@@ -8,6 +8,31 @@ body {
   font-family: 'NanumSquare';
   color: var(--color-main-text);
 }
+button {
+  cursor: pointer;
+}
+/* 푸터 개인정보처리방침 모달창 */
+#ft-info1 {
+  border: none;
+  border-radius: 5%;
+  box-shadow: 5px 5px 3px 3px rgba(0, 0, 0, 0.2);
+  width: 40rem;
+  height: 40rem;
+}
+#info1Txt {
+  overflow: scroll;
+}
+#closeBtn {
+  border: none;
+  border-radius: 20px;
+  width: 30px;
+  height: 30px;
+  color: var(--color-background);
+  background-color: var(--color-main-point2);
+  margin-left: 94%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
 
 /* header */
 .hd {
