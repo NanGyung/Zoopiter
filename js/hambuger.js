@@ -1,6 +1,10 @@
+// 햄버거버튼
 const $hamburger = document.getElementById('hamburger');
 
+// 로그인 | 회원가입
 const join = document.getElementById('join');
+// const $menuItem4 = document.querySelector('.hd__menu__list1__item .list1-item4');
+
 $hamburger.addEventListener('click', e => {
   const $nav = document.querySelector('.hd');
   const $menu = document.querySelector('.hd .hd__menu');
@@ -16,11 +20,14 @@ $hamburger.addEventListener('click', e => {
   $menuItem1[1].classList.toggle('active');
   $menuItem1[2].classList.toggle('active');
 
-  if (join.style.display === 'flex') {
-    join.style.display = 'none';
-  } else {
-    join.style.display = 'flex';
-  }
+  // $menuItem4.classList.toggle('active');
+
+    if (join.style.display === 'flex') {
+      join.style.display = 'none';
+    } else {
+      join.style.display = 'flex';
+    }
+
 
   const $item1 = document.querySelectorAll(
     '.hd__menu__list1__item.active ',

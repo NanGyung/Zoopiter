@@ -45,6 +45,10 @@ body {
   line-height: 2em;
 }
 
+.hd__menu__list1 .hd__menu__list1__item{
+  font-size: 1.1rem;
+}
+
 /* 1뎁스 메뉴 호버 시 나타나는 아이콘 */
 .list1-item1:hover::after,
 .list1-item2:hover::after,
@@ -91,6 +95,8 @@ body {
 #logo {
   display: flex;
   align-items: center;
+  /* font-family: "jua"; */
+  font-size: 1.2em;
 }
 
 #logo a {
