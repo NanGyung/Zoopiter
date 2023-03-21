@@ -1,9 +1,9 @@
-// $(document).ready(function () {
-//   calendarInit();
-// });
-document.addEventListener('DOMContentLoaded', function() {
+$(document).ready(function () {
   calendarInit();
 });
+// document.addEventListener('DOMContentLoaded', function() {
+//   calendarInit();
+// });
 /*
     달력 렌더링 할 때 필요한 정보 목록 
 
