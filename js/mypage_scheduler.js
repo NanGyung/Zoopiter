@@ -80,12 +80,36 @@ function calendarInit() {
       var currentMonthDate = document.querySelectorAll('.dates .current');
       currentMonthDate[todayDate - 1].classList.add('today');
     }
+
+    //currentMonthDate : NodeList 객체에 접근 해야함
+    console.log(currentMonthDate.values());
+    // 날짜 선택
+    for(const ele of currentMonthDate){
+      // ele는 날짜(일)태그 <div class="day current">1...31</div>
+      // var values = ele.innerHTML;
+      // console.log(values); // 1...31
+
+      ele.addEventListener('click', e => {
+        const todayItem = document.querySelector('.current.today'); 
+        const clickItem = e.target;
+        console.log(clickItem);
+        // console.log(e.target.innerHTML); //클릭한 날짜의 값
+        //현재 날짜 표시하는 div의 class 값 제거
+        todayItem.classList.remove('today');
+        // 선택한 날짜 표시
+        clickItem.classList.add('today');
+          
+      }, false);
+    }
   }
+
+  // console.log(currentMonth+1);
 
   // 이전달로 이동
   $('.go-prev').on('click', function () {
     thisMonth = new Date(currentYear, currentMonth - 1, 1);
     renderCalender(thisMonth);
+    todayItem.classList.remove('today');
   });
 
   // 다음달로 이동

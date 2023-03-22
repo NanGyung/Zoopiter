@@ -247,6 +247,15 @@ li {
   font-size: 12px;
   text-align: center;
   border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.cal_wrap .dates .day{
+  cursor: pointer;
+}
+
+.cal_wrap .dates .day:hover{
+  border: 1px solid var(--color-main-point2);
 }
 
 .current.today {

@@ -85,6 +85,7 @@
       <main class="container">
         <section class="container__content item1">
           <article>
+            <!-- 개인정보 약관 -->
             <dialog id="ft-info1">
               <button id="closeBtn">X</button>
               <div id="info1Txt">
@@ -251,7 +252,7 @@
       $closeBtn.addEventListener(
         'click',
         e => {
-          $infoWindow.style.display = 'none';
+          $infoWindow.close();
         },
         false,
       );
