@@ -8,30 +8,55 @@ body {
   font-family: 'NanumSquare';
   color: var(--color-main-text);
 }
+
 button {
   cursor: pointer;
 }
+
 /* 푸터 개인정보처리방침 모달창 */
-#ft-info1 {
+#ft-info1,
+#ft-info2,
+#ft-info3 {
   border: none;
   border-radius: 5%;
   box-shadow: 5px 5px 3px 3px rgba(0, 0, 0, 0.2);
   width: 40rem;
-  height: 40rem;
+  height: 28rem;
+  padding: 40px;
 }
-#info1Txt {
+
+#info1Txt,
+#info2Txt,
+#info3Txt {
   overflow: scroll;
+  height: 340px;
 }
-#closeBtn {
+
+.ft-info1__title,
+.ft-info2__title,
+.ft-info3__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+#closeBtn1,
+#closeBtn2,
+#closeBtn3 {
   border: none;
   border-radius: 20px;
   width: 30px;
   height: 30px;
   color: var(--color-background);
   background-color: var(--color-main-point2);
-  margin-left: 94%;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+#ft-info1 h3,
+#ft-info2 h3,
+#ft-info3 h3 {
+  text-align: center;
 }
 
 /* header */
