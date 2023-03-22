@@ -5,6 +5,15 @@
 button {
   cursor: pointer;
 }
+
+/* 새로운 캘린더  */
+/* 캘린더 위의 해더 스타일(날짜가 있는 부분) */
+.fc-header-toolbar {
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
 /* 레이아웃 조정 - 난경 */
 .fg-banner {
   background-color: var(--color-background2);
@@ -250,11 +259,11 @@ li {
   box-sizing: border-box;
 }
 
-.cal_wrap .dates .day{
+.cal_wrap .dates .day {
   cursor: pointer;
 }
 
-.cal_wrap .dates .day:hover{
+.cal_wrap .dates .day:hover {
   border: 1px solid var(--color-main-point2);
 }
 
