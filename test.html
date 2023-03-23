@@ -1,146 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>test</title>
-    <link rel="stylesheet" href="css/test.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <script src="https://kit.fontawesome.com/6631aa96e6.js" crossorigin="anonymous"></script>
-  <!-- 네이버 API-->
-  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=83k8992bai"></script>
-  <!-- 카카오 API -->
-  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f7a8928bfd98ac187fdf1d5c84603904&libraries=services,clusterer,drawing"></script>
-<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-  
-</head>
-<body>
+    <link rel="stylesheet" href="css/test.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <script
+      src="https://kit.fontawesome.com/6631aa96e6.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- 네이버 API-->
+    <script
+      type="text/javascript"
+      src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=83k8992bai"
+    ></script>
+    <!-- 카카오 API -->
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f7a8928bfd98ac187fdf1d5c84603904&libraries=services,clusterer,drawing"
+    ></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
     <div class="wrap">
-        <div class="gnb-l"></div>
-        <div class="header__menu">
-            <nav class="menu">
-                <ul class="menu__list1">
-                    <li class="menu__item1" id="gnbLogo">
-                        <i class="fa-solid fa-dog fa-2x"></i>
-                        <a href="#"><h1>슬기로운 반려생활</h1></a>
-                    </li>
-                    <div class="menu__middle">
-                        <li class="menu__item1"><a href="#">펫 병원</a>
-                            <ul class="menu__list2">
-                                <li class="menu__item2"><a href="#">병원 찾기</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu__item1"><a href="#">게시판</a>
-                            <ul class="menu__list2">
-                                <li class="menu__item2"><a href="#">커뮤니티</a></li>
-                                <li class="menu__item2"><a href="#">병원후기</a></li>
-                                <li class="menu__item2"><a href="#">펫가이드</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu__item1"><a href="#">마이페이지</a>
-                            <ul class="menu__list2">
-                                <li class="menu__item2"><a href="#">정보수정</a></li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="menu__right">
-                        <li class="menu__item1">
-                            <a href="#">로그인</a> 
-                        </li>
-                        | 
-                        <li class="menu__item1">
-                            <a href="#"> 회원가입</a>
-                        </li>
-                    </div>
+      <div class="gnb-l"></div>
+      <div class="header__menu">
+        <nav class="menu">
+          <ul class="menu__list1">
+            <li class="menu__item1" id="gnbLogo">
+              <i class="fa-solid fa-dog fa-2x"></i>
+              <a href="#"><h1>슬기로운 반려생활</h1></a>
+            </li>
+            <div class="menu__middle">
+              <li class="menu__item1">
+                <a href="#">펫 병원</a>
+                <ul class="menu__list2">
+                  <li class="menu__item2"><a href="#">병원 찾기</a></li>
                 </ul>
-               
-            </nav>
-        </div>
-        <div class="gnb-r"></div>
-        <div class="banner-l"></div>
-        <header class="banner">
-            <p>펫병원 검색</p>
-            <h2>우리 반려동물의 병원을 찾아보세요</h2>
-           <div class="search">
-                <button class ="place-btn" id="myPlace">현재 위치로 설정</button>
-                <button class ="place-btn" id="regionChoice">지역 선택</button>
-            </div >
-            <div class="region-choice">
-                <button id="close"><i class="fa-solid fa-xmark"></i></button>
-                <h3>지역 선택</h3>
-                <div class="select">
-                    <select name="sido1" id="sido1"></select>
-                    <select name="gugun1" id="gugun1"></select>
-                </div>
-                <button id="selectBtn">확인</button>
+              </li>
+              <li class="menu__item1">
+                <a href="#">게시판</a>
+                <ul class="menu__list2">
+                  <li class="menu__item2"><a href="#">커뮤니티</a></li>
+                  <li class="menu__item2"><a href="#">병원후기</a></li>
+                  <li class="menu__item2"><a href="#">펫가이드</a></li>
+                </ul>
+              </li>
+              <li class="menu__item1">
+                <a href="#">마이페이지</a>
+                <ul class="menu__list2">
+                  <li class="menu__item2"><a href="#">정보수정</a></li>
+                </ul>
+              </li>
             </div>
-            <div class="filters">
-                <button>#강아지</button>
-                <button>#고양이</button>
-                <button>#조류   </button>
-                <button>#파충류</button>
-                <button>#양서류</button>
-                <button>#소동물</button>
-                <button>#기타</button>
-                <button id="searchBtn">검색하기</button>
+            <div class="menu__right">
+              <li class="menu__item1">
+                <a href="#">로그인</a>
+              </li>
+              |
+              <li class="menu__item1">
+                <a href="#"> 회원가입</a>
+              </li>
             </div>
-        </header>
-        <div class="banner-r"></div>
-        <div class="main1-l"></div>
-        <div class="main1" id="map">
-           
+          </ul>
+        </nav>
+      </div>
+      <div class="gnb-r"></div>
+      <div class="banner-l"></div>
+      <header class="banner">
+        <p>펫병원 검색</p>
+        <h2>우리 반려동물의 병원을 찾아보세요</h2>
+        <div class="search">
+          <button class="place-btn" id="myPlace">현재 위치로 설정</button>
+          <button class="place-btn" id="regionChoice">지역 선택</button>
         </div>
-        <div class="main1-r"></div>
-        <div class="main2-l"></div>
-        <div class="main2">
-           <h3 id="region">울산광역시 남구</h3>
-         <div class="filter-option">
-               <button>#강아지</button>
-               <button>#고양이</button>
-         </div>
+        <div class="region-choice">
+          <button id="close"><i class="fa-solid fa-xmark"></i></button>
+          <h3>지역 선택</h3>
+          <div class="select">
+            <select name="sido1" id="sido1"></select>
+            <select name="gugun1" id="gugun1"></select>
+          </div>
+          <button id="selectBtn">확인</button>
+        </div>
+        <div class="filters">
+          <button>#강아지</button>
+          <button>#고양이</button>
+          <button>#조류</button>
+          <button>#파충류</button>
+          <button>#양서류</button>
+          <button>#소동물</button>
+          <button>#기타</button>
+          <button id="searchBtn">검색하기</button>
+        </div>
+      </header>
+      <div class="banner-r"></div>
+      <div class="main1-l"></div>
+      <div class="main1" id="map"></div>
+      <div class="main1-r"></div>
+      <div class="main2-l"></div>
+      <div class="main2">
+        <h3 id="region">울산광역시 남구</h3>
+        <div class="filter-option">
+          <button>#강아지</button>
+          <button>#고양이</button>
+        </div>
         <select id="listFilter" size="1">
-            <option value="1" selected>거리순</option>
-            <option value="2">좋아요</option>
-            <option value="3">평점</option>
+          <option value="1" selected>거리순</option>
+          <option value="2">좋아요</option>
+          <option value="3">평점</option>
         </select>
-        </div>
-        <div class="main2-r"></div>
-        <div class="main3-l"></div>
-        <div class="main3">
-           <div class="list list1">item1</div>
-           <div class="list list2">item2</div>
-           <div class="list list3">item3</div>
-           <div class="list list4">item4</div>
-        </div>
-        <div class="main3-r"></div>
-        <div class="footer-l"></div>
-        <div class="footer__fnb">
-            <footer class="fnb">
-                <div class="fnb__buttons f-item1">
-                    <a href="#">슬기로운 반려생활</a>
-                </div>
-                <div class="fnb-mid-area">
-                    <div class="fnb__buttons  f-item2">
-                        <a href="#">개인정보처리방침</a>
-                    </div>
-                    <div class="fnb__buttons  f-item3">
-                        <a href="#">이용약관</a></div>
-                    <div class="fnb__buttons  f-item4">
-                        <a href="#">광고문의</a></div>
-                </div>
-                <div class="fnb__info">
-                    <p>슬기로운 반려생활</p>
-                    <p>주소 : 울산시 자바 개발구 KH빌딩 5층 502호</p>
-                    <p>광고문의 052-123-4567</p>
-                </div>
-                <div class="fnb__copy">
-                    Copyright© 2023 슬반생.All right reserved. Designed by 슬반생
-                </div>
-            </footer>
-        </div>
-        <div class="footer-r"></div>
+      </div>
+      <div class="main2-r"></div>
+      <div class="main3-l"></div>
+      <div class="main3">
+        <div class="list list1">item1</div>
+        <div class="list list2">item2</div>
+        <div class="list list3">item3</div>
+        <div class="list list4">item4</div>
+      </div>
+      <div class="main3-r"></div>
+      <div class="footer-l"></div>
+      <div class="footer__fnb">
+        <footer class="fnb">
+          <div class="fnb__buttons f-item1">
+            <a href="#">슬기로운 반려생활</a>
+          </div>
+          <div class="fnb-mid-area">
+            <div class="fnb__buttons f-item2">
+              <a href="#">개인정보처리방침</a>
+            </div>
+            <div class="fnb__buttons f-item3">
+              <a href="#">이용약관</a>
+            </div>
+            <div class="fnb__buttons f-item4">
+              <a href="#">광고문의</a>
+            </div>
+          </div>
+          <div class="fnb__info">
+            <p>슬기로운 반려생활</p>
+            <p>주소 : 울산시 자바 개발구 KH빌딩 5층 502호</p>
+            <p>광고문의 052-123-4567</p>
+          </div>
+          <div class="fnb__copy">
+            Copyright© 2023 슬반생.All right reserved. Designed by 슬반생
+          </div>
+        </footer>
+      </div>
+      <div class="footer-r"></div>
     </div>
-</body>
-<script src="./js/test.js"></script>
+  </body>
+  <script src="./js/test.js"></script>
 </html>

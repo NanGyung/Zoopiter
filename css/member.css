@@ -1,33 +1,50 @@
 @charset "utf-8";
 @import 'theme/layout.css';
 
-#wrap {
+/* 전체 레이아웃 */
+section{
+  background-color: var(--color-grey1);
+}
+.wrap {
   display: grid;
-  grid-template-columns: 1fr 600px 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: 3fr minmax(320px, 1024px) 3fr;
+  grid-template-rows: max-content;
   grid-template-areas:
-    '. hd .'
-    '. fg .';
+      'l mn r'
+      'l mn r'
+      'l mn r'
+      'l mn r';
+  color: var(--color-main-text);
 }
 
-header {
-  height: 150px;
-  text-align: center;
-  line-height: 150px;
-  font-size: 2rem;
-  color: gray;
-  font-weight: bold;
-  background-color: rgb(245, 245, 246);
+.mn-l, .hd-l, .fg-l, .ft-l {
+  grid-area: l;
+  background-color: var(--color-main-background);
 }
 
-main {
-  height: calc(100vh - 220px);
-  min-height: 500px;
+.mn-r,
+.hd-r,
+.fg-r,
+.ft-r {
+  grid-area: r;
+  background-color: var(--color-main-background);
 }
 
-main {
+.container {
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: calc(122.4vh - 220px);
+  min-height: 500px;
+  background-color: var(--color-background);
+  padding: 30px;
 }
+
+.hd, .fg-banner, .container, .ft{
+  grid-area: mn;
+}
+
 
 main section {
   display: flex;
@@ -58,6 +75,8 @@ main form input {
 #login {
   width: 100%;
 }
+
+/* input태그 */
 
 main form input[type='text' i],
 main form input[type='password' i] {
@@ -93,38 +112,6 @@ input:focus {
   font-size: 1.2rem;
   color: white;
   font-weight: bold;
-}
-
-.sns__choice {
-  display: flex;
-  width: 100%;
-  background-color: inherit;
-  justify-content: center;
-  align-items: center;
-}
-
-.sns__choice ul {
-  display: flex;
-  height: 50px;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.sns__choice li {
-  font-size: 0.8rem;
-  color: white;
-  font-weight: bold;
-}
-
-footer {
-  display: flex;
-  height: 70px;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  color: gray;
-  font-weight: bold;
-  background-color: rgb(245, 245, 246);
 }
 
 .hidden {
@@ -184,24 +171,114 @@ dialog li {
 }
 
 /* member_join */
-main .scroll-boxs {
+#mainTitle{
+  display: flex;
+  margin: 1.2rem 0;
+}
+#mainTitle i{
+  color: var(--color-main-point2);
+  margin-right: 10px;
+}
+
+.joinbox{
+  display: flex;
+  margin-top: 1.6rem;
+  background-color: var(--color-background);
+}
+
+.scroll-boxs {
+  display: flex;
+  margin: 1.2rem 0;
+}
+
+.scroll-box{
+    height: 28rem; 
+    width: 22rem;
+    padding: 1.2em;
+    overflow: auto;
+    border: 1px solid var(--color-grey1);
+}
+.scroll-box1{
+  margin-right: 20px;
+}
+
+.scroll-boxs.box2{
+  display: flex;
+  justify-content: space-around;
+}
+.box2__info1{
+  margin-right: 10rem;
+}
+.box2__info2 {
+  margin-right: 10px;
+}
+
+ .joinbox__title p{
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold
+}
+
+#joinboxContents{
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.joinbox__btns {
   display: flex;
 }
 
-.joinbox {
+.joinbox__btns__choice1 {
+  flex: 5;
   display: flex;
 }
 
-aside {
+.joinbox__btns__choice2 {
   flex: 5;
   display: flex;
   flex-direction: column;
 }
 
-section {
-  flex: 5;
+.joinbox__title{
   display: flex;
-  flex-direction: column;
+  width: 40rem;
+}
+
+.joinbox__title__owner{
+  flex: 5;
+  margin-right: 20px;
+}
+
+.joinbox__title__hospital{
+  flex: 5;
+}
+
+/* 회원가입버튼 */
+.signBtn{
+  width: 300px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-grey1) ;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  /* color: var(--color-main-text); */
+}
+
+.signUp{
+  margin: 0 5px;
+}
+
+.signUpH{
+  margin: 0 5px; 
+}
+
+#scroll-checkbox {
+  margin-right: 10px;
+}
+
+#scroll-checkbox2{
+  margin: 0 10px;
 }
 
 /* member_signup */

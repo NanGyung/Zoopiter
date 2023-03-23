@@ -32,7 +32,7 @@
         console.log(obj);
       },
       select: function (arg) { // 캘린더에서 드래그로 이벤트를 생성할 수 있다.
-        var title = prompt('Event Title:');
+        var title = prompt('Event Title:'); //반려동물 이름 입력받는 창
         if (title) {
           calendar.addEvent({
             title: title,
