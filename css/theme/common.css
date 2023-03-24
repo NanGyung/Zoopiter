@@ -25,11 +25,16 @@ button {
   padding: 40px;
 }
 
+
 #info1Txt,
 #info2Txt,
 #info3Txt {
-  overflow: scroll;
   height: 340px;
+}
+
+#info1Txt,
+#info2Txt{
+  overflow: scroll; 
 }
 
 .ft-info1__title,
@@ -308,6 +313,10 @@ button {
   background-color: var(--color-grey6);
   color: var(--color-grey1);
   text-align: center;
+}
+
+.wrap .ft a{
+  cursor: pointer;
 }
 
 .wrap .ft .ft__buttons {
