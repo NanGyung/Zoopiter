@@ -10,7 +10,7 @@
   <meta name="author" content="2팀" />
   <title>병원후기</title>
   <!--  리뷰게시판 메인 css -->
-  <link rel="stylesheet" href="../css/review.css" />
+  <link rel="stylesheet" href="../css/board_review.css" />
   <!--  폰트 어썸 : 로고 -->
   <script src="https://kit.fontawesome.com/6631aa96e6.js" crossorigin="anonymous"></script>
 </head>
@@ -37,8 +37,7 @@
             <a href="#">게시판</a>
             <ul class="hd__menu__list1__item__submenu">
               <li><a href="#">커뮤니티</a></li>
-              <li><a href="#">병원후기</a></li>
-              <li><a href="#">펫가이드</a></li>
+              <li><a href="board_review.html">병원후기</a></li>
             </ul>
           </li>
           <li class="hd__menu__list1__item list1-item3" id="myPage">
@@ -58,12 +57,12 @@
     <div class="hd-r"></div>
 
     <div class="fg-l"></div>
-    
+
     <div class="fg-r"></div>
 
     <div class="mn-l"></div>
     <main class="container">
-    <!-- 푸터 팝업 -->
+      <!-- 푸터 팝업 -->
       <!-- 개인정보 약관 -->
       <dialog id="ft-info1">
         <div class="ft-info1__title">
@@ -77,7 +76,7 @@
               이외의 용도로는 이용하지 않습니다.</br> – 고객 가입의사 확인,
               고객에 대한 서비스 제공에 따른 본인 식별.인증, 회원자격
               유지.관리, 물품 또는 서비스 공급에 따른 금액 결제, 물품 또는
-              서비스의 공급.배송 등 </br></br></br>  2. 개인정보의 처리 및 보유 기간 ①
+              서비스의 공급.배송 등 </br></br></br> 2. 개인정보의 처리 및 보유 기간 ①
               ‘와이즈펫’은 정보주체로부터 개인정보를 수집할 때 동의 받은
               개인정보 보유․이용기간 또는 법령에 따른 개인정보 보유․이용기간
               내에서 개인정보를 처리․보유합니다. ② 구체적인 개인정보 처리 및
@@ -268,7 +267,7 @@
           <h3>광고 소개서</h3>
           <button id="closeBtn3">X</button>
           <div class="ft-info3__content">
-              ul>
+            ul>
           </div>
         </div>
         <div id="info3Txt">
@@ -277,20 +276,18 @@
       </dialog>
 
       <!-- 메인 컨텐츠 -->
-         <div class="main-list">
+      <div class="main-list">
         <div class="list">
           <div class="main">병원 후기 목록</div>
           <div class="selectBox">
             <select class="select">
-              <option value="">조회순</option>
-              <option value="">최신순</option>
-              <option value="">좋아요</option>
+              <option value="viewCnt">조회순</option>
+              <option value="latest">최신순</option>
+              <option value="like">좋아요</option>
             </select>
             <span class="icoArrow">
-              <!-- <img src="/img/under.png" alt="" /> -->
               <i class="fa-solid fa-arrow-down"></i>
             </span>
-            <!-- <span class="icoArrow"><img src="https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png" alt=""></span> -->
           </div>
         </div>
       </div>
@@ -298,10 +295,10 @@
       <div class="sort">
         <div class="search">
           <!-- 동물 태그 선택 -->
-          <div class="left" >
+          <div class="left">
             <div class="tag">동물태그</div>
-            <form class="selectBox" name = "petTag" >
-              <select class="select" name="pet">
+            <form class="selectBox" name="petTag">
+              <!-- <select class="select" name="pet">
                 <option value="default">동물유형</option>
                 <option value="dog">강아지</option>
                 <option value="cat">고양이</option>
@@ -309,11 +306,15 @@
                 <option value="other">기타</option>
               </select>
               <span class="icoArrow">
-              <i class="fa-solid fa-arrow-down"></i>
-                <!-- <img src="/img/under.png" alt="" /> -->
-              </span>
+                <i class="fa-solid fa-arrow-down"></i>
+              </span> -->
+              <input type="checkbox" name="dog"> 강아지
+              <input type="checkbox" name="cat"> 고양이
+              <input type="checkbox" name="small"> 소동물
+              <input type="checkbox" name="other"> 기타
+              <button id="checkBtn">적용</button>
             </form>
-           
+
           </div>
           <div class="input">
             <input type="text" />
@@ -324,8 +325,6 @@
 
       <!-- 선택한 동물태그 -->
       <div class="tag-list">
-        <div class="tag">#<p></p></div>
-        <!-- <div class="tag">#새</div> -->
       </div>
       <div class="tag-list-r"></div>
 
@@ -336,27 +335,38 @@
         <div class="post">
           <div class="info">
             <div class="pro">
-              <div class="img"><img src="" alt="" />프사</div>
+              <div class="img">
+                <!--  기본프로필 이미지 -->
+                <i class="fa-solid fa-circle-user" style="color: #d1d1d1;"></i>
+              </div>
               <div class="name">
                 <div>작성자명</div>
-                <div id="clock" style="color: black">
-                  <!-- <script type="text/javascript"></script> -->
+                <div id="clock">
+                  게시글 작성 시간
                 </div>
               </div>
             </div>
             <div class="sub">
               <div class="num">
-                <div>조회수</div>
-                <div>4444</div>
-                <div><img src="" alt="" />하트</div>
+                <div class="num-cnt">
+                  조회수
+                  <p>4444</p>
+                </div>
+                <div class="like-icons">
+                  <!--  좋아요 누르기 전 아이콘 -->
+                  <i class="fa-regular fa-heart"></i>
+                  <!-- 좋아요 누른 후 아이콘 -->
+                  <!-- <i class="fa-solid fa-heart"></i> -->
+                </div>
               </div>
-              <div class="tag">#개</div>
+              <div class="tag">#강아지</div>
             </div>
           </div>
           <div class="preview">
             <div class="img">
-              <img src="" style="max-width: 100%; height: auto" />
-              이미지
+              <!-- <img src="" style="max-width: 100%; height: auto" /> -->
+              <!-- 기본이미지 -->
+              <i class="fa-solid fa-shield-cat"></i>
             </div>
             <div class="review">
               <div class="hos">슬기로운 동물병원</div>
@@ -371,28 +381,42 @@
             </div>
           </div>
         </div>
+        <!-- 게시글 -->
         <div class="post">
           <div class="info">
             <div class="pro">
-              <div class="img"><img src="" alt="" />프사</div>
+              <div class="img">
+                <!--  기본프로필 이미지 -->
+                <i class="fa-solid fa-circle-user" style="color: #d1d1d1;"></i>
+              </div>
               <div class="name">
                 <div>작성자명</div>
-                <div id="clock" style="color: black">clock</div>
+                <div id="clock">
+                  게시글 작성 시간
+                </div>
               </div>
             </div>
             <div class="sub">
               <div class="num">
-                <div>조회수</div>
-                <div>4444</div>
-                <div><img src="" alt="" />하트</div>
+                <div class="num-cnt">
+                  조회수
+                  <p>4444</p>
+                </div>
+                <div class="like-icons">
+                  <!--  좋아요 누르기 전 아이콘 -->
+                  <i class="fa-regular fa-heart"></i>
+                  <!-- 좋아요 누른 후 아이콘 -->
+                  <!-- <i class="fa-solid fa-heart"></i> -->
+                </div>
               </div>
-              <div class="tag">#개</div>
+              <div class="tag">#강아지</div>
             </div>
           </div>
           <div class="preview">
             <div class="img">
-              <img src="" style="max-width: 100%; height: auto" />
-              이미지
+              <!-- <img src="" style="max-width: 100%; height: auto" /> -->
+              <!-- 기본이미지 -->
+              <i class="fa-solid fa-shield-cat"></i>
             </div>
             <div class="review">
               <div class="hos">슬기로운 동물병원</div>
@@ -407,49 +431,126 @@
             </div>
           </div>
         </div>
+        <!-- 게시글 -->
+        <div class="post">
+          <div class="info">
+            <div class="pro">
+              <div class="img">
+                <!--  기본프로필 이미지 -->
+                <i class="fa-solid fa-circle-user" style="color: #d1d1d1;"></i>
+              </div>
+              <div class="name">
+                <div>작성자명</div>
+                <div id="clock">
+                  게시글 작성 시간
+                </div>
+              </div>
+            </div>
+            <div class="sub">
+              <div class="num">
+                <div class="num-cnt">
+                  조회수
+                  <p>4444</p>
+                </div>
+                <div class="like-icons">
+                  <!--  좋아요 누르기 전 아이콘 -->
+                  <i class="fa-regular fa-heart"></i>
+                  <!-- 좋아요 누른 후 아이콘 -->
+                  <!-- <i class="fa-solid fa-heart"></i> -->
+                </div>
+              </div>
+              <div class="tag">#강아지</div>
+            </div>
+          </div>
+          <div class="preview">
+            <div class="img">
+              <!-- <img src="" style="max-width: 100%; height: auto" /> -->
+              <!-- 기본이미지 -->
+              <i class="fa-solid fa-shield-cat"></i>
+            </div>
+            <div class="review">
+              <div class="hos">슬기로운 동물병원</div>
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Aperiam laudantium architecto rerum nam harum error eius qui
+                  incidunt, illo veritatis ad. Quisquam perspiciatis asperiores
+                  quis debitis minus possimus. Expedita, quasi?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 게시글 -->
+        <div class="post">
+          <div class="info">
+            <div class="pro">
+              <div class="img">
+                <!--  기본프로필 이미지 -->
+                <i class="fa-solid fa-circle-user" style="color: #d1d1d1;"></i>
+              </div>
+              <div class="name">
+                <div>작성자명</div>
+                <div id="clock">
+                  게시글 작성 시간
+                </div>
+              </div>
+            </div>
+            <div class="sub">
+              <div class="num">
+                <div class="num-cnt">
+                  조회수
+                  <p>4444</p>
+                </div>
+                <div class="like-icons">
+                  <!--  좋아요 누르기 전 아이콘 -->
+                  <i class="fa-regular fa-heart"></i>
+                  <!-- 좋아요 누른 후 아이콘 -->
+                  <!-- <i class="fa-solid fa-heart"></i> -->
+                </div>
+              </div>
+              <div class="tag">#강아지</div>
+            </div>
+          </div>
+          <div class="preview">
+            <div class="img">
+              <!-- <img src="" style="max-width: 100%; height: auto" /> -->
+              <!-- 기본이미지 -->
+              <i class="fa-solid fa-shield-cat"></i>
+            </div>
+            <div class="review">
+              <div class="hos">슬기로운 동물병원</div>
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Aperiam laudantium architecto rerum nam harum error eius qui
+                  incidunt, illo veritatis ad. Quisquam perspiciatis asperiores
+                  quis debitis minus possimus. Expedita, quasi?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-       <!-- 게시판 페이지 -->
+      <!-- 게시판 페이지 -->
       <div class="page">
-        <button
-          type="button"
-          class="navyBtn"
-          onClick="location.href='PAGENAME.html'"
-        >
+        <button type="button" class="prevBtn" onClick="location.href='PAGENAME.html'">
           이전
         </button>
-        <button
-          type="button"
-          class="navyBtn"
-          onClick="location.href='PAGENAME.html'"
-        >
+        <button type="button" class="pageBtns item1 active" onClick="location.href='PAGENAME.html'">
           1
         </button>
-        <button
-          type="button"
-          class="navyBtn"
-          onClick="location.href='PAGENAME.html'"
-        >
+        <button type="button" class="pageBtns item2" onClick="location.href='PAGENAME.html'">
           2
         </button>
-        <button
-          type="button"
-          class="navyBtn"
-          onClick="location.href='PAGENAME.html'"
-        >
+        <button type="button" class="pageBtns item3" onClick="location.href='PAGENAME.html'">
           3
         </button>
-        <button
-          type="button"
-          class="navyBtn"
-          onClick="location.href='PAGENAME.html'"
-        >
+        <button type="button" class="pageBtns item4" onClick="location.href='PAGENAME.html'">
           4
         </button>
-        <button
-          type="button"
-          class="navyBtn"
-          onClick="location.href='PAGENAME.html'"
-        >
+        <button type="button" class="nextBtn" onClick="location.href='PAGENAME.html'">
           다음
         </button>
       </div>
