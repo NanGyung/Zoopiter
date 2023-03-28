@@ -26,21 +26,26 @@
 // };
 // $select.addEventListener('change', select_h, false);
 
-// 동물태그 체크박스 선택했을 시 전체 선택 해제 버튼 추가
-const $selectBox = document.querySelector('.selectBox');
-const $check = document.querySelector('input[type="checkbox"]');
-// console.log($check);
-if ($check.checked == "true") {
-    alert("체크됨");
-    let addBtn = document.createElement("button");
-    addBtn.innerHTML = '전체 선택 해제';
-    addBtn.setAttribute("id", "allBtn");
-    $selectBox.appendChild(addBtn);
-} else {
-    // const $addBtn = document.getElementById('allBtn');
-    $selectBox.removeChild($selectBox.lastChild);
+const $selectBox = document.querySelector('.left .selectBox');
+const $check = document.querySelectorAll('input[type="checkbox"]');
+
+const  checkbox_h = e => {
+    // 동물태그 체크박스 선택했을 시 전체 선택 해제 버튼 추가
+    for(const ele of $check){
+        if (ele.checked == true) {
+            console.log(e.target);
+            let addBtn = document.createElement("button");
+            addBtn.innerHTML = '전체 선택 해제';
+            addBtn.setAttribute("id", "allBtn");
+            $selectBox.appendChild(addBtn);
+        } else {
+            // const $addBtn = document.getElementById('allBtn');
+            $selectBox.removeChild(addBtn);
+        }
+    }
 }
 
+$selectBox.addEventListener('change',checkbox_h,false);
 
 
 // 좋아요 클릭 이벤트
