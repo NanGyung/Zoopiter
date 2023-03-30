@@ -1,0 +1,45 @@
+@charset "utf-8";
+@import 'theme/layout.css';
+
+.fg-banner{
+    background-color: var(--color-background);
+    padding: 20px;
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* 동물병원 검색 메뉴 */
+.container .findHospital{
+    flex: 2;
+}
+
+/* 동물병원 검색 주소 표시 메뉴 */
+.container .findedAddr{
+    flex: 3;
+}
+
+/* 병원 검색 결과 목록 */
+.container .findedHospital{
+    flex: 8;
+}
+
+
+
+/* 메인 지도 하단 메뉴 */
+.container .bottom-menu{
+    background-color: var(--color-main-background);
+}
+
+#map{
+    /* flex: 5; */
+    width: 100%;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
