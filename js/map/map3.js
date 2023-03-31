@@ -119,7 +119,7 @@ function removeAllChildNods(el) {
 
 
 
-// 모달 실험
+// 병원 정보 모달 실험
 document.getElementById("modal_opne_btn").onclick = function() {
     document.getElementById("modal").style.display="block";
 }
@@ -135,8 +135,6 @@ $("#modal_opne_btn").click(function(){
  $("#modal_close_btn").click(function(){
     $("#modal").attr("style", "display:none");
 });      
-
-      
 
 
     // 지도를 생성하고 현재 위치를 얻어옵니다
