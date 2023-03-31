@@ -85,23 +85,25 @@
       <main class="container">
         <!-- 지도표시 -->
         <div id="map"></div>
+        <!-- 지도 키워드 검색, 목록 -->
+        <div id="menu_wrap" class="bg_white">
+          <div class="option">
+            <div>
+              <form onsubmit="searchPlaces(); return false;">
+                검색 :
+                <input type="text" value="동물병원" id="keyword" size="15" />
+              </form>
+            </div>
+          </div>
+          <hr />
+          <ul id="placesList"></ul>
+          <div id="pagination"></div>
+        </div>
 
-        <!-- <div class="contents">
-
-        </div> -->
-
-        <!-- 동물병원 검색 메뉴 -->
+        <!-- 동물 태그, 동물병원 목록 필터 -->
         <div class="findHospital">
           <div class="findHospital__search-keyword">
-            <form onsubmit="searchPlaces(); return false;" name="petTag">
-              <!-- <label for="keyword">검색</label>
-              <input
-                type="text"
-                placeholder="동물병원"
-                id="keyword"
-                size="15"
-                <button id="keywordBtn">검색</button>
-              /> -->
+            <form name="petTag">
               <input type="checkbox" name="dog" /> 강아지
               <input type="checkbox" name="cat" /> 고양이
               <input type="checkbox" name="small" /> 소동물
@@ -114,9 +116,8 @@
               <option value="">평점</option>
             </select>
           </div>
+
           <!-- <hr /> -->
-          <ul id="placesList"></ul>
-          <div id="pagination"></div>
         </div>
 
         <!-- 병원 검색 결과 목록 -->
