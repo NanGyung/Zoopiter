@@ -16,6 +16,8 @@
   <!-- 카카오 카테고리 지도 API -->
   <script type="text/javascript"
     src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f7a8928bfd98ac187fdf1d5c84603904&libraries=services"></script>
+  <!-- jquery -->
+  <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
@@ -63,7 +65,7 @@
     <figure class="fg-banner">
       <article class="fg-banner__left">
         <div class="banner-title">
-          <h3>펫병원</h3>
+          <p>펫병원</p>
           <h2>우리 반려동물의 병원을 찾아보세요!</h2>
         </div>
         <div class="banner-title__search">
@@ -71,9 +73,7 @@
           <button class="search-btns" id="regionChoice">지역 선택</button>
         </div>
         <!-- 선택한 지역 표시 -->
-        <div class="search-res">
-          선택한 지역 표시
-          <!-- <p>울산 남구</p> -->
+        <div class="search-res" id="searchRes">
         </div>
       </article>
       <aside class="fg-banner__right">
@@ -81,12 +81,15 @@
       </aside>
       <!-- 지역선택 팝업 -->
       <dialog id="regionSelect">
+        <div class="regionSelect__closebtn">
+          <h4>지역선택</h4>
+          <i class="fa-solid fa-xmark" id="regionCloseBtn"></i>
+        </div>
         <select name="sido" id="sido">
-          <!-- <option value=""></option> -->
         </select>
         <select name="gugun" id="gugun">
-          <!-- <option value=""></option> -->
         </select>
+        <button id="regionBtn">확인</button>
       </dialog>
 
     </figure>

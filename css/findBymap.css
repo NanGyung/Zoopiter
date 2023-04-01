@@ -35,6 +35,17 @@
   line-height: 3rem;
 }
 
+.banner-title p {
+  width: 100px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-background);
+  background-color: var(--color-main-point);
+  border-radius: 2rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 .banner-title__search {
   margin: 20px 0;
 }
@@ -48,6 +59,26 @@
   background-color: var(--color-background);
   font-weight: bold;
   color: var(--color-main-text);
+}
+
+/* 선택한 지역 표시 */
+.search-res {
+  display: flex;
+  margin-right: 10px;
+}
+#sidoRes {
+  margin-right: 10px;
+}
+
+/* 지역선택 팝업 닫힘 버튼 */
+.regionSelect__closebtn {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.regionSelect__closebtn i {
+  cursor: pointer;
 }
 
 /* 메인영역 */
