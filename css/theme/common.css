@@ -64,6 +64,39 @@ button {
   text-align: center;
 }
 
+.ft-info3__content{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ft-info3__content ul li {
+  line-height: 1.8rem;
+}
+
+.ft-info3__content form label{
+  text-align: center;
+}
+
+/* 광고 소개서 입력창 */
+
+.ft-info3__content form input[type='text'],
+.ft-info3__content form input[type='email'],
+.ft-info3__content form input[type='tel']{
+  width: 100%;
+}
+
+/* 광고소개서 버튼 */
+#ftInfo3Btn{
+  width: 250px;
+  border-radius: 2rem;
+  margin-top: 20px;
+}
+
+
 /* header */
 .hd {
   grid-area: hd;
