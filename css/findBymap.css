@@ -64,21 +64,61 @@
 /* 선택한 지역 표시 */
 .search-res {
   display: flex;
+  align-items: center;
   margin-right: 10px;
 }
+
+.search-res h4 {
+  margin-right: 10px;
+}
+
 #sidoRes {
   margin-right: 10px;
+}
+
+/* 지역선택 팝업창 */
+#regionSelect {
+  width: 20rem;
+  padding: 10px;
+  border-radius: 2rem;
+  border: 1px solid var(--color-background);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* 지역선택 팝업 닫힘 버튼 */
 .regionSelect__closebtn {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 .regionSelect__closebtn i {
   cursor: pointer;
+}
+
+.regionSelect__address {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+.regionSelect__address select {
+  width: 8rem;
+  margin-right: 10px;
+  border-radius: 2rem;
+}
+
+#regionBtn {
+  width: 4rem;
+  padding: 4px;
+  border-radius: 2rem;
+  border: 1px solid var(--color-main-point);
+  background-color: var(--color-main-point);
+  color: var(--color-background);
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
 /* 메인영역 */

@@ -49,7 +49,7 @@ function displayMarker(place) {
 const $myPlaceBtn = document.getElementById('myPlace');
 let myPosition = '';
 const myPlace_h = e => {
-    const geoLocation = globalThis.navigator.geolocation;
+    const geoLocation = navigator.geolocation;
     if (geoLocation) {
         geoLocation.getCurrentPosition((position) => {
             // 내위치 위도, 경도
@@ -61,14 +61,30 @@ const myPlace_h = e => {
             map.setLevel(2, { animate: true });
 
             //  내위치 마커표시
-            const mypsMarker = new kakao.maps.Marker({
-                // map: map,
-                position: new kakao.maps.LatLng(myPosition.La, myPosition.Ma)
-            });
-            mypsMarker.setMap(map);
+            displayMarker(myPosition);
+
+            // 카테고리로 병원을 검색합니다
+            ps.categorySearch('HP8', placesSearchCB, { useMapBounds: true });
+
+            // 키워드 검색 완료 시 호출되는 콜백함수 입니다
+            function placesSearchCB(data, status, pagination) {
+                if (status === kakao.maps.services.Status.OK) {
+                    for (var i = 0; i < data.length; i++) {
+                        displayMarker(data[i]);
+                    }
+                }
+            }
+            // const mypsMarker = new kakao.maps.Marker({
+            //     map: map,
+            //     position: new kakao.maps.LatLng(myPosition.La, myPosition.Ma)
+            // });
+
 
         });
-    } else {
+    } else {  // HTML5 GeoLocation 사용할 수 없을 때 마커 위치설정
+        myPosition = new kakao.maps.LatLng(33.450701, 126.570667),
+            message = '위치정보가 존재하지 않습니다 :(';
+        displayMarker(myPosition, message);
         throw new Error('현 브라우저는 위치정보를 제공하지 않습니다!');
     }
 };
@@ -177,14 +193,50 @@ $('document').ready(function () {
 
                 var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
-                // 결과값으로 받은 위치를 마커로 표시합니다
-                var marker = new kakao.maps.Marker({
-                    map: map,
-                    position: coords
-                });
-
                 // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
                 map.setCenter(coords);
+
+                // 카테고리로 병원을 검색합니다
+                ps.categorySearch('HP8', placesSearchCB, { useMapBounds: true });
+
+                // 키워드 검색 완료 시 호출되는 콜백함수 입니다
+                function placesSearchCB(data, status, pagination) {
+                    if (status === kakao.maps.services.Status.OK) {
+                        for (var i = 0; i < data.length; i++) {
+                            displayMarker(data[i]);
+                        }
+                    }
+                }
+
+                // // 키워드로 장소를 검색합니다
+                // ps.keywordSearch('동물병원', placesSearchCB);
+
+                // // 키워드 검색 완료 시 호출되는 콜백함수 입니다
+                // function placesSearchCB(data, status, pagination) {
+                //     if (status === kakao.maps.services.Status.OK) {
+
+                //         // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+                //         // LatLngBounds 객체에 좌표를 추가합니다
+                //         var bounds = new kakao.maps.LatLngBounds();
+
+                //         for (var i = 0; i < data.length; i++) {
+                //             displayMarker(data[i]);
+                //             bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+                //         }
+
+                //         // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+                //         map.setBounds(bounds);
+                //     }
+                // }
+
+
+                // // 결과값으로 받은 위치를 마커로 표시합니다
+                // var marker = new kakao.maps.Marker({
+                //     map: map,
+                //     position: coords
+                // });
+
+
             }
         });
     };

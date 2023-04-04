@@ -74,6 +74,7 @@
         </div>
         <!-- 선택한 지역 표시 -->
         <div class="search-res" id="searchRes">
+          <h4>선택한 지역: </h4>
         </div>
       </article>
       <aside class="fg-banner__right">
@@ -81,15 +82,18 @@
       </aside>
       <!-- 지역선택 팝업 -->
       <dialog id="regionSelect">
-        <div class="regionSelect__closebtn">
+        <article class="regionSelect__closebtn">
           <h4>지역선택</h4>
           <i class="fa-solid fa-xmark" id="regionCloseBtn"></i>
-        </div>
-        <select name="sido" id="sido">
-        </select>
-        <select name="gugun" id="gugun">
-        </select>
-        <button id="regionBtn">확인</button>
+        </article>
+        <hr />
+        <aside class="regionSelect__address">
+          <select name="sido" id="sido">
+          </select>
+          <select name="gugun" id="gugun">
+          </select>
+          <button id="regionBtn">확인</button>
+        </aside>
       </dialog>
 
     </figure>
