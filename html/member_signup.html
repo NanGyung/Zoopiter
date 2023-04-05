@@ -38,28 +38,55 @@
         <section class="joinForm">
           <form action="" method="post">
             <ul class="joinForm__list">
-              <li class="joinForm__list__items">
+              <li class="joinForm__list__items item1">
                 <label for="nickname">닉네임</label
-                ><input type="text" id="nickname" />
+                ><input
+                  type="text"
+                  id="nickname"
+                  maxlength="10"
+                  spellcheck="false"
+                />
+                <p class="information nickname">
+                  닉네임은 영문, 숫자, 한글 조합으로 10자까지 가능합니다.
+                </p>
+                <p class="err nickname"></p>
               </li>
-              <li class="joinForm__list__items">
-                <label for="id">아이디</label><input type="text" id="id" />
+              <li class="joinForm__list__items item2">
+                <label for="id">아이디</label
+                ><input type="text" id="id" maxlength="15" spellcheck="false" />
+                <p class="information id">
+                  아이디는 영문, 숫자 조합으로 15자까지 가능합니다.
+                </p>
+                <p class="err id"></p>
               </li>
-              <li class="joinForm__list__items">
+              <li class="joinForm__list__items item3">
                 <label for="pw">비밀번호</label
-                ><input type="password" id="pw" />
+                ><input type="password" id="pw" maxlength="20" />
+                <p class="information pw">
+                  비밀번호는 영문 대소문자, 숫자조합으로 8~20자 가능합니다.
+                </p>
+                <p class="err pw"></p>
               </li>
-              <li class="joinForm__list__items">
-                <label for="pwCkeck">비밀번호확인</label
-                ><input type="password" id="pwCkeck" />
+              <li class="joinForm__list__items item4">
+                <label for="pwCheck">비밀번호확인</label
+                ><input type="password" id="pwCheck" />
+                <p class="err pwCheck"></p>
               </li>
-              <li class="joinForm__list__items">
+              <li class="joinForm__list__items item5">
                 <label for="email">이메일</label
-                ><input type="email" id="email" />
+                ><input type="email" id="email" spellcheck="false" />
+                <p class="err email"></p>
               </li>
-              <li class="joinForm__list__items">
-                <label for="num">이메일인증번호</label
-                ><input type="number" id="num" />
+              <li class="joinForm__list__items item6">
+                <div class="item6__email">
+                  <label for="emailCheck">이메일인증번호</label
+                  ><input type="number" id="emailCheck" />
+                </div>
+                <button class="emailSend" id="emailSendBtn">
+                  인증번호 받기
+                </button>
+                <button class="emailSend hidden" id="emailChkBtn">확인</button>
+                <p class="err emailCheck"></p>
               </li>
             </ul>
             <button type="button" id="loginBtn">회원가입</button>
@@ -69,9 +96,13 @@
 
       <dialog id="loginPopup">
         <div class="contents">
-          <div>회원가입완료</div>
+          <h3>회원가입 완료!</h3>
+          <img src="../img/img_signup.svg" alt="signupSuccessImg" />
+          <p>슬기로운 반려생활과 함께 추억을 쌓아봐요!</p>
           <button type="button" id="loginGo">
-            <a href="./member_login.html" onclick="location">로그인하러~</a>
+            <a href="./member_login.html" onclick="location"
+              >로그인 하러 가기</a
+            >
           </button>
         </div>
       </dialog>
@@ -82,12 +113,5 @@
       <div class="ft-r"></div>
     </div>
   </body>
-  <script>
-    const $loginBtn = document.getElementById('loginBtn');
-    const $loginPopup = document.getElementById('loginPopup');
-    $loginBtn.addEventListener('click', e => {
-      $loginPopup.showModal();
-    });
-  </script>
-  <!-- <script src="../js/member_join.js"></script> -->
+  <script src="../js/member_signup.js"></script>
 </html>

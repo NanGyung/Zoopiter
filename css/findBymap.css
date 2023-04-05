@@ -6,6 +6,12 @@
   outline: 1px solid green;
 } */
 
+/* 푸터 광고문의 팝업창 타이틀 */
+.ft-info3__content ul li label{
+  display: flex;
+}
+
+
 /* 상단 배너 */
 .fg-banner {
   display: flex;

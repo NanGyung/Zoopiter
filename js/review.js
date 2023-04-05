@@ -26,6 +26,9 @@
 // };
 // $select.addEventListener('change', select_h, false);
 
+
+// 동물 태그 체크박스 이벤트
+
 const $selectBox = document.querySelector('.left .selectBox');
 const $check = document.querySelectorAll('input[type="checkbox"]');
 let addBtn;
@@ -50,6 +53,8 @@ const  checkbox_h = e => {
 }
 
 $selectBox.addEventListener('change',checkbox_h,false);
+
+
 
 
 // 좋아요 클릭 이벤트

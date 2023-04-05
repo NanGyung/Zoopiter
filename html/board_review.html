@@ -36,7 +36,7 @@
           <li class="hd__menu__list1__item list1-item2">
             <a href="#">게시판</a>
             <ul class="hd__menu__list1__item__submenu">
-              <li><a href="#">커뮤니티</a></li>
+              <li><a href="board_community.html">커뮤니티</a></li>
               <li><a href="board_review.html">병원후기</a></li>
             </ul>
           </li>
@@ -262,28 +262,49 @@
         </div>
       </dialog>
       <!-- 광고 문의 -->
-      <dialog id="ft-info3">
+       <dialog id="ft-info3">
         <div class="ft-info3__title">
           <h3>광고 소개서</h3>
           <button id="closeBtn3">X</button>
+        </div>
           <div class="ft-info3__content">
-
+            <form action="">
+              <ul>
+                <li>
+                  <label for="hname"><span>*</span>병원명</label>
+                  <input type="text" id="hname">
+                </li>
+                <li>
+                  <label for="name"><span>*</span>담당자명</label>
+                  <input type="text" id="name">
+                </li>
+                <li>
+                  <label for="email"><span>*</span>이메일주소</label>
+                  <input type="email" id="email">
+                </li>
+                <li>
+                  <label for="phone"><span>*</span>연락처</label>
+                  <input type="tel" id="phone">
+                </li>
+                <li>
+                  <label for="adcontent"><span>*</span>광고내용</label>
+                  <textarea name="adcontent" id="adcontent" cols="30" rows="10">
+                  </textarea>
+                </li>
+              </ul>
+              <button id="ftInfo3Btn">제출하기</button>
+            </form>
           </div>
-        </div>
-        <div id="info3Txt">
-
-        </div>
       </dialog>
-
       <!-- 메인 컨텐츠 -->
       <div class="main-list">
         <div class="list">
-          <div class="main">병원 후기 목록</div>
+          <div class="main">병원 후기</div>
           <div class="selectBox">
             <select class="select">
               <option value="viewCnt">조회순</option>
               <option value="latest">최신순</option>
-              <option value="like">좋아요</option>
+              <!-- <option value="like">좋아요</option> -->
             </select>
             <span class="icoArrow">
               <i class="fa-solid fa-arrow-down"></i>
@@ -298,16 +319,6 @@
           <div class="left">
             <div class="tag">동물태그</div>
             <form class="selectBox" name="petTag">
-              <!-- <select class="select" name="pet">
-                <option value="default">동물유형</option>
-                <option value="dog">강아지</option>
-                <option value="cat">고양이</option>
-                <option value="small">소동물</option>
-                <option value="other">기타</option>
-              </select>
-              <span class="icoArrow">
-                <i class="fa-solid fa-arrow-down"></i>
-              </span> -->
               <input type="checkbox" name="dog"> 강아지
               <input type="checkbox" name="cat"> 고양이
               <input type="checkbox" name="small"> 소동물
@@ -352,11 +363,49 @@
                   조회수
                   <p>4444</p>
                 </div>
-                <div class="like-icons">
-                  <!--  좋아요 누르기 전 아이콘 -->
-                  <i class="fa-regular fa-heart"></i>
-                  <!-- 좋아요 누른 후 아이콘 -->
-                  <!-- <i class="fa-solid fa-heart"></i> -->
+              </div>
+              <div class="tag">#강아지</div>
+            </div>
+          </div>
+          <div class="preview">
+            <div class="img">
+              <!-- <img src="" style="max-width: 100%; height: auto" /> -->
+              <!-- 기본이미지 -->
+              <i class="fa-solid fa-shield-cat"></i>
+            </div>
+            <div class="review">
+              <div class="hos">슬기로운 동물병원</div>
+              <div>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Aperiam laudantium architecto rerum nam harum error eius qui
+                  incidunt, illo veritatis ad. Quisquam perspiciatis asperiores
+                  quis debitis minus possimus. Expedita, quasi?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 게시글 -->
+        <div class="post">
+          <div class="info">
+            <div class="pro">
+              <div class="img">
+                <!--  기본프로필 이미지 -->
+                <i class="fa-solid fa-circle-user" style="color: #d1d1d1;"></i>
+              </div>
+              <div class="name">
+                <div>작성자명</div>
+                <div id="clock">
+                  게시글 작성 시간
+                </div>
+              </div>
+            </div>
+            <div class="sub">
+              <div class="num">
+                <div class="num-cnt">
+                  조회수
+                  <p>4444</p>
                 </div>
               </div>
               <div class="tag">#강아지</div>
@@ -402,12 +451,6 @@
                   조회수
                   <p>4444</p>
                 </div>
-                <div class="like-icons">
-                  <!--  좋아요 누르기 전 아이콘 -->
-                  <i class="fa-regular fa-heart"></i>
-                  <!-- 좋아요 누른 후 아이콘 -->
-                  <!-- <i class="fa-solid fa-heart"></i> -->
-                </div>
               </div>
               <div class="tag">#강아지</div>
             </div>
@@ -451,62 +494,6 @@
                 <div class="num-cnt">
                   조회수
                   <p>4444</p>
-                </div>
-                <div class="like-icons">
-                  <!--  좋아요 누르기 전 아이콘 -->
-                  <i class="fa-regular fa-heart"></i>
-                  <!-- 좋아요 누른 후 아이콘 -->
-                  <!-- <i class="fa-solid fa-heart"></i> -->
-                </div>
-              </div>
-              <div class="tag">#강아지</div>
-            </div>
-          </div>
-          <div class="preview">
-            <div class="img">
-              <!-- <img src="" style="max-width: 100%; height: auto" /> -->
-              <!-- 기본이미지 -->
-              <i class="fa-solid fa-shield-cat"></i>
-            </div>
-            <div class="review">
-              <div class="hos">슬기로운 동물병원</div>
-              <div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Aperiam laudantium architecto rerum nam harum error eius qui
-                  incidunt, illo veritatis ad. Quisquam perspiciatis asperiores
-                  quis debitis minus possimus. Expedita, quasi?
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- 게시글 -->
-        <div class="post">
-          <div class="info">
-            <div class="pro">
-              <div class="img">
-                <!--  기본프로필 이미지 -->
-                <i class="fa-solid fa-circle-user" style="color: #d1d1d1;"></i>
-              </div>
-              <div class="name">
-                <div>작성자명</div>
-                <div id="clock">
-                  게시글 작성 시간
-                </div>
-              </div>
-            </div>
-            <div class="sub">
-              <div class="num">
-                <div class="num-cnt">
-                  조회수
-                  <p>4444</p>
-                </div>
-                <div class="like-icons">
-                  <!--  좋아요 누르기 전 아이콘 -->
-                  <i class="fa-regular fa-heart"></i>
-                  <!-- 좋아요 누른 후 아이콘 -->
-                  <!-- <i class="fa-solid fa-heart"></i> -->
                 </div>
               </div>
               <div class="tag">#강아지</div>

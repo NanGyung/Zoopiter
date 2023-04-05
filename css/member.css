@@ -63,7 +63,7 @@ main section {
 }
 
 main section form {
-  width: 300px;
+  width: 320px;
   padding: 32px;
 }
 
@@ -101,11 +101,23 @@ main form input {
 }
 
 /* 로그인페이지 member_login */
+/* 로그인 버튼 */
 #login {
   width: 100%;
+  margin: 20px 0;
+  padding: 6px;
+  border: 1px solid var(--color-main-point);
+  border-radius: 2rem;
+  background-color: var(--color-main-point);
+  color: var(--color-background);
+  font-weight: bold;
 }
 
-
+.loginForm form{
+  width: 280px;
+  padding: 0;
+  margin-top: 20px;
+}
 
 /* input태그 */
 
@@ -124,6 +136,7 @@ input:focus {
   outline: none;
 }
 
+/* 아이디 찾기, 비밀번호찾기 영역 */
 .findUser__menu {
   display: flex;
   width: 100%;
@@ -140,7 +153,7 @@ input:focus {
 
 .findUser__menu--ul li,
 .findUser__menu--ul span {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -198,6 +211,133 @@ dialog .contents {
 dialog li {
   display: flex;
   flex-direction: row;
+}
+
+/* 아이디 찾기 팝업 */
+#findPopup{
+  width: 400px;
+}
+
+#findIdPopup .contents {
+  padding: 20px;
+}
+
+#findIdPopup .contents form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+/* 아이디찾기 안내문구 */
+#findIdPopup .contents p{
+  margin-bottom: 20px;
+}
+
+#findIdPopup .contents ul li{
+  margin-bottom: 20px;
+}
+
+/* 아이디찾기 이메일 인증확인 버튼 */
+#emailchkBtn {
+  width: 10rem;
+  margin-left: 10px;
+  padding: 6px;
+  border: 1px solid var(--color-main-point3);
+  background-color: var(--color-main-point3);
+  border-radius: 2rem;
+  font-weight: bold;
+}
+
+/* 아이디 찾기 버튼 */
+#checkId{
+  width: 100%; 
+  padding: 8px;
+  border: 1px solid var(--color-main-point);
+  background-color: var(--color-main-point);
+  border-radius: 2rem;
+  color: var(--color-background);
+  font-weight: bold;
+}
+
+/* 아이디 찾기 완료 팝업 */
+#findIdPopup2 {
+  height: max-content;
+  border-radius: 20px;
+}
+
+#findIdPopup2 .contents{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* 아이디찾기완료 타이틀 */
+#findIdPopup2 .contents h3{
+  line-height: 3rem;
+}
+
+/* 아이디 찾기 팝업 : 비밀번호 찾기 버튼 */
+#checkPw{
+  width: 300px;
+  padding: 10px;
+  align-self: center;
+  margin-top: 40px;
+  border: 2px solid var(--color-main-point);
+  background-color: var(--color-background2);
+  border-radius: 2rem;
+  font-weight: bold;
+  color: var(--color-main-text);
+}
+
+/* 비밀번호 찾기 팝업 */
+#findPwPopup {
+  width: 400px;
+  height: 500px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+#findPwPopup .contents {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* 비밀번호 찾기 입력 영역 */
+#findPwPopup .contents form ul{
+  margin-top: 20px;
+}
+
+#findPwPopup .contents form ul li {
+  margin-bottom: 10px;
+}
+
+#findPwPopup .contents p{
+  margin-bottom: 20px;
+}
+
+/* 비밀번호 찾기 이메일 인증 버튼 */
+#findPwIdBtn{
+  margin-left: 10px;
+  width: 150px;
+  padding: 8px;
+  border: 1px solid var(--color-main-point);
+  background-color: var(--color-main-point);
+  border-radius: 2rem;
+  color: var(--color-background);
+  font-weight: bold;
+}
+
+/* 비밀번호 찾기: 찾기 버튼 */
+#checkPassword{
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--color-main-point);
+  background-color: var(--color-background2);
+  border-radius: 2rem;
+  font-weight: bold;
+  color: var(--color-main-text);
 }
 
 /* member_join */
@@ -284,6 +424,8 @@ dialog li {
   flex: 5;
 }
 
+
+
 /* 회원가입버튼 */
 .signBtn{
   width: 300px;
@@ -312,7 +454,7 @@ dialog li {
   margin: 0 10px;
 }
 
-/* member_signup */
+/* member_signup 회원가입 화면 */
 input[type='number']::-webkit-outer-spin-button,
 input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -340,3 +482,63 @@ main form input[type='number' i] {
 input:focus {
   outline: none;
 }
+
+.joinForm__list__items.item6{
+  display: flex;
+
+}
+
+/* 이메일 인증번호 버튼 */
+.emailSend {
+  width: 100px;
+  padding: 5px;
+  border: 1px solid var(--color-main-point3);
+  border-radius: 2rem;
+  margin-top: 10px;
+  background-color: var(--color-main-point3);
+  font-size: 0.6rem;
+}
+
+.item6__email{
+  margin-right: 10px;
+}
+
+#loginPopup{
+  width: max-content;
+  padding: 40px;
+}
+
+#loginPopup .contents{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#loginPopup .contents h3{
+  line-height: 4rem;
+}
+
+#loginPopup .contents img{
+  width: 20rem;
+  margin-top: 2rem;
+}
+
+#loginPopup .contents p {
+  margin: 20px 0;
+  font-size: 1.2rem;
+}
+
+/* 회원가입 완료 팝업-로그인 하러가기 버튼 */
+#loginGo{
+  width: 10rem;
+  height: 40px;
+  margin-top: 2rem;
+  border: 1px solid var(--color-main-point);
+  border-radius: 2rem;
+  background-color: var(--color-main-point);
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--color-background);
+}
+
