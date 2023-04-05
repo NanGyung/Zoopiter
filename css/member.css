@@ -329,7 +329,20 @@ dialog li {
   font-weight: bold;
 }
 
-/* 비밀번호 찾기: 찾기 버튼 */
+/* 회원가입 완료 팝업-로그인 하러가기 버튼 */
+#loginGo {
+  width: 10rem;
+  height: 40px;
+  margin-top: 2rem;
+  border: 1px solid var(--color-main-point);
+  border-radius: 2rem;
+  background-color: var(--color-main-point);
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--color-background);
+}
+
+/* 비밀번호 찾기: 확인 버튼 */
 #checkPassword{
   width: 100%;
   padding: 10px;
@@ -338,6 +351,32 @@ dialog li {
   border-radius: 2rem;
   font-weight: bold;
   color: var(--color-main-text);
+}
+
+/* 비밀번호 찾기 완료 팝업 */
+#findPwPopup2 {
+  height: max-content;
+  border-radius: 20px;
+}
+
+#findPwPopup2 .contents{
+  padding: 20px;
+}
+
+#findPwPopup2 .contents h3{
+  margin-bottom: 20px;
+}
+
+#findPwBtn{
+  width: 100%;
+  height: 40px;
+  margin-top: 2rem;
+  border: 1px solid var(--color-main-point);
+  border-radius: 2rem;
+  background-color: var(--color-main-point);
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--color-background);
 }
 
 /* member_join */
@@ -529,16 +568,4 @@ input:focus {
   font-size: 1.2rem;
 }
 
-/* 회원가입 완료 팝업-로그인 하러가기 버튼 */
-#loginGo{
-  width: 10rem;
-  height: 40px;
-  margin-top: 2rem;
-  border: 1px solid var(--color-main-point);
-  border-radius: 2rem;
-  background-color: var(--color-main-point);
-  font-size: 0.8rem;
-  font-weight: bold;
-  color: var(--color-background);
-}
 
