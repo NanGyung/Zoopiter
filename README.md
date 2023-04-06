@@ -77,7 +77,12 @@
     - 목록 화면에서 글쓰기 버튼 필요함, 동물병원 검색 기능도 구현해야함, 기본 프로필 & 기본 사진 이미지 추가
 
 - 04.02
+
   - 병원찾기화면 : 레이아웃 새로 작업하고 카카오 지도 api 적용 중
     - 해당 파일: findBymap.html findBymap.css findBymap.js
     - 현재위치 기준 지도 이동 구현, 마커 표시 안됨
     - 선택한 지역 표시 구현, 선택한 주소 주변 병원 표시됨(카카오 카테고리 HP8-병원)
+
+- 04.06
+  - 회원가입&로그인 : 레이아웃 완료(팝업까지), 병원회원 회원가입 폼에 사업자번호 입력 추가
+    - 해당 파일: member_join.html, member_login, member_signup.html(일반회원가입), member_signup2.html(병원회원가입) member.css
