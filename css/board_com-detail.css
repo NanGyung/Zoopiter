@@ -1,0 +1,407 @@
+@charset "utf-8";
+@import './theme/layout.css';
+
+* {
+  /* outline: 1px solid green; */
+}
+
+.hd-r {
+  border-bottom: 2px solid var(--color-grey1);
+}
+
+.container {
+  background-color: var(--color-background);
+  padding: 30px;
+}
+
+p {
+  margin: 0;
+}
+
+/* 메인 컨텐츠 */
+.main-list {
+  grid-area: main-list;
+  width: 100%;
+}
+
+.main-list div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.main-list .list .main {
+  /* height: 50px; */
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 20px 0;
+}
+
+.main-list .list .selectBox {
+  position: relative;
+  width: 150px;
+  height: 35px;
+  border-radius: 4px;
+  border: 2px solid #f29a2e;
+  font-size: 16px;
+}
+
+.main-list .list .selectBox .select {
+  width: inherit;
+  /* display: none; */
+  height: inherit;
+  background: transparent;
+  border: 0 none;
+  outline: 0 none;
+  padding: 0 5px;
+  position: relative;
+  z-index: 3;
+  /* opacity: 0; */
+  appearance: none;
+  /* 기록 */
+}
+
+.main-list .list .selectBox .select option {
+  background: #ffd65f;
+  color: #fff;
+  padding: 3px 0;
+  font-size: 16px;
+}
+
+.main-list .list .selectBox .icoArrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 35px;
+  height: inherit;
+  border-left: 2px solid #ffd65f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectBox .icoArrow i {
+  transition: 0.3s;
+}
+
+.selectBox .select:focus-visible + .icoArrow i {
+  transform: rotate(180deg);
+}
+
+/* 첫줄 동물태그 */
+.tag {
+  grid-area: tag;
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+}
+.tag .tag__pet {
+  background-color: #1d1c1ce3;
+  padding: 10px;
+  color: white;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+/* 게시글 제목 */
+.main-title {
+  grid-area: main-title;
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+.main-title .main-title__name .name {
+  font-size: 25px;
+  font-weight: bold;
+}
+.main-title .main-title__name .view {
+  display: flex;
+  font-size: 15px;
+}
+.main-title .main-title__name .view .count {
+  margin-inline: 10px;
+}
+
+/* 조회,좋아요 */
+.main-title .sub {
+  display: flex;
+  flex-direction: column;
+}
+.main-title .sub .num {
+  display: flex;
+  margin-bottom: 10px;
+}
+.sub .num .num-cnt {
+  display: flex;
+  margin-right: 10px;
+}
+.sub .num .num-cnt p {
+  font-weight: bold;
+}
+.sub .num .fa-heart {
+  color: var(--color-main-point2);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* 게시글 작성자 닉네임,시간 */
+.main-nick {
+  grid-area: main-nick;
+  width: 100%;
+  height: 25px;
+  margin-bottom: 10px;
+}
+.main-nick .nick__info {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.main-nick .nick__info .nick__date {
+  display: flex;
+  width: 40%;
+}
+.main-nick .nick__info .nick__date div {
+  margin-right: 10px;
+}
+
+/* 게시글내용 */
+.content {
+  grid-area: content;
+  width: 100%;
+  margin-bottom: 5px;
+  outline: 1px solid black;
+  border-radius: 4px;
+}
+.content .content__view {
+  padding: 5px;
+  /* text-align: center; */
+}
+
+/* 목록,수정,삭제버튼 */
+.btn {
+  grid-area: btn;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.btn .btn__che {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.btn .btn__che .btn__btn {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  height: 100%;
+}
+.btn .btn__che .btn__btn-list .list button {
+  background-color: #ffd65f;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 20px;
+  border-radius: 10px;
+  color: black;
+  border: 2px solid #f26d3d;
+}
+.btn .btn__che .btn__btn .modi button {
+  background-color: #ffd65f;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 20px;
+  border-radius: 10px;
+  color: black;
+  border: 2px solid #f26d3d;
+  margin-left: 10px;
+}
+.btn .btn__che .btn__btn .del button {
+  background-color: #ffd65f;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 20px;
+  border-radius: 10px;
+  color: black;
+  border: 2px solid #f26d3d;
+  margin-left: 10px;
+}
+
+/* 댓글작성 */
+.comment-cnt {
+  grid-area: comment-cnt;
+  width: 100%;
+  margin-bottom: 40px;
+}
+.comment-cnt .comment-cnt__num {
+  display: flex;
+  flex-direction: row;
+}
+.comment-cnt .comment-cnt__num div {
+  font-size: 15px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.main-comment {
+  grid-area: main-comment;
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+.main-comment .input {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  outline: 1px solid black;
+  border-radius: 4px;
+}
+.main-comment .input .main-comment__write {
+  width: 100%;
+}
+.main-comment .input .main-comment__write input {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.main-comment .input .btn1 {
+  display: flex;
+  justify-content: flex-end;
+}
+.main-comment .input .btn2 {
+  display: flex;
+  justify-content: flex-end;
+}
+.main-comment .input .btn1 button {
+  font-weight: bold;
+  width: 50px;
+  height: 25px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #ffd65f;
+  border: 2px solid #f26d3d;
+}
+.main-comment .input .btn2 button {
+  font-weight: bold;
+  width: 50px;
+  height: 25px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #ffd65f;
+  border: 2px solid #f26d3d;
+}
+.main-comment .input .main-comment__write .re_btn {
+  display: flex;
+  justify-content: flex-end;
+}
+.main-comment .input .main-comment__write .re_btn div:nth-of-type(1) {
+  margin-right: 10px;
+}
+
+/* 댓글 리스트 */
+.list-comment {
+  grid-area: list-comment;
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+.list-comment .input {
+  /* width: 100%; */
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border-bottom: 1px solid #ffd65f;
+  /* border-radius: 4px; */
+  margin-bottom: 15px;
+  /* width: 100%; */
+}
+.list-comment .input .comment__list {
+  width: 100%;
+}
+.list-comment .input .comment__list div:nth-of-type(1) {
+  margin-bottom: 5px;
+}
+.list-comment .input .comment__list div:nth-of-type(2) {
+  margin-bottom: 5px;
+}
+.list-comment .input .comment__list input {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.list-comment .input .comment__list .re {
+  display: flex;
+  flex-direction: row;
+}
+.list-comment .input .comment__list .re div {
+  margin-right: 10px;
+}
+.list-comment .input .btn button {
+  font-weight: bold;
+  width: 80px;
+  height: 25px;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #ffd65f;
+  border: 2px solid #f26d3d;
+}
+
+/* 모달 버튼 만들기 */
+button {
+  background-color: #ffd65f;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .bg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modalBox {
+  position: absolute;
+  border-radius: 4px;
+  background-color: #fff;
+  width: 400px;
+  height: 100px;
+  padding: 15px;
+}
+.modalBox .alarm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}
+.modalBox .alarm .chk {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.modalBox .alarm .btn {
+  justify-content: flex-end;
+}
+.modalBox .alarm .btn button:nth-of-type(2) {
+  margin-left: 5px;
+}
+.hidden {
+  display: none;
+}

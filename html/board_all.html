@@ -8,9 +8,9 @@
   <meta name="description" content="메인화면" />
   <meta name="keywords" content="pet hospital search" />
   <meta name="author" content="2팀" />
-  <title>병원후기</title>
+  <title>게시판 전체목록</title>
   <!--  리뷰게시판 메인 css -->
-  <link rel="stylesheet" href="../css/board_review.css" />
+  <link rel="stylesheet" href="../css/board_all.css" />
   <!--  폰트 어썸 : 로고 -->
   <script src="https://kit.fontawesome.com/6631aa96e6.js" crossorigin="anonymous"></script>
 </head>
@@ -28,16 +28,16 @@
             </a>
           </li>
           <li class="hd__menu__list1__item list1-item1">
-            <a href="findBymap.html">펫병원</a>
+            <a href="#">펫병원</a>
             <ul class="hd__menu__list1__item__submenu">
-              <li><a href="findBymap.html">병원찾기</a></li>
+              <li><a href="test.html">병원찾기</a></li>
             </ul>
           </li>
           <li class="hd__menu__list1__item list1-item2">
             <a href="board_all.html">게시판</a>
             <ul class="hd__menu__list1__item__submenu">
-              <li><a href="board_review.html">병원후기</a></li>
               <li><a href="board_com.html">커뮤니티</a></li>
+              <li><a href="board_review.html">병원후기</a></li>
             </ul>
           </li>
           <li class="hd__menu__list1__item list1-item3" id="myPage">
@@ -262,49 +262,33 @@
         </div>
       </dialog>
       <!-- 광고 문의 -->
-       <dialog id="ft-info3">
+      <dialog id="ft-info3">
         <div class="ft-info3__title">
           <h3>광고 소개서</h3>
           <button id="closeBtn3">X</button>
-        </div>
           <div class="ft-info3__content">
-            <form action="">
-              <ul>
-                <li>
-                  <label for="hname"><span>*</span>병원명</label>
-                  <input type="text" id="hname">
-                </li>
-                <li>
-                  <label for="name"><span>*</span>담당자명</label>
-                  <input type="text" id="name">
-                </li>
-                <li>
-                  <label for="email"><span>*</span>이메일주소</label>
-                  <input type="email" id="email">
-                </li>
-                <li>
-                  <label for="phone"><span>*</span>연락처</label>
-                  <input type="tel" id="phone">
-                </li>
-                <li>
-                  <label for="adcontent"><span>*</span>광고내용</label>
-                  <textarea name="adcontent" id="adcontent" cols="30" rows="10">
-                  </textarea>
-                </li>
-              </ul>
-              <button id="ftInfo3Btn">제출하기</button>
-            </form>
+           
           </div>
+        </div>
+        <div id="info3Txt">
+
+        </div>
       </dialog>
+
       <!-- 메인 컨텐츠 -->
       <div class="main-list">
         <div class="list">
-          <div class="main">병원 후기</div>
+          <div class="write-btn">
+            <div><button onclick="location.href='board_all.html'">전체게시판</button></div>
+            <div><button onclick="location.href='board_review.html'">동물병원후기</button></div>
+            <div><button onclick="location.href='board_com.html'">커뮤니티</button></div>
+          </div>
+
           <div class="selectBox">
             <select class="select">
               <option value="viewCnt">조회순</option>
               <option value="latest">최신순</option>
-              <!-- <option value="like">좋아요</option> -->
+              <option value="like">좋아요</option>
             </select>
             <span class="icoArrow">
               <i class="fa-solid fa-arrow-down"></i>
@@ -325,11 +309,6 @@
               <input type="checkbox" name="other"> 기타
               <button id="checkBtn">적용</button>
             </form>
-
-          </div>
-          <div class="input">
-            <input type="text" />
-            <button id="searchBtn">검색</button>
           </div>
         </div>
       </div>
@@ -337,7 +316,12 @@
       <!-- 글쓰기버튼 -->
       <div class="write-btn-l"></div>
       <div class="write-btn">
-        <div><button onclick="location.href='board_review-add.html'">글쓰기</button></div>
+        <div><button id="writeBtn">글쓰기</button></div>
+        <select class="writeSelect" name="selectBoard" id="selectBoard">
+          <option value="default">= 선택 =</option>
+          <option value="review">병원후기</option>
+          <option value="commu">커뮤니티</option>
+        </select>
       </div>
       <div class="write-btn-r"></div>
 
@@ -345,12 +329,14 @@
       <div class="tag-list">
       </div>
       <div class="tag-list-r"></div>
-
+      
       <div class="main-nick-l"></div>
       <!-- 게시글 영역 -->
       <div class="main-nick">
+      
         <!-- 게시글 -->
         <div class="post">
+          <div class="kind_board">동물병원후기</div>
           <div class="info">
             <div class="pro">
               <div class="img">
@@ -359,16 +345,23 @@
               </div>
               <div class="name">
                 <div>작성자명</div>
-                <div id="clock">
-                  게시글 작성 시간
-                </div>
+                <div id="re1" style="color: black; font-size: 12px">clock</div>
               </div>
             </div>
+
+            <!-- <div class="kind_board">커뮤니티</div> -->
+
             <div class="sub">
               <div class="num">
                 <div class="num-cnt">
                   조회수
                   <p>4444</p>
+                </div>
+                <div class="like-icons">
+                  <!--  좋아요 누르기 전 아이콘 -->
+                  <i class="fa-regular fa-heart"></i>
+                  <!-- 좋아요 누른 후 아이콘 -->
+                  <!-- <i class="fa-solid fa-heart"></i> -->
                 </div>
               </div>
               <div class="tag">#강아지</div>
@@ -395,6 +388,7 @@
         </div>
         <!-- 게시글 -->
         <div class="post">
+          <div class="kind_board">동물병원후기</div>
           <div class="info">
             <div class="pro">
               <div class="img">
@@ -403,9 +397,7 @@
               </div>
               <div class="name">
                 <div>작성자명</div>
-                <div id="clock">
-                  게시글 작성 시간
-                </div>
+                <div id="re2" style="color: black; font-size: 12px">clock</div>
               </div>
             </div>
             <div class="sub">
@@ -413,6 +405,12 @@
                 <div class="num-cnt">
                   조회수
                   <p>4444</p>
+                </div>
+                <div class="like-icons">
+                  <!--  좋아요 누르기 전 아이콘 -->
+                  <i class="fa-regular fa-heart"></i>
+                  <!-- 좋아요 누른 후 아이콘 -->
+                  <!-- <i class="fa-solid fa-heart"></i> -->
                 </div>
               </div>
               <div class="tag">#강아지</div>
@@ -439,6 +437,7 @@
         </div>
         <!-- 게시글 -->
         <div class="post">
+          <div class="kind_board">커뮤니티</div>
           <div class="info">
             <div class="pro">
               <div class="img">
@@ -447,9 +446,7 @@
               </div>
               <div class="name">
                 <div>작성자명</div>
-                <div id="clock">
-                  게시글 작성 시간
-                </div>
+                <div id="re3" style="color: black; font-size: 12px">clock</div>
               </div>
             </div>
             <div class="sub">
@@ -457,6 +454,12 @@
                 <div class="num-cnt">
                   조회수
                   <p>4444</p>
+                </div>
+                <div class="like-icons">
+                  <!--  좋아요 누르기 전 아이콘 -->
+                  <i class="fa-regular fa-heart"></i>
+                  <!-- 좋아요 누른 후 아이콘 -->
+                  <!-- <i class="fa-solid fa-heart"></i> -->
                 </div>
               </div>
               <div class="tag">#강아지</div>
@@ -469,7 +472,7 @@
               <i class="fa-solid fa-shield-cat"></i>
             </div>
             <div class="review">
-              <div class="hos">슬기로운 동물병원</div>
+              <div class="hos">슬기로운 커뮤니티</div>
               <div>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -483,6 +486,7 @@
         </div>
         <!-- 게시글 -->
         <div class="post">
+          <div class="kind_board">커뮤니티</div>
           <div class="info">
             <div class="pro">
               <div class="img">
@@ -491,9 +495,7 @@
               </div>
               <div class="name">
                 <div>작성자명</div>
-                <div id="clock">
-                  게시글 작성 시간
-                </div>
+                <div id="re4" style="color: black; font-size: 12px">clock</div>
               </div>
             </div>
             <div class="sub">
@@ -501,6 +503,12 @@
                 <div class="num-cnt">
                   조회수
                   <p>4444</p>
+                </div>
+                <div class="like-icons">
+                  <!--  좋아요 누르기 전 아이콘 -->
+                  <i class="fa-regular fa-heart"></i>
+                  <!-- 좋아요 누른 후 아이콘 -->
+                  <!-- <i class="fa-solid fa-heart"></i> -->
                 </div>
               </div>
               <div class="tag">#강아지</div>
@@ -513,7 +521,7 @@
               <i class="fa-solid fa-shield-cat"></i>
             </div>
             <div class="review">
-              <div class="hos">슬기로운 동물병원</div>
+              <div class="hos">슬기로운 커뮤니티</div>
               <div>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -578,12 +586,19 @@
     </footer>
     <div class="ft-r"></div>
   </div>
+
+
+  
   <!-- 햄버거 메뉴 구현 -->
   <script src="../js/hambuger.js"></script>
   <!-- footer 개인정보처리방침 모달 구현 -->
   <script src="../js/ft_modal.js"></script>
   <!-- 동물 태그 선택 구현 -->
   <script src="../js/review.js"></script>
+  <!-- 작성날짜 -->
+  <script src="../js/clock.js"></script>
+  <!-- 글쓰기 버튼-게시판선택 토글 -->
+  <script src="../js/board_all.js"></script>
 </body>
 
 </html>

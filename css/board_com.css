@@ -19,6 +19,7 @@ p {
 }
 
 /* 메인 컨텐츠 */
+
 .main-list {
     grid-area: main-list;
     width: 100%;
@@ -89,6 +90,7 @@ p {
     transform: rotate(180deg);
 }
 
+/* 동물태그선택 */
 .sort {
     grid-area: sort;
     width: 100%;
@@ -103,7 +105,7 @@ p {
     margin-right: 1.2rem;
 }
 
-.sort .left .tag input[type="checkbox"] {
+.sort .left .tag input[type='checkbox'] {
     font-size: 0.8rem;
 }
 
@@ -162,9 +164,9 @@ p {
     margin-left: 10px;
     width: 4rem;
     padding: 3px;
-    background-color: var(--color-main-point3);
     border: none;
     border-radius: 2rem;
+    box-shadow: 2px 2px 2px rgba(39, 27, 27, 0.5);
     font-weight: 400;
 }
 
@@ -219,7 +221,7 @@ p {
     border: 1px solid #ffd65f;
     border-radius: 2rem;
     background-color: #ffd65f;
-    margin: 1.2rem;
+    margin-left: 1.2rem;
 }
 
 .sort .search .left .selectBox .icoArrow i {
@@ -236,6 +238,24 @@ p {
     transform: rotate(180deg);
 }
 
+/* 글쓰기버튼 */
+.write-btn {
+    grid-area: write-btn;
+    width: 100%;
+    text-align: end;
+    margin-bottom: 20px;
+}
+
+.write-btn button {
+    background-color: #ffd65f;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 20px;
+    border-radius: 10px;
+    border: 2px solid #f26d3d;
+}
+
+/* 선택한 동물태그 */
 .tag-list {
     grid-area: tag-list;
     width: 100%;
@@ -365,7 +385,7 @@ p {
 .main-nick .post .preview .review {
     flex-direction: column;
     text-align: center;
-    margin-left: 10px;
+    margin-left: 10px;  
 }
 
 .main-nick .post .preview .review .hos {
@@ -400,12 +420,4 @@ p {
 
 .pageBtns.active {
     background-color: var(--color-main-point);
-}
-
-#allBtn {
-    padding: 5px;
-    border: 1px solid var(--color-main-background);
-    border-radius: 2rem;
-    background-color: var(--color-main-background);
-    font-size: 12px;
 }

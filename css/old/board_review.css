@@ -96,7 +96,7 @@ p {
   margin-right: 1.2rem;
 }
 
-.sort .left .tag input[type='checkbox'] {
+.sort .left .tag input[type="checkbox"]{
   font-size: 0.8rem;
 }
 @media screen and (width <=800px) {
@@ -219,24 +219,6 @@ p {
   transform: rotate(180deg);
 }
 
-/* 글쓰기버튼 */
-.write-btn {
-  grid-area: write-btn;
-  width: 100%;
-  text-align: end;
-  margin-bottom: 20px;
-}
-.write-btn button {
-  background-color: #ffd65f;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 5px 20px;
-  border-radius: 10px;
-  color: black;
-  border: 2px solid #f26d3d;
-}
-
-/* 선택한 동물태그 */
 .tag-list {
   grid-area: tag-list;
   width: 100%;

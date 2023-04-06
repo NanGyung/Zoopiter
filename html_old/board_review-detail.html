@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>병원 후기 게시글</title>
+    <link rel="stylesheet" href="/css/detailForm.css" />
+
+    <!-- 폰트 어썸 : 로고 -->
+    <script
+      src="https://kit.fontawesome.com/6631aa96e6.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="hd-l"></div>
+      <header class="hd">
+        <nav class="hd_menu">
+          <ul class="hd_menu-list1">
+            <li id="logo">
+              <i class="fa-solid fa-dog fa-2x"></i>
+              <a href="#"><h3>슬기로운 반려생활</h3></a>
+            </li>
+            <li class="menu-list1_item">
+              <a href="#">펫병원</a>
+              <ul class="hd_menu-list2">
+                <li><a href="#">병원찾기</a></li>
+              </ul>
+            </li>
+            <li class="menu-list1_item">
+              <a href="#">게시판</a>
+              <ul class="hd_menu-list2">
+                <li><a href="#">커뮤니티</a></li>
+                <li><a href="#">병원후기</a></li>
+                <li><a href="#">펫가이드</a></li>
+              </ul>
+            </li>
+            <div class="menu-list1_item" id="join">
+              <li><a href="#">마이페이지</a></li>
+              |
+              <li><a href="#">회원가입</a></li>
+            </div>
+          </ul>
+          <a href="#" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+          </a>
+        </nav>
+      </header>
+      <div class="hd-r"></div>
+      <div class="top">
+        <div class="load-tag-l"></div>
+        <div class="load-tag">
+          <div class="tag">#개</div>
+          <div class="tag">#새</div>
+        </div>
+        <div class="load-tag-r"></div>
+
+        <div class="main-title-l"></div>
+        <div class="main-title">
+          <div class="title">
+            <div class="name">병원 후기 게시글 제목</div>
+            <div class="view">
+              <div>조회수</div>
+              <div class="count">4444</div>
+            </div>
+          </div>
+        </div>
+        <div class="main-title-r"></div>
+
+        <div class="main-nick-l"></div>
+        <div class="main-nick">
+          <div class="info">
+            <div class="img"><img src="" alt="" />프사</div>
+            <div class="date">
+              <div>닉네임</div>
+              <div id="clock" style="color: black">clock</div>
+            </div>
+          </div>
+        </div>
+        <div class="main-nick-r"></div>
+
+        <div class="preview-l"></div>
+        <div class="preview">
+          <div class="info">
+            <div class="hos">
+              <div class="name">동물병원 이름</div>
+              <div class="img"><img src="" alt="" />사진</div>
+            </div>
+          <div class="star-ratings">
+            <div>총점</div>
+             <div id="result"></div>
+            <div class="star-rating space-x-4 mx-auto">
+              <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
+              <label for="5-stars" class="star pr-4">★</label>
+              <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
+              <label for="4-stars" class="star">★</label>
+              <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
+              <label for="3-stars" class="star">★</label>
+              <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
+              <label for="2-stars" class="star">★</label>
+              <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+              <label for="1-star" class="star">★</label>
+            </div>
+         </div>
+            <div class="review">
+              <div>4개의 후기</div>
+              <div class="img">
+                <button type="button">
+                  <img src="/img/arrow.png" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="preview-r"></div>
+
+        <div class="content-l"></div>
+        <div class="content">
+          <div class="lorem">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae,
+              obcaecati exercitationem sit ab deserunt hic nisi numquam nemo qui
+              nesciunt odit distinctio sed adipisci quis magnam! Molestias
+              repellat deserunt commodi? Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit. Vitae, obcaecati exercitationem sit ab deserunt
+              hic nisi numquam nemo qui nesciunt odit distinctio sed adipisci
+              quis magnam! Molestias repellat deserunt commodi? Lorem ipsum
+              dolor sit amet, consectetur adipisicing elit. Vitae, obcaecati
+              exercitationem sit ab deserunt hic nisi numquam nemo qui nesciunt
+              odit distinctio sed adipisci quis magnam! Molestias repellat
+              deserunt commodi? Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit. Vitae, obcaecati exercitationem sit ab deserunt
+              hic nisi numquam nemo qui nesciunt odit distinctio sed adipisci
+              quis magnam! Molestias repellat deserunt commodi? Lorem ipsum
+              dolor sit amet, consectetur adipisicing elit. Vitae, obcaecati
+              exercitationem sit ab deserunt hic nisi numquam nemo qui nesciunt
+              odit distinctio sed adipisci quis magnam! Molestias repellat
+              deserunt commodi? Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit. Vitae, obcaecati exercitationem sit ab deserunt
+              hic nisi numquam nemo qui nesciunt odit distinctio sed adipisci
+              quis magnam! Molestias repellat deserunt commodi?
+            </p>
+          </div>
+        </div>
+        <div class="content-r"></div>
+
+        <div class="button-l"></div>
+        <div class="button">
+          <div class="che">
+            <div class="btn">
+              <div class="list">
+                <button onclick="location.href='review.html'">목록</button>
+              </div>
+            </div>
+            <div class="btn">
+              <div class="corr">
+                <button onclick="location.href='saveForm.html'">수정</button>
+              </div>
+              <div class="del"><button class="openBtn">삭제</button></div>
+              <div class="modal hidden">
+                <div class="bg"></div>
+                <div class="modalBox">
+                  <div class="alarm">
+                    <div class="chk">게시글을 삭제하시겠습니까?</div>
+                    <div class="btn">
+                      <button onclick="location.href='review.html'">
+                        확인
+                      </button>
+                      <button class="closeBtn">취소</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="button-r"></div>
+      <hr />
+      <div class="comment-cnt-l"></div>
+      <div class="bot">
+        <div class="comment-cnt">
+          <div class="re">
+            <div>댓글</div>
+            <div>2</div>
+          </div>
+        </div>
+        <div class="comment-cnt-r"></div>
+
+        <div class="main-comment-l"></div>
+        <div class="main-comment">
+          <div class="input">
+            <div class="comment">
+              <div>닉네임</div>
+              <div>
+                <input type="text" placeholder="댓글을 입력해주세요." />
+              </div>
+            </div>
+            <div class="btn"><button>등록</button></div>
+          </div>
+        </div>
+        <div class="main-comment-r"></div>
+
+        <div class="list-comment-l"></div>
+        <div class="list-comment">
+          <div class="input">
+            <div class="pic">
+              <div class="img"><img src="" alt="" />프사</div>
+            </div>
+            <div class="comment">
+              <div>닉네임</div>
+              <div>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Suscipit iusto eveniet in inventore, magnam corrupti quae
+                consequatur eos assumenda necessitatibus impedit minima nihil
+                qui, amet adipisci voluptates tempore earum eius!
+              </div>
+              <div class="re">
+                <div id="re1" style="color: black"></div>
+                <div class="btn"><button>답글쓰기</button></div>
+              </div>
+            </div>
+          </div>
+          <div class="input">
+            <div class="pic">
+              <div class="img"><img src="" alt="" />프사</div>
+            </div>
+            <div class="comment">
+              <div>닉네임</div>
+              <div>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Suscipit iusto eveniet in inventore, magnam corrupti quae
+                consequatur eos assumenda necessitatibus impedit minima nihil
+                qui, amet adipisci voluptates tempore earum eius!
+              </div>
+              <div class="re">
+                <div id="re2" style="color: black"></div>
+                <div class="btn"><button>답글쓰기</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="list-comment-r"></div>
+         <div class="cic-l"></div>
+      <div class="cic">
+        <div class="input">
+          <div class="pic">
+            <div class="img"><img src="" alt="" />프사</div>
+          </div>
+          <div class="comment">
+            <div>닉네임</div>
+            <div><input type="text" placeholder="댓글을 입력해주세요." /></div>
+            <div class="re_btn">
+              <div class="btn"><button>취소</button></div>
+              <div class="btn"><button>등록</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cic-r"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var Target = document.getElementById('clock');
+      function clock() {
+        var time = new Date();
+
+        var year = time.getFullYear();
+        var month = time.getMonth();
+        var date = time.getDate();
+        var day = time.getDay();
+        var week = ['일', '월', '화', '수', '목', '금', '토'];
+
+        var hours = time.getHours();
+        var minutes = time.getMinutes();
+        var seconds = time.getSeconds();
+
+        Target.innerText =
+          `${year}.${month + 1}.${date}  ` +
+          `${hours < 10 ? `0${hours}` : hours}:${
+            minutes < 10 ? `0${minutes}` : minutes
+          }`;
+      }
+      clock();
+
+      var Target = document.getElementById('re1');
+      function re1() {
+        var time = new Date();
+
+        var year = time.getFullYear();
+        var month = time.getMonth();
+        var date = time.getDate();
+        var day = time.getDay();
+        var week = ['일', '월', '화', '수', '목', '금', '토'];
+
+        var hours = time.getHours();
+        var minutes = time.getMinutes();
+        var seconds = time.getSeconds();
+
+        Target.innerText =
+          `${year}.${month + 1}.${date}  ` +
+          `${hours < 10 ? `0${hours}` : hours}:${
+            minutes < 10 ? `0${minutes}` : minutes
+          }`;
+      }
+      re1();
+
+      var Target = document.getElementById('re2');
+      function re2() {
+        var time = new Date();
+
+        var year = time.getFullYear();
+        var month = time.getMonth();
+        var date = time.getDate();
+        var day = time.getDay();
+        var week = ['일', '월', '화', '수', '목', '금', '토'];
+
+        var hours = time.getHours();
+        var minutes = time.getMinutes();
+        var seconds = time.getSeconds();
+
+        Target.innerText =
+          `${year}.${month + 1}.${date}  ` +
+          `${hours < 10 ? `0${hours}` : hours}:${
+            minutes < 10 ? `0${minutes}` : minutes
+          }`;
+      }
+      re2();
+
+      const open = () => {
+        document.querySelector('.modal').classList.remove('hidden');
+      };
+
+      const close = () => {
+        document.querySelector('.modal').classList.add('hidden');
+      };
+
+      document.querySelector('.openBtn').addEventListener('click', open);
+      document.querySelector('.closeBtn').addEventListener('click', close);
+      document.querySelector('.bg').addEventListener('click', close);
+
+      const stars = document.getElementsByName('rating');
+
+      // 이벤트 리스너 등록
+      stars.forEach(function (star) {
+        star.addEventListener('click', function () {
+          // 선택한 별점 값을 출력
+          document.getElementById('result').innerText = star.value + '점';
+        });
+      });
+    </script>
+  </body>
+</html>

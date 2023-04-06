@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="메인화면" />
-  <meta name="keywords" content="pet hospital search" />
-  <meta name="author" content="2팀" />
-  <title>병원후기</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>커뮤니티 작성</title>
   <!--  리뷰게시판 메인 css -->
-  <link rel="stylesheet" href="../css/board_review.css" />
+  <link rel="stylesheet" href="../css/board_com-add.css">
   <!--  폰트 어썸 : 로고 -->
   <script src="https://kit.fontawesome.com/6631aa96e6.js" crossorigin="anonymous"></script>
 </head>
@@ -28,9 +24,9 @@
             </a>
           </li>
           <li class="hd__menu__list1__item list1-item1">
-            <a href="findBymap.html">펫병원</a>
+            <a href="#">펫병원</a>
             <ul class="hd__menu__list1__item__submenu">
-              <li><a href="findBymap.html">병원찾기</a></li>
+              <li><a href="test.html">병원찾기</a></li>
             </ul>
           </li>
           <li class="hd__menu__list1__item list1-item2">
@@ -262,56 +258,18 @@
         </div>
       </dialog>
       <!-- 광고 문의 -->
-       <dialog id="ft-info3">
+      <dialog id="ft-info3">
         <div class="ft-info3__title">
           <h3>광고 소개서</h3>
           <button id="closeBtn3">X</button>
-        </div>
           <div class="ft-info3__content">
-            <form action="">
-              <ul>
-                <li>
-                  <label for="hname"><span>*</span>병원명</label>
-                  <input type="text" id="hname">
-                </li>
-                <li>
-                  <label for="name"><span>*</span>담당자명</label>
-                  <input type="text" id="name">
-                </li>
-                <li>
-                  <label for="email"><span>*</span>이메일주소</label>
-                  <input type="email" id="email">
-                </li>
-                <li>
-                  <label for="phone"><span>*</span>연락처</label>
-                  <input type="tel" id="phone">
-                </li>
-                <li>
-                  <label for="adcontent"><span>*</span>광고내용</label>
-                  <textarea name="adcontent" id="adcontent" cols="30" rows="10">
-                  </textarea>
-                </li>
-              </ul>
-              <button id="ftInfo3Btn">제출하기</button>
-            </form>
-          </div>
-      </dialog>
-      <!-- 메인 컨텐츠 -->
-      <div class="main-list">
-        <div class="list">
-          <div class="main">병원 후기</div>
-          <div class="selectBox">
-            <select class="select">
-              <option value="viewCnt">조회순</option>
-              <option value="latest">최신순</option>
-              <!-- <option value="like">좋아요</option> -->
-            </select>
-            <span class="icoArrow">
-              <i class="fa-solid fa-arrow-down"></i>
-            </span>
+           
           </div>
         </div>
-      </div>
+        <div id="info3Txt">
+
+        </div>
+      </dialog>
 
       <div class="sort">
         <div class="search">
@@ -319,238 +277,95 @@
           <div class="left">
             <div class="tag">동물태그</div>
             <form class="selectBox" name="petTag">
+              <!-- <select class="select" name="pet">
+                <option value="default">동물유형</option>
+                <option value="dog">강아지</option>
+                <option value="cat">고양이</option>
+                <option value="small">소동물</option>
+                <option value="other">기타</option>
+              </select>
+              <span class="icoArrow">
+                <i class="fa-solid fa-arrow-down"></i>
+              </span> -->
               <input type="checkbox" name="dog"> 강아지
               <input type="checkbox" name="cat"> 고양이
               <input type="checkbox" name="small"> 소동물
               <input type="checkbox" name="other"> 기타
               <button id="checkBtn">적용</button>
             </form>
-
-          </div>
-          <div class="input">
-            <input type="text" />
-            <button id="searchBtn">검색</button>
           </div>
         </div>
       </div>
 
-      <!-- 글쓰기버튼 -->
-      <div class="write-btn-l"></div>
-      <div class="write-btn">
-        <div><button onclick="location.href='board_review-add.html'">글쓰기</button></div>
-      </div>
-      <div class="write-btn-r"></div>
-
-      <!-- 선택한 동물태그 -->
-      <div class="tag-list">
-      </div>
-      <div class="tag-list-r"></div>
-
-      <div class="main-nick-l"></div>
-      <!-- 게시글 영역 -->
-      <div class="main-nick">
-        <!-- 게시글 -->
-        <div class="post">
-          <div class="info">
-            <div class="pro">
-              <div class="img">
-                <!--  기본프로필 이미지 -->
-                <i class="fa-solid fa-circle-user" style="color: #d1d1d1;"></i>
-              </div>
-              <div class="name">
-                <div>작성자명</div>
-                <div id="clock">
-                  게시글 작성 시간
-                </div>
-              </div>
-            </div>
-            <div class="sub">
-              <div class="num">
-                <div class="num-cnt">
-                  조회수
-                  <p>4444</p>
-                </div>
-              </div>
-              <div class="tag">#강아지</div>
-            </div>
-          </div>
-          <div class="preview">
-            <div class="img">
-              <!-- <img src="" style="max-width: 100%; height: auto" /> -->
-              <!-- 기본이미지 -->
-              <i class="fa-solid fa-shield-cat"></i>
-            </div>
-            <div class="review">
-              <div class="hos">슬기로운 동물병원</div>
-              <div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Aperiam laudantium architecto rerum nam harum error eius qui
-                  incidunt, illo veritatis ad. Quisquam perspiciatis asperiores
-                  quis debitis minus possimus. Expedita, quasi?
-                </p>
-              </div>
-            </div>
-          </div>
+    <!-- 메인제목 -->
+    <div class="title-l"></div>
+    <div class="title">
+      <div class="title__name">
+        <div class="main">커뮤니티 글작성</div>
+        <div class="title__inline">
+            <input type="radio" name="cs_open" id="cs_open" value="Y" class="radio" /><span class="ml_10">공개</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="cs_open" id="cs_open" value="N" class="radio" /><span class="ml_10">비공개</span>&nbsp;
         </div>
-        <!-- 게시글 -->
-        <div class="post">
-          <div class="info">
-            <div class="pro">
-              <div class="img">
-                <!--  기본프로필 이미지 -->
-                <i class="fa-solid fa-circle-user" style="color: #d1d1d1;"></i>
-              </div>
-              <div class="name">
-                <div>작성자명</div>
-                <div id="clock">
-                  게시글 작성 시간
-                </div>
-              </div>
-            </div>
-            <div class="sub">
-              <div class="num">
-                <div class="num-cnt">
-                  조회수
-                  <p>4444</p>
-                </div>
-              </div>
-              <div class="tag">#강아지</div>
-            </div>
-          </div>
-          <div class="preview">
-            <div class="img">
-              <!-- <img src="" style="max-width: 100%; height: auto" /> -->
-              <!-- 기본이미지 -->
-              <i class="fa-solid fa-shield-cat"></i>
-            </div>
-            <div class="review">
-              <div class="hos">슬기로운 동물병원</div>
-              <div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Aperiam laudantium architecto rerum nam harum error eius qui
-                  incidunt, illo veritatis ad. Quisquam perspiciatis asperiores
-                  quis debitis minus possimus. Expedita, quasi?
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- 게시글 -->
-        <div class="post">
-          <div class="info">
-            <div class="pro">
-              <div class="img">
-                <!--  기본프로필 이미지 -->
-                <i class="fa-solid fa-circle-user" style="color: #d1d1d1;"></i>
-              </div>
-              <div class="name">
-                <div>작성자명</div>
-                <div id="clock">
-                  게시글 작성 시간
-                </div>
-              </div>
-            </div>
-            <div class="sub">
-              <div class="num">
-                <div class="num-cnt">
-                  조회수
-                  <p>4444</p>
-                </div>
-              </div>
-              <div class="tag">#강아지</div>
-            </div>
-          </div>
-          <div class="preview">
-            <div class="img">
-              <!-- <img src="" style="max-width: 100%; height: auto" /> -->
-              <!-- 기본이미지 -->
-              <i class="fa-solid fa-shield-cat"></i>
-            </div>
-            <div class="review">
-              <div class="hos">슬기로운 동물병원</div>
-              <div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Aperiam laudantium architecto rerum nam harum error eius qui
-                  incidunt, illo veritatis ad. Quisquam perspiciatis asperiores
-                  quis debitis minus possimus. Expedita, quasi?
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- 게시글 -->
-        <div class="post">
-          <div class="info">
-            <div class="pro">
-              <div class="img">
-                <!--  기본프로필 이미지 -->
-                <i class="fa-solid fa-circle-user" style="color: #d1d1d1;"></i>
-              </div>
-              <div class="name">
-                <div>작성자명</div>
-                <div id="clock">
-                  게시글 작성 시간
-                </div>
-              </div>
-            </div>
-            <div class="sub">
-              <div class="num">
-                <div class="num-cnt">
-                  조회수
-                  <p>4444</p>
-                </div>
-              </div>
-              <div class="tag">#강아지</div>
-            </div>
-          </div>
-          <div class="preview">
-            <div class="img">
-              <!-- <img src="" style="max-width: 100%; height: auto" /> -->
-              <!-- 기본이미지 -->
-              <i class="fa-solid fa-shield-cat"></i>
-            </div>
-            <div class="review">
-              <div class="hos">슬기로운 동물병원</div>
-              <div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Aperiam laudantium architecto rerum nam harum error eius qui
-                  incidunt, illo veritatis ad. Quisquam perspiciatis asperiores
-                  quis debitis minus possimus. Expedita, quasi?
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
-      <!-- 게시판 페이지 -->
-      <div class="page">
-        <button type="button" class="prevBtn" onClick="location.href='PAGENAME.html'">
-          이전
-        </button>
-        <button type="button" class="pageBtns item1 active" onClick="location.href='PAGENAME.html'">
-          1
-        </button>
-        <button type="button" class="pageBtns item2" onClick="location.href='PAGENAME.html'">
-          2
-        </button>
-        <button type="button" class="pageBtns item3" onClick="location.href='PAGENAME.html'">
-          3
-        </button>
-        <button type="button" class="pageBtns item4" onClick="location.href='PAGENAME.html'">
-          4
-        </button>
-        <button type="button" class="nextBtn" onClick="location.href='PAGENAME.html'">
-          다음
-        </button>
-      </div>
-    </main>
-    <div class="mn-r"></div>
+    </div>
+    <div class="title-r"></div>
 
+    <!-- 제목입력창 -->
+    <div class="main-title-l"></div>
+    <div class="main-title">
+      <div class="input">
+          <input type="text" placeholder="제목을 입력해주세요.">
+      </div>
+    </div>
+    <div class="main-title-r"></div>
+
+    <!-- 본문입력창 -->
+    <div class="body-write-l"></div>
+    <div class="body-write">
+      <div class="input">
+        <input type="text" placeholder="본문을 입력해주세요.">
+      </div>
+    </div>
+    <div class="body-write-r"></div>
+
+    <!-- 첨부파일버튼 -->
+    <div class="file-l"></div>
+    <div class="file">
+      <!-- <input type="file" name="FileName"> -->
+      <form name="이 폼의 이름" action="이 데이터들을 받을 파일" method="post" enctype="multipart/form-data">
+          <input type='file' name='' multiple/>
+      </form>
+    </div>
+    <div class="file-r"></div>  
+
+    <!-- 사진첨부 -->
+    <div class="pic-l"></div>
+    <div class="pic">
+      <div class="pic__file">
+        <!-- <div class="img">
+          <div class="pic__img"><img src="/img/photo.png" alt="">사진첨부</div>
+        </div> -->
+        <div class="file__pic">
+          <div>* 파일은 파일1개당 최대 300mb 이내로 업로드 가능합니다.</div>
+        </div>
+      </div>
+    </div>
+    <div class="pic-r"></div>
+
+    <!-- 글등록버튼 -->
+      <div class="btn-l"></div>
+      <div class="btn">
+        <div class="detail">
+          <button onclick="location.href='board_com-detail.html'">목록</button>
+        </div>
+        <div class="add">
+          <button onclick="location.href='board_com-detail.html'">등록</button>
+        </div>
+      </div>
+      <div class="btn-r"></div>
+  </main>
+
+    <!-- 푸터 -->
     <div class="ft-l"></div>
     <footer class="ft">
       <div class="ft__buttons f-item1">
@@ -578,12 +393,42 @@
     </footer>
     <div class="ft-r"></div>
   </div>
-  <!-- 햄버거 메뉴 구현 -->
-  <script src="../js/hambuger.js"></script>
-  <!-- footer 개인정보처리방침 모달 구현 -->
-  <script src="../js/ft_modal.js"></script>
-  <!-- 동물 태그 선택 구현 -->
-  <script src="../js/review.js"></script>
-</body>
 
+
+  <script>
+    const open = () => {
+      document.querySelector(".modal").classList.remove("hidden");
+    }
+
+    const close = () => {
+      document.querySelector(".modal").classList.add("hidden");
+    }
+
+    document.querySelector(".openBtn").addEventListener("click", open);
+    document.querySelector(".closeBtn1").addEventListener("click", close);
+    document.querySelector(".closeBtn2").addEventListener("click", close);
+    document.querySelector(".bg").addEventListener("click", close);
+
+
+        // const modal = document.getElementById("modal")
+        // function modalOn() {
+        //     modal.style.display = "flex"
+        // }
+        // function isModalOn() {
+        //     return modal.style.display === "flex"
+        // }
+        // function modalOff() {
+        //     modal.style.display = "none"
+        // }
+        
+        // const closeBtn = modal.querySelector(".close-area")
+        // closeBtn.addEventListener("click", e => {
+        //     modalOff();
+        // })
+  </script>
+</body>
 </html>
+
+
+
+ 
