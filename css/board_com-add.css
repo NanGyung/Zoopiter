@@ -97,6 +97,21 @@ p {
   margin-right: 1.2rem;
 }
 
+/* 선택한 펫태그가 추가될 영역 */
+.tag-list {
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+}
+.tag-list .tag {
+  display: flex;
+  color: var(--color-main-point2);
+}
+/* 추가된 펫태그 */
+.tag-list .tag p {
+  margin: 0 10px;
+}
+
 .sort .left .tag input[type='checkbox'] {
   font-size: 0.8rem;
 }
@@ -108,10 +123,11 @@ p {
 }
 
 .sort .search {
-  justify-content: flex-start;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: 100%;
-  justify-content: space-between;
 }
 .sort .left {
   width: auto;
@@ -230,7 +246,7 @@ p {
 .title .title__name {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 3rem;
 }
 .title .title__name .main {
   font-weight: bold;
@@ -250,7 +266,7 @@ p {
 .main-title {
   grid-area: main-title;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 .main-title .input input {
   height: 30px;

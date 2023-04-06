@@ -89,31 +89,8 @@ p {
   height: 80px;
 }
 
-.sort .search {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
 .sort .search .left .tag {
-  margin: 0 20px;
-}
-
-/* 선택한 펫태그가 추가될 영역 */
-.tag-list {
-  display: flex;
-  justify-content: center;
-  margin: 0 20px;
-}
-.tag-list .tag {
-  display: flex;
-  color: var(--color-main-point2);
-}
-/* 추가된 펫태그 */
-.tag-list .tag p {
-  margin: 0 10px;
+  margin-left: 10px;
 }
 
 .sort .left .tag {
@@ -130,6 +107,12 @@ p {
   }
 }
 
+.sort .search {
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
 .sort .left {
   width: auto;
   border-radius: 4px;
@@ -148,7 +131,9 @@ p {
   font-size: 1rem;
   /* margin-left: 10px; */
 }
-
+.sort .search {
+  display: flex;
+}
 .sort .search .input input {
   height: 20px;
   /* width: 70%; */
@@ -245,7 +230,7 @@ p {
 .title .title__name {
   display: flex;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 20px;
 }
 .title .title__name .main {
   font-weight: bold;
@@ -259,41 +244,6 @@ p {
 }
 .title .title__name .chk input {
   margin: 2px;
-}
-/* 별 */
-.star-rating {
-  display: flex;
-  flex-direction: row-reverse;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-  justify-content: space-around;
-  padding: 0 0.2em;
-  text-align: center;
-  width: 5em;
-}
-.star-rating input {
-  display: none;
-}
-.star-rating label {
-  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 2.3px;
-  -webkit-text-stroke-color: #333;
-  cursor: pointer;
-  margin: 0 4px;
-}
-.star-rating :checked ~ label {
-  -webkit-text-fill-color: #ffd65f;
-}
-.star-rating label:hover,
-.star-rating label:hover ~ label {
-  -webkit-text-fill-color: #fff58c;
-}
-/* 평점표시 */
-.title__name #result {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: var(--color-grey6);
-  margin: 0 10px;
 }
 
 /* 제목입력창 */
@@ -310,34 +260,6 @@ p {
   padding: 0;
   /* border: 0; */
   border-color: #ffd65f;
-}
-
-/* 동물병원 검색창 */
-.hos-search {
-  grid-area: hos-search;
-  width: 100%;
-  margin-top: 20px;
-  margin-bottom: 3rem;
-}
-
-.hos-search-star {
-  display: flex;
-  align-items: center;
-}
-
-.hos-search input {
-  border: none;
-  outline: 2px solid #ffd65f;
-  border-radius: 2px;
-  padding: 10px;
-  width: 20rem;
-  height: 10px;
-}
-.hos-search button {
-  margin-left: 20px;
-  width: 120px;
-  height: 30px;
-  color: white;
 }
 
 /* 본문입력창 */
@@ -406,15 +328,25 @@ p {
   font-size: 13px;
 }
 
-/* 등록,목록 버튼 */
+/* 목록,등록,취소 버튼 */
 .btn {
   grid-area: btn;
   width: 100%;
   margin-bottom: 30px;
-  display: flex;
-  justify-content: flex-end;
 }
-.btn .detail button {
+.btn .btn__che {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.btn .btn__che .btn__btn {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  height: 100%;
+}
+.btn .btn__che .btn__btn .detail button {
   background-color: #ffd65f;
   font-size: 15px;
   font-weight: bold;
@@ -423,7 +355,17 @@ p {
   color: black;
   border: 2px solid #f26d3d;
 }
-.btn .add button {
+.btn .btn__che .btn__btn .cancel button {
+  background-color: #ffd65f;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 20px;
+  border-radius: 10px;
+  color: black;
+  border: 2px solid #f26d3d;
+  margin-left: 10px;
+}
+.btn .btn__che .btn__btn .add button {
   background-color: #ffd65f;
   font-size: 15px;
   font-weight: bold;
@@ -437,10 +379,8 @@ p {
 /* 모달 버튼 만들기 */
 button {
   background-color: #ffd65f;
-  /* padding: 5px 10px; */
   border-radius: 4px;
   cursor: pointer;
-  border: none;
 }
 .modal {
   position: fixed;
@@ -451,7 +391,6 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
 }
 .modal .bg {
   width: 100%;
@@ -460,41 +399,27 @@ button {
 }
 .modalBox {
   position: absolute;
+  border-radius: 4px;
   background-color: #fff;
-  width: 500px;
-  height: 600px;
+  width: 400px;
+  height: 100px;
   padding: 15px;
 }
-.modalBox .title {
+.modalBox .alarm {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  align-items: center;
+  flex-direction: column;
+  margin-top: 25px;
 }
-.modal .mid {
-  display: flex;
-  flex-direction: row;
-  height: 40px;
-  /* background-color: yellow; */
-  justify-content: space-evenly;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.modal .mid input {
-  width: 350px;
-}
-.modal .modalBox .res {
-  height: 400px;
-  width: 100%;
-  margin-bottom: 50px;
-  padding: 5px;
-  border-top: 1px solid #ffd65f;
-  border-bottom: 1px solid #ffd65f;
-}
-.modal .modalBox .bot {
+.modalBox .alarm .chk {
   display: flex;
   justify-content: center;
+  margin-bottom: 10px;
+}
+.modalBox .alarm .btn {
+  justify-content: flex-end;
+}
+.modalBox .alarm .btn button:nth-of-type(2) {
+  margin-left: 5px;
 }
 .hidden {
   display: none;

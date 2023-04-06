@@ -175,46 +175,46 @@ p {
   margin-bottom: 30px;
 }
 .preview .info {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
-  height: 100px;
+  justify-content: space-evenly;
   align-items: center;
-  background-color: #ffd65f;
+  width: auto;
+  height: 100px;
+  padding: 20px;
+  background-color: var(--color-main-background);
   border-radius: 5px;
 }
 .preview .info .hos {
   margin-left: 25px;
   display: flex;
-  flex-direction: column;
-  height: 80px;
+  align-items: center;
+  width: auto;
+  height: auto;
 }
 .preview .info .hos .name {
   height: 20px;
 }
 .preview .info .hos .img {
-  height: 60px;
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--color-main-point);
 }
-.preview .info .review {
-  height: 80px;
-  margin-right: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
+
+.preview .info .hos .img img {
+  filter: invert(98%) sepia(25%) saturate(5388%) hue-rotate(303deg)
+    brightness(144%) contrast(106%);
+  width: 100%;
+  height: 100%;
 }
-.preview .info .review button {
-  display: flex;
-  border: 0;
-  padding: 0;
-  background-color: #ffd65f;
-}
+
 .preview .info .star-ratings {
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
 .star-rating {
@@ -232,17 +232,20 @@ p {
   display: none;
 }
 .star-rating label {
-  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+  -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 2.3px;
-  -webkit-text-stroke-color: #2b2a29;
-  cursor: pointer;
+  -webkit-text-stroke-color: var(--color-main-point2);
+  -webkit-text-fill-color: var(--color-main-point3);
 }
-.star-rating :checked ~ label {
-  -webkit-text-fill-color: gold;
+
+.star-ratings__title {
+  font-weight: bold;
+  margin-right: 10px;
 }
-.star-rating label:hover,
-.star-rating label:hover ~ label {
-  -webkit-text-fill-color: #fff58c;
+
+#result {
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 
 /* 게시글내용 */

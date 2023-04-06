@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -263,7 +264,7 @@
           <h3>광고 소개서</h3>
           <button id="closeBtn3">X</button>
           <div class="ft-info3__content">
-           
+
           </div>
         </div>
         <div id="info3Txt">
@@ -273,11 +274,12 @@
 
       <div class="sort">
         <div class="search">
+          <div class="tag-list"></div>
           <!-- 동물 태그 선택 -->
           <div class="left">
             <div class="tag">동물태그</div>
             <form class="selectBox" name="petTag">
-              <!-- <select class="select" name="pet">
+              <select class="select" name="pet">
                 <option value="default">동물유형</option>
                 <option value="dog">강아지</option>
                 <option value="cat">고양이</option>
@@ -286,62 +288,58 @@
               </select>
               <span class="icoArrow">
                 <i class="fa-solid fa-arrow-down"></i>
-              </span> -->
-              <input type="checkbox" name="dog"> 강아지
-              <input type="checkbox" name="cat"> 고양이
-              <input type="checkbox" name="small"> 소동물
-              <input type="checkbox" name="other"> 기타
-              <button id="checkBtn">적용</button>
+              </span>
             </form>
           </div>
         </div>
       </div>
 
-    <!-- 메인제목 -->
-    <div class="title-l"></div>
-    <div class="title">
-      <div class="title__name">
-        <div class="main">동물병원 후기 글작성</div>
-        <div class="star-ratings">
-          <div class="star-rating space-x-4 mx-auto">
-            <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
-            <label for="5-stars" class="star pr-4">★</label>
-            <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
-            <label for="4-stars" class="star">★</label>
-            <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
-            <label for="3-stars" class="star">★</label>
-            <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
-            <label for="2-stars" class="star">★</label>
-            <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
-            <label for="1-star" class="star">★</label>
+      <!-- 메인제목 -->
+      <div class="title-l"></div>
+      <div class="title">
+        <div class="title__name">
+          <div class="main">동물병원 후기 글작성</div>
+          <div class="star-ratings">
+            <div class="star-rating space-x-4 mx-auto">
+              <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings" />
+              <label for="5-stars" class="star pr-4">★</label>
+              <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings" />
+              <label for="4-stars" class="star">★</label>
+              <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings" />
+              <label for="3-stars" class="star">★</label>
+              <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings" />
+              <label for="2-stars" class="star">★</label>
+              <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
+              <label for="1-star" class="star">★</label>
+            </div>
+          </div>
+          <p id="result"></p>
+        </div>
+      </div>
+      <div class="title-r"></div>
+
+      <!-- 제목입력창 -->
+      <div class="main-title-l"></div>
+      <div class="main-title">
+        <div class="input">
+          <input type="text" placeholder="제목을 입력해주세요.">
+        </div>
+      </div>
+      <div class="main-title-r"></div>
+
+      <!-- 동물병원 검색창 -->
+      <div class="hos-search-l"></div>
+      <div class="hos-search">
+        <div class="hos-search-star">
+          <div class="search">
+            <input type="text" placeholder="병원을 검색해주세요." />
+            <button class="openBtn">검색</button>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="title-r"></div>
-
-    <!-- 제목입력창 -->
-    <div class="main-title-l"></div>
-    <div class="main-title">
-      <div class="input">
-          <input type="text" placeholder="제목을 입력해주세요.">
-      </div>
-    </div>
-    <div class="main-title-r"></div>
-
-    <!-- 동물병원 검색창 -->
-    <div class="hos-search-l"></div>
-    <div class="hos-search">
-      <div class="hos-search-star">
-        <div class="search">
-          <input type="text" placeholder="병원을 검색해주세요."/>
-          <button class="openBtn">검색</button>
-        </div>
-      </div>
-      <div class="modal hidden">
-        <div class="bg"></div>
-        <div class="modalBox">
-          <div class="title">
+        <div class="modal hidden">
+          <div class="bg"></div>
+          <div class="modalBox">
+            <div class="title">
               <h2>동물병원 검색</h2>
               <div class="btn">
                 <button class="closeBtn1">✖</button>
@@ -354,59 +352,53 @@
                 <button>검색</button>
               </div>
             </div>
-            <div class="res" style="overflow:auto; width: 500px; height:400px";>
-              찾으실 동물병원을 검색해 주세요Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione facilis vitae dolorum possimus optio est dolorem aut numquam voluptates perferendis debitis, dolores doloribus reiciendis harum provident repudiandae. Asperiores, repellat eos.
-              Eligendi quam, quisquam atque eaque ullam facere asperiores suscipit labore blanditiis voluptates assumenda ipsam consectetur voluptatibus. Minus, repellat? Qui quos voluptate dolore perspiciatis dignissimos odio alias earum culpa consectetur corrupti!
-              Culpa eaque corrupti a sunt quidem ad. Ratione autem alias a repudiandae soluta, ullam eum voluptatum magni illum aut omnis facilis suscipit, natus quidem labore quam ut dolorem nobis ea!
-              Adipisci consequatur officia obcaecati ab quisquam incidunt officiis sequi iusto, nesciunt at dolore quasi atque magnam aliquam! Tempore cum odio modi! Maiores aut repudiandae, harum odio culpa recusandae autem dicta?
-              Ut, facilis delectus natus ullam officia libero similique nam laboriosam necessitatibus, est iure impedit aut iusto repellat id expedita, dignissimos optio. Quasi culpa distinctio praesentium consequatur aperiam, magnam sed tempora.
-              Earum, accusamus. Aut labore animi ipsa totam! Officia pariatur similique ad eius corporis impedit possimus laborum vero nam blanditiis nisi maiores, labore eaque voluptas aspernatur, saepe facilis quos sunt. Odit?
-              Esse nisi dolorum ratione voluptates architecto facere, omnis eos cumque placeat quisquam. Deleniti voluptas hic blanditiis excepturi! Quia in consectetur illum corrupti sapiente illo, impedit obcaecati! Minima pariatur explicabo harum.
+            <div class="res" style="overflow:auto; width: 500px; height:400px" ;>
+              찾으실 동물병원을 검색해 주세요!
             </div>
             <div class="bot">
               <div class="btn">
                 <button class="closeBtn2">닫기</button>
               </div>
             </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="hos-search-r"></div>
+      <div class="hos-search-r"></div>
 
-    <!-- 본문입력창 -->
-    <div class="body-write-l"></div>
-    <div class="body-write">
-      <div class="input">
-        <input type="text" placeholder="본문을 입력해주세요.">
+      <!-- 본문입력창 -->
+      <div class="body-write-l"></div>
+      <div class="body-write">
+        <div class="input">
+          <input type="text" placeholder="본문을 입력해주세요.">
+        </div>
       </div>
-    </div>
-    <div class="body-write-r"></div>
+      <div class="body-write-r"></div>
 
-    <!-- 첨부파일버튼 -->
-    <div class="file-l"></div>
-    <div class="file">
-      <!-- <input type="file" name="FileName"> -->
-      <form name="이 폼의 이름" action="이 데이터들을 받을 파일" method="post" enctype="multipart/form-data">
-          <input type='file' name='' multiple/>
-      </form>
-    </div>
-    <div class="file-r"></div>  
+      <!-- 첨부파일버튼 -->
+      <div class="file-l"></div>
+      <div class="file">
+        <!-- <input type="file" name="FileName"> -->
+        <form name="이 폼의 이름" action="이 데이터들을 받을 파일" method="post" enctype="multipart/form-data">
+          <input type='file' name='' multiple />
+        </form>
+      </div>
+      <div class="file-r"></div>
 
-    <!-- 사진첨부 -->
-    <div class="pic-l"></div>
-    <div class="pic">
-      <div class="pic__file">
-        <!-- <div class="img">
+      <!-- 사진첨부 -->
+      <div class="pic-l"></div>
+      <div class="pic">
+        <div class="pic__file">
+          <!-- <div class="img">
           <div class="pic__img"><img src="/img/photo.png" alt="">사진첨부</div>
         </div> -->
-        <div class="file__pic">
-          <div>* 파일은 파일1개당 최대 300mb 이내로 업로드 가능합니다.</div>
+          <div class="file__pic">
+            <div>* 파일은 파일1개당 최대 300mb 이내로 업로드 가능합니다.</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="pic-r"></div>
+      <div class="pic-r"></div>
 
-    <!-- 글등록버튼 -->
+      <!-- 글등록버튼 -->
       <div class="btn-l"></div>
       <div class="btn">
         <div class="detail">
@@ -447,25 +439,24 @@
     </footer>
     <div class="ft-r"></div>
   </div>
-
-
+  <!-- 펫 태그 셀렉트  -->
+  <script src="../js/board_selectPet.js"></script>
+  <!-- 별점 매기기  -->
+  <script src="../js/board_star_modal.js"></script>
   <script>
-  const open = () => {
-    document.querySelector(".modal").classList.remove("hidden");
-  }
+    const open = () => {
+      document.querySelector(".modal").classList.remove("hidden");
+    }
 
-  const close = () => {
-    document.querySelector(".modal").classList.add("hidden");
-  }
+    const close = () => {
+      document.querySelector(".modal").classList.add("hidden");
+    }
 
-  document.querySelector(".openBtn").addEventListener("click", open);
-  document.querySelector(".closeBtn1").addEventListener("click", close);
-  document.querySelector(".closeBtn2").addEventListener("click", close);
-  document.querySelector(".bg").addEventListener("click", close);
+    document.querySelector(".openBtn").addEventListener("click", open);
+    document.querySelector(".closeBtn1").addEventListener("click", close);
+    document.querySelector(".closeBtn2").addEventListener("click", close);
+    document.querySelector(".bg").addEventListener("click", close);
   </script>
 </body>
+
 </html>
-
-
-
- 

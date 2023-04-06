@@ -33,15 +33,15 @@
             </a>
           </li>
           <li class="hd__menu__list1__item list1-item1">
-            <a href="#">펫병원</a>
+            <a href="./findBymap.html">펫병원</a>
             <ul class="hd__menu__list1__item__submenu">
-              <li><a href="#">병원찾기</a></li>
+              <li><a href="./findBymap.html">병원찾기</a></li>
             </ul>
           </li>
           <li class="hd__menu__list1__item list1-item2">
-            <a href="#">게시판</a>
+            <a href="./board_all.html">게시판</a>
             <ul class="hd__menu__list1__item__submenu">
-              <li><a href="#">커뮤니티</a></li>
+              <li><a href="./board_com.html">커뮤니티</a></li>
               <li><a href="./board_review.html">병원후기</a></li>
             </ul>
           </li>
@@ -101,22 +101,22 @@
     <div class="fg-r"></div>
 
     <div class="mn-l"></div>
-    
+
     <main class="container">
       <!-- 지도표시 -->
       <div id="map"></div>
       <div id="menu_wrap" class="bg_white">
         <div class="option">
-            <div>
-                <form onsubmit="searchPlaces(); return false;">
-                    검색 : <input type="text" value="동물병원" id="keyword" size="15" readonly> 
-                </form>
-            </div>
+          <div>
+            <form onsubmit="searchPlaces(); return false;">
+              검색 : <input type="text" value="동물병원" id="keyword" size="15" readonly>
+            </form>
+          </div>
         </div>
         <hr>
         <ul id="placesList"></ul>
         <div id="pagination"></div>
-    </div>
+      </div>
 
 
       <!-- 동물 필터 및 병원목록 필터 메뉴 -->
@@ -139,7 +139,7 @@
           <option value="grade">평점</option>
         </select>
       </div>
-      <!-- 병원목록 -->   
+      <!-- 병원목록 -->
       <div class="res-list">
 
         <!-- 목록1 -->
@@ -159,7 +159,7 @@
               <!-- 거리 -->
               <span id="regionDis">1.4km</span>
             </div>
-            
+
             <!-- 병원이름, 평점 (별)-->
             <div class="info__grade">
               <!-- 병원이름 -->
@@ -263,7 +263,7 @@
               <!-- 거리 -->
               <span id="regionDis">1.4km</span>
             </div>
-            
+
             <!-- 병원이름, 평점 (별)-->
             <div class="info__grade">
               <!-- 병원이름 -->
@@ -317,7 +317,7 @@
             <aside class="details__info">
               <!-- 병원 이름, 평점 -->
               <div class="details__info__grade">
-                <h3 id="hospitalName2" >S동물메디컬센터</h3>
+                <h3 id="hospitalName2">S동물메디컬센터</h3>
                 <i class="fa-solid fa-star"></i>
                 <p>4.4</p>
               </div>
@@ -368,7 +368,7 @@
               <!-- 거리 -->
               <span id="regionDis">1.4km</span>
             </div>
-            
+
             <!-- 병원이름, 평점 (별)-->
             <div class="info__grade">
               <!-- 병원이름 -->
@@ -470,7 +470,7 @@
               <!-- 거리 -->
               <span id="regionDis">1.4km</span>
             </div>
-            
+
             <!-- 병원이름, 평점 (별)-->
             <div class="info__grade">
               <!-- 병원이름 -->
@@ -767,29 +767,34 @@
         <div class="ft-info3__title">
           <h3>광고 소개서</h3>
           <button id="closeBtn3">X</button>
-          <div class="ft-info3__content">
+        </div>
+        <div class="ft-info3__content">
+          <form action="">
             <ul>
               <li>
-                <label for=""></label>
-                <input type="text">
+                <label for="hname"><span>*</span>병원명</label>
+                <input type="text" id="hname">
               </li>
               <li>
-                <label for=""></label>
-                <input type="text">
+                <label for="name"><span>*</span>담당자명</label>
+                <input type="text" id="name">
               </li>
               <li>
-                <label for=""></label>
-                <input type="text">
+                <label for="email"><span>*</span>이메일주소</label>
+                <input type="email" id="email">
               </li>
               <li>
-                <label for=""></label>
-                <input type="text">
+                <label for="phone"><span>*</span>연락처</label>
+                <input type="tel" id="phone">
+              </li>
+              <li>
+                <label for="adcontent"><span>*</span>광고내용</label>
+                <textarea name="adcontent" id="adcontent" cols="30" rows="10">
+                            </textarea>
               </li>
             </ul>
-          </div>
-        </div>
-        <div id="info3Txt">
-
+            <button id="ftInfo3Btn">제출하기</button>
+          </form>
         </div>
       </dialog>
       <div class="ft__buttons f-item1">
