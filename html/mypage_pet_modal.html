@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="메인화면" />
+    <meta name="keywords" content="pet hospital search" />
+    <meta name="author" content="2팀" />
+    <title>pet_modal</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../css/mypage_pet_modal.css" />
+    <!--  폰트 어썸 : 로고 -->
+    <script
+      src="https://kit.fontawesome.com/6631aa96e6.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <div class="modal">
+    <div class="modal-content">
+      <div class="pet_modal">
+        <div class="pet_modal-title">
+          <h2>의료수첩 작성</h2>
+        </div>
+        <div class="pet_modal-main">
+          <div class="pet_modal-main-title">
+            <p>반려동물 기본 정보</p>
+          </div>
+          <div class="pet_modal-info">
+            <div class="pet_modal-info-profile">
+              <img src="../img/img_profile1.png" alt="" />
+              <!-- 이름 가져올 방식 고민 -->
+              <div class="pet-name">반려동물이름</div>
+            </div>
+            <!--  -->
+            <div class="pet_modal-info-text">
+              <div class="list-frm">
+                <div class="list">반려동물 품종</div>
+                <div class="pet-info">소동물/햄스터</div>
+              </div>
+              <div class="list-frm">
+                <div class="list">성별</div>
+                <div class="pet-info">여</div>
+              </div>
+              <div class="list-frm">
+                <div class="list">생일</div>
+                <div class="pet-info">20200315</div>
+                <div class="list">입양일</div>
+                <div class="pet-info">20200315</div>
+              </div>
+              <div class="list-frm">
+                <div class="list">중성화 여부</div>
+                <div class="pet-info">중성화 완료</div>
+              </div>
+              <div class="list-frm">
+                <div class="list">기초접종 여부</div>
+                <div class="pet-info">모름</div>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="pet_modal-others">
+            <p>추가 작성 정보</p>
+            <div class="pet_modal-other-text">
+              <div class="list-frm">
+                <div class="list">몸무게</div>
+                <input type="text" id="" maxlength="5" />
+                <div class="list">방문날짜</div>
+                <input type="date" id="vday" />
+              </div>
+              <div class="list-frm">
+                <div class="list">병원명</div>
+                <input type="text" id="" maxlength="25" />
+                <div class="list">담당수의사</div>
+                <input type="text" id="" maxlength="15" />
+              </div>
+              <div class="list-frm">
+                <div class="list">내방이유</div>
+                <input type="text" id="" maxlength="30" />
+                <div class="list">증상</div>
+                <input type="text" id="" maxlength="30" />
+              </div>
+              <div class="list-frm-other">
+                <div class="list">* 진료내용 및 유의사항</div>
+                <p>
+                  <textarea
+                    name="act-text"
+                    placeholder="기타정보를 입력해보세요"
+                    cols="40"
+                    rows="5"
+                  ></textarea>
+                </p>
+              </div>
+              <div class="pet_modal-day">
+                <div class="list-frm">다음 예약일</div>
+                <input type="date" id="petDay" />
+              </div>
+            </div>
+          </div>
+          <div><button>작성완료</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <body></body>
+  <script src="../js/mypage_pet_modal.js"></script>
+</html>

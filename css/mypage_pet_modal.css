@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+body {
+  font-family: 'NanumSquare';
+  color: var(--color-main-text);
+}
+
+.pet_modal-main-title,
+.pet_modal-others > p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.pet_modal-main-title {
+  border-bottom: 2px solid #303334;
+}
+
+/* 반려동물 기본정보 */
+.pet_modal-info {
+  display: flex;
+  margin: 10px;
+  border-bottom: 2px solid #303334;
+}
+.pet_modal-info .pet_modal-info-text {
+  display: flex;
+  width: 1000px;
+  height: 130px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.pet_modal-info .pet_modal-info-profile {
+  margin-right: 40px;
+}
+.pet_modal-info .pet_modal-info-text {
+  margin: 10px 0;
+}
+.pet_modal-info .pet_modal-info-text .list-frm {
+  display: flex;
+
+  margin-bottom: 10px;
+  margin-right: 120px;
+}
+
+.pet_modal-info .pet_modal-info-text .list-frm .list,
+.pet_modal-info .pet_modal-info-text .list-frm .pet-info {
+  margin-right: 30px;
+  width: 20%;
+}
+
+/* 추가작성정보 */
+
+.pet_modal-other-text .list-frm {
+  display: flex;
+  margin-bottom: 10px;
+  margin: 10px;
+  margin-right: 120px;
+}
+
+.pet_modal-day {
+  display: flex;
+}
