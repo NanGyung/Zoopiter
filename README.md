@@ -86,3 +86,4 @@
 - 04.06
   - 회원가입&로그인 : 레이아웃 완료(팝업까지), 병원회원 회원가입 폼에 사업자번호 입력 추가
     - 해당 파일: member_join.html, member_login, member_signup.html(일반회원가입), member_signup2.html(병원회원가입) member.css
+  - 게시판 : 커뮤니티, 병원후기 레이아웃 정리 및 수정 (파일명 수정)

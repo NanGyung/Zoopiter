@@ -147,9 +147,7 @@ p {
   font-size: 1rem;
   /* margin-left: 10px; */
 }
-.sort .search {
-  display: flex;
-}
+
 .sort .search .input input {
   height: 20px;
   /* width: 70%; */

@@ -167,7 +167,7 @@ $pwCheck.addEventListener('keydown', e => {
 $email.addEventListener('keydown', e => {
   const input = $email.value;
   const lenOfInput = input.length;
-  const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]$/;
+  const emailRegex = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@(?:\w+\.)+\w+$/;
 
   if (e.key === ' ') {
     e.preventDefault();
@@ -182,12 +182,7 @@ $email.addEventListener('keydown', e => {
       $errEmail.textContent = '* 이메일를 입력해 주세요.';
       $email.focus();
       $email.value = '';
-    } else if (
-      !input.includes('@') ||
-      !input.includes('.') ||
-      lenOfInput < 5 ||
-      emailRegex.test(input)
-    ) {
+    } else if (!emailRegex.test(input)) {
       $errEmail.classList.remove('hidden');
       $errEmail.textContent = '* 이메일 양식에 맞게 입력해 주세요.';
       $email.focus();
@@ -203,18 +198,13 @@ $email.addEventListener('keydown', e => {
 $email.addEventListener('blur', e => {
   const input = $email.value;
   const lenOfInput = input.length;
-  const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]$/;
+  const emailRegex = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@(?:\w+\.)+\w+$/;
 
   if (lenOfInput == 0) {
     $errEmail.classList.remove('hidden');
     $errEmail.textContent = '* 이메일를 입력해 주세요.';
     $email.value = '';
-  } else if (
-    !input.includes('@') ||
-    !input.includes('.') ||
-    lenOfInput < 5 ||
-    emailRegex.test(input)
-  ) {
+  } else if (!emailRegex.test(input)) {
     $errEmail.classList.remove('hidden');
     $errEmail.textContent = '* 이메일 양식에 맞게 입력해 주세요.';
   } else {

@@ -18,6 +18,22 @@ p {
 }
 
 /* 메인 컨텐츠 */
+
+/* 선택한 펫태그가 추가될 영역 */
+.tag-list {
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+}
+.tag-list .tag {
+  display: flex;
+  color: var(--color-main-point2);
+}
+/* 추가된 펫태그 */
+.tag-list .tag p {
+  margin: 0 10px;
+}
+
 .main-list {
   grid-area: main-list;
   width: 100%;
@@ -83,6 +99,7 @@ p {
 }
 
 /* 동물태그선택 */
+
 .sort {
   grid-area: sort;
   width: 100%;

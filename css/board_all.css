@@ -30,12 +30,13 @@ p {
 }
 
 .main-list .write-btn button {
-  background-color: #ffd65f;
-  font-size: 15px;
+  background-color: var(--color-background2);
+  font-size: 0.9rem;
   font-weight: bold;
+  color: var(--color-main-text);
   padding: 5px 20px;
   border-radius: 15px;
-  border: 2px solid #f26d3d;
+  border: 2px solid var(--color-main-point2);
   margin: 0px 45px 0px 0px;
 }
 .main-list .list .selectBox {
@@ -88,6 +89,16 @@ p {
 }
 
 /* 동물태그선택 */
+
+/* 동물태그 전체 선택 해제 버튼 */
+#allBtn {
+  padding: 5px;
+  border: 1px solid var(--color-main-background);
+  border-radius: 2rem;
+  background-color: var(--color-main-background);
+  font-size: 12px;
+}
+
 .sort {
   grid-area: sort;
   width: 100%;
@@ -247,7 +258,7 @@ p {
 .write-btn .writeSelect {
   display: none;
 }
-.write-btn .writeSelect.active{
+.write-btn .writeSelect.active {
   display: inline;
 }
 
@@ -291,7 +302,6 @@ p {
   outline: 3px solid #ffd65f;
   margin-bottom: 30px;
   border-radius: 10px;
-
 }
 .main-nick .kind_board {
   width: 20%;
