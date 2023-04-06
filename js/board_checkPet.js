@@ -12,6 +12,8 @@ const checkbox_h = e => {
     for (const ele of $check) {
         if (ele.checked == true) {
             checkedCnt++;
+        } else {
+            checkedCnt - 1;
         }
     }
     if (checkedCnt === 1) {
@@ -19,9 +21,21 @@ const checkbox_h = e => {
         addBtn.innerHTML = '전체 선택 해제';
         addBtn.setAttribute("id", "allBtn");
         $selectBox.appendChild(addBtn);
-    } else if (checkedCount === 0 || checkedCount === $check.length) {
+    } else if (checkedCnt === 0 || checkedCnt === $check.length + 1) {
         $selectBox.removeChild(addBtn);
     }
+    // 전체 체크 해제 버튼
+    const $allBtn = document.getElementById("allBtn");
+    $allBtn.addEventListener('click', e => {
+        e.preventDefault();
+        $check.forEach((checkedEle) => {
+            checkedEle.checked = false;
+        });
+        if (checkedCnt === 0) {
+            $selectBox.removeChild(addBtn);
+        }
+    }, false);
 }
+
 
 $selectBox.addEventListener('change', checkbox_h, false);
