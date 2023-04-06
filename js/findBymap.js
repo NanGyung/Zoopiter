@@ -1,95 +1,3 @@
-//  kakao api 카테고리 라이브러리 지도(병원코드 : HP8) 
-// 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
-var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
-
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = {
-        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
-    };
-
-// 지도를 생성합니다    
-var map = new kakao.maps.Map(mapContainer, mapOption);
-
-// 장소 검색 객체를 생성합니다
-var ps = new kakao.maps.services.Places(map);
-
-// 카테고리로 병원을 검색합니다
-ps.categorySearch('HP8', placesSearchCB, { useMapBounds: true });
-
-// 키워드 검색 완료 시 호출되는 콜백함수 입니다
-function placesSearchCB(data, status, pagination) {
-    if (status === kakao.maps.services.Status.OK) {
-        for (var i = 0; i < data.length; i++) {
-            displayMarker(data[i]);
-        }
-    }
-}
-
-// 지도에 마커를 표시하는 함수입니다
-function displayMarker(place) {
-    // 마커를 생성하고 지도에 표시합니다
-    var marker = new kakao.maps.Marker({
-        map: map,
-        position: new kakao.maps.LatLng(place.y, place.x)
-    });
-
-    // 마커에 클릭이벤트를 등록합니다
-    kakao.maps.event.addListener(marker, 'click', function () {
-        // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-        infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
-        infowindow.open(map, marker);
-    });
-}
-
-
-
-// 현재위치 정보 지도표시
-// 현재위치 설정 버튼
-const $myPlaceBtn = document.getElementById('myPlace');
-let myPosition = '';
-const myPlace_h = e => {
-    const geoLocation = navigator.geolocation;
-    if (geoLocation) {
-        geoLocation.getCurrentPosition((position) => {
-            // 내위치 위도, 경도
-            myPosition = new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-            //내위치로 지도중심이동
-            map.setCenter(myPosition);
-            //지도의 줌레벨 조정
-            map.setLevel(2, { animate: true });
-
-            //  내위치 마커표시
-            displayMarker(myPosition);
-
-            // 카테고리로 병원을 검색합니다
-            ps.categorySearch('HP8', placesSearchCB, { useMapBounds: true });
-
-            // 키워드 검색 완료 시 호출되는 콜백함수 입니다
-            function placesSearchCB(data, status, pagination) {
-                if (status === kakao.maps.services.Status.OK) {
-                    for (var i = 0; i < data.length; i++) {
-                        displayMarker(data[i]);
-                    }
-                }
-            }
-            // const mypsMarker = new kakao.maps.Marker({
-            //     map: map,
-            //     position: new kakao.maps.LatLng(myPosition.La, myPosition.Ma)
-            // });
-
-
-        });
-    } else {  // HTML5 GeoLocation 사용할 수 없을 때 마커 위치설정
-        myPosition = new kakao.maps.LatLng(33.450701, 126.570667),
-            message = '위치정보가 존재하지 않습니다 :(';
-        displayMarker(myPosition, message);
-        throw new Error('현 브라우저는 위치정보를 제공하지 않습니다!');
-    }
-};
-$myPlaceBtn.addEventListener('click', myPlace_h, false);
-
 //  지역 선택 버튼
 const $regionChoiceBtn = document.getElementById('regionChoice');
 //  지역선택창 닫힘버튼
@@ -142,7 +50,8 @@ $('document').ready(function () {
             });
         }
     });
-
+    // 현재 위치 설정 버튼 찾기
+    const $currentLocationBtn = document.getElementById('myPlace');
     //지역 선택 팝업창 
     const $regionSelect = document.getElementById('regionSelect');
     // 선택한 지역 확인 버튼
@@ -160,6 +69,26 @@ $('document').ready(function () {
     const addEle2 = document.createElement('p');
     // 선택한 지역 표시 영역
     const parentEle = document.getElementById('searchRes');
+
+    // 현재위치 글자표시
+    const currentLocationBtnHandler = e => {
+    // 선택한 지역 표시영역에 시/도  표시할 p태그 추가
+    parentEle.appendChild(addEle);
+    // 선택한 지역 표시영역에 선택한 구/군 표시할 p태그 추가
+    parentEle.appendChild(addEle2);
+    // 추가한 시/도 객체에 아이디값 추가
+    addEle.setAttribute('id', 'sidoRes');
+    // 추가한 구/군 객체에 아이디값 추가
+    addEle2.setAttribute('id', 'gugunRes');
+  
+    // 현재 위치로 설정 시, 선택한 지역 영역에 "현재위치"라는 글자가 표시됩니다.
+    addEle.textContent = "현재 위치";
+    addEle2.textContent = "";
+    };
+  
+    // 현재 위치 설정 버튼에 이벤트 리스너 추가
+    $currentLocationBtn.addEventListener("click", currentLocationBtnHandler, false);
+
 
 
     // 지역선택 팝업 확인버튼 이벤트리스너
@@ -196,9 +125,6 @@ $('document').ready(function () {
                 // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
                 map.setCenter(coords);
 
-                // 카테고리로 병원을 검색합니다
-                ps.categorySearch('HP8', placesSearchCB, { useMapBounds: true });
-
                 // 키워드 검색 완료 시 호출되는 콜백함수 입니다
                 function placesSearchCB(data, status, pagination) {
                     if (status === kakao.maps.services.Status.OK) {
@@ -207,36 +133,6 @@ $('document').ready(function () {
                         }
                     }
                 }
-
-                // // 키워드로 장소를 검색합니다
-                // ps.keywordSearch('동물병원', placesSearchCB);
-
-                // // 키워드 검색 완료 시 호출되는 콜백함수 입니다
-                // function placesSearchCB(data, status, pagination) {
-                //     if (status === kakao.maps.services.Status.OK) {
-
-                //         // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
-                //         // LatLngBounds 객체에 좌표를 추가합니다
-                //         var bounds = new kakao.maps.LatLngBounds();
-
-                //         for (var i = 0; i < data.length; i++) {
-                //             displayMarker(data[i]);
-                //             bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
-                //         }
-
-                //         // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
-                //         map.setBounds(bounds);
-                //     }
-                // }
-
-
-                // // 결과값으로 받은 위치를 마커로 표시합니다
-                // var marker = new kakao.maps.Marker({
-                //     map: map,
-                //     position: coords
-                // });
-
-
             }
         });
     };
@@ -248,25 +144,19 @@ $('document').ready(function () {
 
 
 
+// 자세히보기 버튼을 클릭하면 다이얼로그를 연다
+document.querySelectorAll('.list-content__btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        const detailsId = btn.id.replace('infoBtn', 'list-details');
+        const listDetails = document.getElementById(detailsId);
+        listDetails.showModal();
+    });
+});
 
-
-// 자세히 보기 버튼
-const $infoBtn = document.getElementById('infoBtn');
-// 상세정보 모달창
-const $listDetails = document.querySelector('.list-details');
-//  상세정보창 닫힘버튼
-const $listDetails_closeBtn = document.getElementById('detailsCloseBtn');
-
-// 자세히 보기 버튼 이벤트 핸들러
-const infoBtn_h = e => {
-    $listDetails.showModal();
-};
-//  자세히 보기 버튼 쿨락이벤트 리스너 등록
-$infoBtn.addEventListener('click', infoBtn_h, false);
-
-//  상세정보창 닫힘버튼 이벤트핸들러
-const detailsCloseBtn_h = e => {
-    $listDetails.close();
-};
-//  상세정보창 닫힘버튼 쿨락이벤트 리스너 등록
-$listDetails_closeBtn.addEventListener('click', detailsCloseBtn_h, false);
+// X 버튼을 클릭하면 다이얼로그를 닫는다
+document.querySelectorAll('.list-details .fa-solid.fa-xmark').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        const parentDialog = btn.closest('.list-details');
+        parentDialog.close();
+    });
+}); 

@@ -15,7 +15,7 @@
   <script src="https://kit.fontawesome.com/6631aa96e6.js" crossorigin="anonymous"></script>
   <!-- 카카오 카테고리 지도 API -->
   <script type="text/javascript"
-    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4723c31f03890875728666f8c3711023&libraries=services"></script>
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f7a8928bfd98ac187fdf1d5c84603904&libraries=services"></script>
   <!-- jquery -->
   <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
@@ -41,7 +41,7 @@
           <li class="hd__menu__list1__item list1-item2">
             <a href="#">게시판</a>
             <ul class="hd__menu__list1__item__submenu">
-              <li><a href="#">커뮤니티</a></li>
+              <li><a href="./board_community.html">커뮤니티</a></li>
               <li><a href="./board_review.html">병원후기</a></li>
             </ul>
           </li>
@@ -72,7 +72,6 @@
           <button class="search-btns" id="myPlace">현재 위치로 설정</button>
           <button class="search-btns" id="regionChoice">지역 선택</button>
         </div>
-
         <!-- 선택한 지역 표시 -->
         <div class="search-res" id="searchRes">
           <h4>선택한 지역: </h4>
@@ -96,29 +95,14 @@
           <button id="regionBtn">확인</button>
         </aside>
       </dialog>
-    </figure>
 
+    </figure>
     <div class="fg-r"></div>
 
     <div class="mn-l"></div>
-    
     <main class="container">
       <!-- 지도표시 -->
       <div id="map"></div>
-      <div id="menu_wrap" class="bg_white">
-        <div class="option">
-            <div>
-                <form onsubmit="searchPlaces(); return false;">
-                    검색 : <input type="text" value="동물병원" id="keyword" size="15" readonly> 
-                </form>
-            </div>
-        </div>
-        <hr>
-        <ul id="placesList"></ul>
-        <div id="pagination"></div>
-    </div>
-
-
       <!-- 동물 필터 및 병원목록 필터 메뉴 -->
       <div class="bottom-menu">
         <!-- 동물필터 -->
@@ -139,11 +123,9 @@
           <option value="grade">평점</option>
         </select>
       </div>
-      <!-- 병원목록 -->   
+      <!-- 병원목록 -->
       <div class="res-list">
-
-        <!-- 목록1 -->
-        <div class="list-content1">
+        <div class="list-content">
           <!-- 병원 이미지-->
           <div class="list-content__img">
             <!-- 기본이미지 -->
@@ -151,19 +133,16 @@
           </div>
           <!--  병원 정보 -->
           <div class="list-content__info">
-
             <div class="info__address">
               <!-- 주소 -->
-              <p id="region" class="hospital-address">울산 남구</p>
-              <!-- <h5 id="region">울산 남구</h5> -->
+              <p id="region">울산 남구</p>
               <!-- 거리 -->
               <span id="regionDis">1.4km</span>
             </div>
-            
             <!-- 병원이름, 평점 (별)-->
             <div class="info__grade">
               <!-- 병원이름 -->
-              <h3 id="info__name" class="hospital-name">S동물메디컬센터</h3>
+              <h3>S동물메디컬센터</h3>
               <!-- 별 아이콘 -->
               <i class="fa-solid fa-star" style="color: #f26d3e;"></i>
               <!-- 평점 -->
@@ -181,16 +160,16 @@
             </div>
           </div>
           <!-- 병원 상세정보 버튼 -->
-          <button class="list-content__btn" id="infoBtn1">자세히보기</button>
+          <button class="list-content__btn" id="infoBtn">자세히보기</button>
         </div>
         <!-- 병원 상세정보 팝업 -->
-        <dialog class="list-details" id="list-details1">
+        <dialog class="list-details">
           <!-- 팝업창 상단 -->
           <div class="list-details__header">
             <!-- 타이틀 -->
             <h3>상세정보</h3>
             <!-- 닫힘 버튼 -->
-            <i class="fa-solid fa-xmark" id="detailsCloseBtn1"></i>
+            <i class="fa-solid fa-xmark" id="detailsCloseBtn"></i>
           </div>
           <!-- 상세정보 내용 -->
           <div class="list-details__contents">
@@ -213,15 +192,15 @@
             <aside class="details__info">
               <!-- 병원 이름, 평점 -->
               <div class="details__info__grade">
-                <h3 id="hospitalName1">S동물메디컬센터</h3>
+                <h3>S동물메디컬센터</h3>
                 <i class="fa-solid fa-star"></i>
                 <p>4.4</p>
               </div>
               <div class="details__info__address">
                 <!-- 주소 -->
-                <p id="region1">울산 남구</p>
+                <p id="region">울산 남구</p>
                 <!-- 거리 -->
-                <span id="regionDis1">1.4km</span>
+                <span id="regionDis">1.4km</span>
               </div>
               <!-- 진료 동물 -->
               <div class="details__info__petTag">
@@ -242,323 +221,7 @@
           </div>
 
         </dialog>
-        <!--  -->
-
-
-
-        <!-- 목록2 -->
-        <div class="list-content2">
-          <!-- 병원 이미지-->
-          <div class="list-content__img">
-            <!-- 기본이미지 -->
-            <i class="fa-solid fa-shield-cat"></i>
-          </div>
-          <!--  병원 정보 -->
-          <div class="list-content__info">
-
-            <div class="info__address">
-              <!-- 주소 -->
-              <p id="region" class="hospital-address">울산 남구</p>
-              <!-- <h5 id="region">울산 남구</h5> -->
-              <!-- 거리 -->
-              <span id="regionDis">1.4km</span>
-            </div>
-            
-            <!-- 병원이름, 평점 (별)-->
-            <div class="info__grade">
-              <!-- 병원이름 -->
-              <h3 id="info__name" class="hospital-name">S동물메디컬센터</h3>
-              <!-- 별 아이콘 -->
-              <i class="fa-solid fa-star" style="color: #f26d3e;"></i>
-              <!-- 평점 -->
-              <p>4.4</p>
-            </div>
-            <!-- 진료 동물 -->
-            <div class="info__petTag">
-              <p>#강아지</p>
-              <p>#고양이</p>
-              <p>#소동물</p>
-            </div>
-            <!-- 기타정보 -->
-            <div class="info__other">
-              <p>주차장,예약가능,무선인터넷</p>
-            </div>
-          </div>
-          <!-- 병원 상세정보 버튼 -->
-          <button class="list-content__btn" id="infoBtn2">자세히보기</button>
-        </div>
-        <!-- 병원 상세정보 팝업 -->
-        <dialog class="list-details" id="list-details2">
-          <!-- 팝업창 상단 -->
-          <div class="list-details__header">
-            <!-- 타이틀 -->
-            <h3>상세정보</h3>
-            <!-- 닫힘 버튼 -->
-            <i class="fa-solid fa-xmark" id="detailsCloseBtn2"></i>
-          </div>
-          <!-- 상세정보 내용 -->
-          <div class="list-details__contents">
-            <article class="details__left">
-              <!-- 병원 대표 사진  -->
-              <div class="details__left__img">
-                <!-- 기본이미지 -->
-                <i class="fa-solid fa-shield-cat"></i>
-              </div>
-              <div class="details__left__time">
-                <h4>영업시간</h4>
-                <ul>
-                  <li>주간진료 10:00~19:00</li>
-                  <li>야간진료 19:00~10:00</li>
-                  <li>응급진료 22:00~09:00</li>
-                </ul>
-              </div>
-            </article>
-
-            <aside class="details__info">
-              <!-- 병원 이름, 평점 -->
-              <div class="details__info__grade">
-                <h3 id="hospitalName2" >S동물메디컬센터</h3>
-                <i class="fa-solid fa-star"></i>
-                <p>4.4</p>
-              </div>
-              <div class="details__info__address">
-                <!-- 주소 -->
-                <p id="region2">울산 남구</p>
-                <!-- 거리 -->
-                <span id="regionDis2">1.4km</span>
-              </div>
-              <!-- 진료 동물 -->
-              <div class="details__info__petTag">
-                <p>#강아지</p>
-                <p>#고양이</p>
-                <p>#소동물</p>
-              </div>
-              <!-- 기타정보 -->
-              <div class="details__info__other">
-                <p>주차장,예약가능,무선인터넷</p>
-              </div>
-
-              <div class="details__info__inst">
-                <h4>이용안내</h4>
-                <p>반려동물에게도 사람과 같은 전문적인 치료를 24시간 운영하고 있습니다.</p>
-              </div>
-            </aside>
-          </div>
-
-        </dialog>
-        <!--  -->
-
-
-
-
-        <!-- 목록3 -->
-        <div class="list-content3">
-          <!-- 병원 이미지-->
-          <div class="list-content__img">
-            <!-- 기본이미지 -->
-            <i class="fa-solid fa-shield-cat"></i>
-          </div>
-          <!--  병원 정보 -->
-          <div class="list-content__info">
-
-            <div class="info__address">
-              <!-- 주소 -->
-              <p id="region" class="hospital-address">울산 남구</p>
-              <!-- <h5 id="region">울산 남구</h5> -->
-              <!-- 거리 -->
-              <span id="regionDis">1.4km</span>
-            </div>
-            
-            <!-- 병원이름, 평점 (별)-->
-            <div class="info__grade">
-              <!-- 병원이름 -->
-              <h3 id="info__name" class="hospital-name">S동물메디컬센터</h3>
-              <!-- 별 아이콘 -->
-              <i class="fa-solid fa-star" style="color: #f26d3e;"></i>
-              <!-- 평점 -->
-              <p>4.4</p>
-            </div>
-            <!-- 진료 동물 -->
-            <div class="info__petTag">
-              <p>#강아지</p>
-              <p>#고양이</p>
-              <p>#소동물</p>
-            </div>
-            <!-- 기타정보 -->
-            <div class="info__other">
-              <p>주차장,예약가능,무선인터넷</p>
-            </div>
-          </div>
-          <!-- 병원 상세정보 버튼 -->
-          <button class="list-content__btn" id="infoBtn3">자세히보기</button>
-        </div>
-        <!-- 병원 상세정보 팝업 -->
-        <dialog class="list-details" id="list-details3">
-          <!-- 팝업창 상단 -->
-          <div class="list-details__header">
-            <!-- 타이틀 -->
-            <h3>상세정보</h3>
-            <!-- 닫힘 버튼 -->
-            <i class="fa-solid fa-xmark" id="detailsCloseBtn3"></i>
-          </div>
-          <!-- 상세정보 내용 -->
-          <div class="list-details__contents">
-            <article class="details__left">
-              <!-- 병원 대표 사진  -->
-              <div class="details__left__img">
-                <!-- 기본이미지 -->
-                <i class="fa-solid fa-shield-cat"></i>
-              </div>
-              <div class="details__left__time">
-                <h4>영업시간</h4>
-                <ul>
-                  <li>주간진료 10:00~19:00</li>
-                  <li>야간진료 19:00~10:00</li>
-                  <li>응급진료 22:00~09:00</li>
-                </ul>
-              </div>
-            </article>
-
-            <aside class="details__info">
-              <!-- 병원 이름, 평점 -->
-              <div class="details__info__grade">
-                <h3 id="hospitalName3">S동물메디컬센터</h3>
-                <i class="fa-solid fa-star"></i>
-                <p>4.4</p>
-              </div>
-              <div class="details__info__address">
-                <!-- 주소 -->
-                <p id="region3">울산 남구</p>
-                <!-- 거리 -->
-                <span id="regionDis3">1.4km</span>
-              </div>
-              <!-- 진료 동물 -->
-              <div class="details__info__petTag">
-                <p>#강아지</p>
-                <p>#고양이</p>
-                <p>#소동물</p>
-              </div>
-              <!-- 기타정보 -->
-              <div class="details__info__other">
-                <p>주차장,예약가능,무선인터넷</p>
-              </div>
-
-              <div class="details__info__inst">
-                <h4>이용안내</h4>
-                <p>반려동물에게도 사람과 같은 전문적인 치료를 24시간 운영하고 있습니다.</p>
-              </div>
-            </aside>
-          </div>
-
-        </dialog>
-        <!--  -->
-
-        <!-- 목록4 -->
-        <div class="list-content4">
-          <!-- 병원 이미지-->
-          <div class="list-content__img">
-            <!-- 기본이미지 -->
-            <i class="fa-solid fa-shield-cat"></i>
-          </div>
-          <!--  병원 정보 -->
-          <div class="list-content__info">
-
-            <div class="info__address">
-              <!-- 주소 -->
-              <p id="region" class="hospital-address">울산 남구</p>
-              <!-- <h5 id="region">울산 남구</h5> -->
-              <!-- 거리 -->
-              <span id="regionDis">1.4km</span>
-            </div>
-            
-            <!-- 병원이름, 평점 (별)-->
-            <div class="info__grade">
-              <!-- 병원이름 -->
-              <h3 id="info__name" class="hospital-name">S동물메디컬센터</h3>
-              <!-- 별 아이콘 -->
-              <i class="fa-solid fa-star" style="color: #f26d3e;"></i>
-              <!-- 평점 -->
-              <p>4.4</p>
-            </div>
-            <!-- 진료 동물 -->
-            <div class="info__petTag">
-              <p>#강아지</p>
-              <p>#고양이</p>
-              <p>#소동물</p>
-            </div>
-            <!-- 기타정보 -->
-            <div class="info__other">
-              <p>주차장,예약가능,무선인터넷</p>
-            </div>
-          </div>
-          <!-- 병원 상세정보 버튼 -->
-          <button class="list-content__btn" id="infoBtn4">자세히보기</button>
-        </div>
-        <!-- 병원 상세정보 팝업 -->
-        <dialog class="list-details" id="list-details4">
-          <!-- 팝업창 상단 -->
-          <div class="list-details__header">
-            <!-- 타이틀 -->
-            <h3>상세정보</h3>
-            <!-- 닫힘 버튼 -->
-            <i class="fa-solid fa-xmark" id="detailsCloseBtn4"></i>
-          </div>
-          <!-- 상세정보 내용 -->
-          <div class="list-details__contents">
-            <article class="details__left">
-              <!-- 병원 대표 사진  -->
-              <div class="details__left__img">
-                <!-- 기본이미지 -->
-                <i class="fa-solid fa-shield-cat"></i>
-              </div>
-              <div class="details__left__time">
-                <h4>영업시간</h4>
-                <ul>
-                  <li>주간진료 10:00~19:00</li>
-                  <li>야간진료 19:00~10:00</li>
-                  <li>응급진료 22:00~09:00</li>
-                </ul>
-              </div>
-            </article>
-
-            <aside class="details__info">
-              <!-- 병원 이름, 평점 -->
-              <div class="details__info__grade">
-                <h3 id="hospitalName4">S동물메디컬센터</h3>
-                <i class="fa-solid fa-star"></i>
-                <p>4.4</p>
-              </div>
-              <div class="details__info__address">
-                <!-- 주소 -->
-                <p id="region4">울산 남구</p>
-                <!-- 거리 -->
-                <span id="regionDis4">1.4km</span>
-              </div>
-              <!-- 진료 동물 -->
-              <div class="details__info__petTag">
-                <p>#강아지</p>
-                <p>#고양이</p>
-                <p>#소동물</p>
-              </div>
-              <!-- 기타정보 -->
-              <div class="details__info__other">
-                <p>주차장,예약가능,무선인터넷</p>
-              </div>
-
-              <div class="details__info__inst">
-                <h4>이용안내</h4>
-                <p>반려동물에게도 사람과 같은 전문적인 치료를 24시간 운영하고 있습니다.</p>
-              </div>
-            </aside>
-          </div>
-
-        </dialog>
-        <!--  -->
-
-
       </div>
-
-
     </main>
     <div class="mn-r"></div>
 
@@ -767,30 +430,35 @@
         <div class="ft-info3__title">
           <h3>광고 소개서</h3>
           <button id="closeBtn3">X</button>
+        </div>
           <div class="ft-info3__content">
-            <ul>
-              <li>
-                <label for=""></label>
-                <input type="text">
-              </li>
-              <li>
-                <label for=""></label>
-                <input type="text">
-              </li>
-              <li>
-                <label for=""></label>
-                <input type="text">
-              </li>
-              <li>
-                <label for=""></label>
-                <input type="text">
-              </li>
-            </ul>
+            <form action="">
+              <ul>
+                <li>
+                  <label for="hname"><span>*</span>병원명</label>
+                  <input type="text" id="hname">
+                </li>
+                <li>
+                  <label for="name"><span>*</span>담당자명</label>
+                  <input type="text" id="name">
+                </li>
+                <li>
+                  <label for="email"><span>*</span>이메일주소</label>
+                  <input type="email" id="email">
+                </li>
+                <li>
+                  <label for="phone"><span>*</span>연락처</label>
+                  <input type="tel" id="phone">
+                </li>
+                <li>
+                  <label for="adcontent"><span>*</span>광고내용</label>
+                  <textarea name="adcontent" id="adcontent" cols="30" rows="10">
+                  </textarea>
+                </li>
+              </ul>
+              <button id="ftInfo3Btn">제출하기</button>
+            </form>
           </div>
-        </div>
-        <div id="info3Txt">
-
-        </div>
       </dialog>
       <div class="ft__buttons f-item1">
         <a href="index.html">슬기로운 반려생활</a>
@@ -823,10 +491,6 @@
   <script src="../js/ft_modal.js"></script>
   <!--  병원찾기화면 js -->
   <script src="../js/findBymap.js"></script>
-  <script src="../js/map/map1.js"></script>
-  <script src="../js/map/map2.js"></script>
-  <script src="../js/map/map3.js"></script>
-  <script></script>
 </body>
 
 </html>

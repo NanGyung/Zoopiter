@@ -1,3 +1,4 @@
+//map2.js
 // 검색 결과 목록과 마커를 표출하는 함수입니다
 function displayPlaces(places) {
 
@@ -20,12 +21,21 @@ function displayPlaces(places) {
             marker = addMarker(placePosition, i), 
             itemEl = getListItem(i, places[i]); // 검색 결과 항목 Element를 생성합니다
 
-        // 검색 결과를 병원검색결과1,2,3,4에 표시합니다.
-        const resultDiv = document.querySelector(`.find${i + 1}`);
-        
-        resultDiv.innerHTML = `<b>병원 이름:</b> ${places[i].place_name}<br><b>주소:</b> ${places[i].road_address_name || places[i].address_name}<br><b>전화번호:</b> ${places[i].phone}`;
-            
 
+        const nameElement = document.querySelector(`.list-content${i + 1} .hospital-name`);
+        const addressElement = document.querySelector(`.list-content${i + 1} .hospital-address`);
+        updateAddressInfo(places[i], nameElement, addressElement);
+        
+                // 거리 계산
+                const distance = calculateDistance(
+                    currentLocation.getLat(), currentLocation.getLng(),
+                    places[i].y, places[i].x
+                );
+                // list-content 클래스를 사용하여 거리 정보를 업데이트할 span 요소를 선택합니다.
+                const distanceElement = document.querySelector(`.list-content${i + 1} #regionDis`);
+                // 거리 정보를 업데이트합니다.
+                distanceElement.innerHTML = distance.toFixed(1) + 'km';
+                
             
         // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
         // LatLngBounds 객체에 좌표를 추가합니다
@@ -36,7 +46,7 @@ function displayPlaces(places) {
         // mouseout 했을 때는 인포윈도우를 닫습니다
         (function(marker, title) {
             kakao.maps.event.addListener(marker, 'mouseover', function() {
-                displayInfowindow(marker, title);
+                displayInfowindow(marker, title, distance);
             });
 
             kakao.maps.event.addListener(marker, 'mouseout', function() {
@@ -44,7 +54,7 @@ function displayPlaces(places) {
             });
 
             itemEl.onmouseover =  function () {
-                displayInfowindow(marker, title);
+                displayInfowindow(marker, title, distance);
             };
 
             itemEl.onmouseout =  function () {
@@ -116,3 +126,4 @@ function removeMarker() {
     }   
     markers = [];
 }
+
