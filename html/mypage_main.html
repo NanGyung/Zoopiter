@@ -8,7 +8,12 @@
   <meta name="description" content="메인화면" />
   <meta name="keywords" content="pet hospital search" />
   <meta name="author" content="2팀" />
-  <title>my page</title>
+  <title>일반회원-마이페이지 메인</title>
+  <!--  이미지슬라이더 js -->
+  <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
   <!--  마이페이지 css -->
   <link rel="stylesheet" href="../css/mypage_main.css" />
   <!--  폰트 어썸 : 로고 -->
@@ -63,15 +68,27 @@
         <p>마이페이지</p>
         <h2>반가워요</h2>
         <div class="profile-list">
-          <div class="profile-area" onclick="petModify()">
-            <div class="upload-area">
-              <img src="../img/img_profile1.png" alt="" />
+          <div class="profile-list__areas">
+            <div class="profile-area" onclick="petModify()">
+              <div class="upload-area">
+                <img src="../img/img_profile1.png" alt="" />
+              </div>
+              <div class="upload-area2" id="">
+                <div class="pet-name">반려동물이름</div>
+                <div class="pet-info">정보</div>
+              </div>
             </div>
-            <div class="upload-area2" id="">
-              <div class="pet-name">반려동물이름</div>
-              <div class="pet-info">정보</div>
-            </div>
+            <!-- <div class="profile-area" onclick="petModify()">
+              <div class="upload-area">
+                <img src="../img/img_profile1.png" alt="" />
+              </div>
+              <div class="upload-area2" id="">
+                <div class="pet-name">반려동물이름</div>
+                <div class="pet-info">정보</div>
+              </div>
+            </div> -->
           </div>
+
           <div class="profile-make" onclick="petAdd()">
             <a href="./mypage_pet_reg.html">
               <img src="../img/add_circle.png" alt="" />
@@ -193,9 +210,6 @@
   <script src="../js/hambuger.js"></script>
   <!-- my page -->
   <script src="../js/mypage_main.js"></script>
-  <!-- jquery CDN -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
-    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
   <!-- footer 모달 구현 -->
   <script src="../js/ft_modal.js"></script>
   <script>

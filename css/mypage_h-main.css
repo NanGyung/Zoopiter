@@ -77,10 +77,6 @@ button {
   position: relative;
   margin: 10px;
   box-sizing: border-box; /*반응형 추가*/
-  overflow: hidden;
-}
-.profile-list__areas {
-  display: flex;
 }
 .user-profile .profile-area {
   display: flex;
@@ -98,6 +94,10 @@ button {
   /* 수정-난경 */
   background-color: var(--color-background);
   box-sizing: border-box; /*반응형 추가*/
+}
+
+.user-profile p {
+  margin-bottom: 2rem;
 }
 
 .user-profile .profile-area .upload-area2 {
@@ -163,11 +163,8 @@ li {
 }
 
 /* 메인타이틀 */
-.main .mypage_content .myprofile-top {
-  padding-bottom: 20px;
-  border-bottom: 2px solid #222222;
-  font-size: 24px;
-  margin-bottom: 30px;
+.myprofile-top h3 {
+  margin-bottom: 2rem;
 }
 .myprofile-list {
   /* display: flex; */
@@ -186,9 +183,19 @@ li {
 .myprofile-list .myprofile-list-image {
   display: flex;
   flex-wrap: nowrap;
-  /* margin: 10px; */
   margin-bottom: 10px;
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+  background-color: var(--color-main-background);
+  border-radius: 1.4rem;
 }
+
+.myprofile-list .myprofile-list-image img {
+  width: 100%;
+  height: 100%;
+}
+
 .myprofile-list .myprofile-list-text {
   margin: 30px;
   position: relative;

@@ -77,10 +77,6 @@ button {
   position: relative;
   margin: 10px;
   box-sizing: border-box; /*반응형 추가*/
-  overflow: hidden;
-}
-.profile-list__areas {
-  display: flex;
 }
 .user-profile .profile-area {
   display: flex;
@@ -98,6 +94,10 @@ button {
   /* 수정-난경 */
   background-color: var(--color-background);
   box-sizing: border-box; /*반응형 추가*/
+}
+
+.user-profile p {
+  margin-bottom: 2rem;
 }
 
 .user-profile .profile-area .upload-area2 {
@@ -163,26 +163,31 @@ li {
 }
 
 /* 메인타이틀 */
-.main .mypage_content .myprofile-top {
-  padding-bottom: 20px;
-  border-bottom: 2px solid #222222;
-  font-size: 24px;
-  margin-bottom: 30px;
+.myprofile-top h3 {
+  margin-bottom: 2rem;
 }
 .myprofile-list {
-  /* display: flex; */
-  align-items: center;
   border-bottom: 2px solid #858585;
   margin-bottom: 30px;
 }
+
+/* 병원등록 폼태그 */
+.myprofile-list__form {
+  display: flex;
+  flex-direction: column;
+}
+
 .myprofile-list .list-frm {
   display: flex;
   /* flex-wrap: wrap; */
   margin-bottom: 18px;
 }
-/* .myprofile-list .list-frm .list {
-  width: 10%;
-} */
+
+/* 병원등록 input 사이즈 */
+.list-frm input {
+  width: 20rem;
+}
+
 .myprofile-list .myprofile-list-image {
   display: flex;
   flex-wrap: nowrap;
@@ -229,6 +234,55 @@ img {
 }
 
 /* 활성화 된 메뉴 강조 */
-.main-gnb #mypagePcGnb li a.on {
+/* .main-gnb #mypagePcGnb li a.on {
   font-weight: bold;
+} */
+
+.main-gnb #mypagePcGnb :nth-child(2) {
+  font-weight: bold;
+}
+
+/* 등록된 병원 조회 버튼 */
+#searchHospital {
+  width: 20rem;
+  align-self: center;
+  margin: 20px;
+  padding: 10px;
+  border: 2px solid var(--color-main-point);
+  background-color: var(--color-background2);
+  border-radius: 2rem;
+  font-weight: bold;
+  color: var(--color-main-text);
+}
+
+/* 등록된 병원이 없을 때 팝업 */
+.findhospital1_wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.findhospital1_wrap i {
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+#findhospital1Btn {
+  margin-top: 20px;
+}
+
+/* 등록된 병원이 있을 때 팝업 */
+.findhospital2_wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.findhospital2_wrap i {
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+#findhospital2Btn {
+  margin-top: 20px;
 }

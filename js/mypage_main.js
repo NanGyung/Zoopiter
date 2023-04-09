@@ -65,3 +65,19 @@ function petModify() {
 //     }
 //   });
 // }
+
+const $petProfiles = document.querySelectorAll('.profile-area');
+console.log($petProfiles.length);
+if ($petProfiles.length >= 2) {
+  // 이미지 슬라이드
+  $(function () {
+    $('.profile-list__areas').trigger('resize');
+    $('.profile-list__areas').slick({
+      slide: 'div',
+      infinite: false,
+      setPosition: 0,
+      slidesToShow: $petProfiles.length - 1,
+      arrows: false
+    })
+  });
+}
