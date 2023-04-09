@@ -66,18 +66,23 @@ function petModify() {
 //   });
 // }
 
+// 이미지 슬라이드 할 영역 
+const $petAreas = document.querySelector('.profile-list__areas');
+// 펫등록 정보(슬라이드 할 아이템)
 const $petProfiles = document.querySelectorAll('.profile-area');
-console.log($petProfiles.length);
-if ($petProfiles.length >= 2) {
-  // 이미지 슬라이드
+
+// 아이템 갯수
+const totalSlides = $petProfiles.length;
+
+if (totalSlides >= 2) {
   $(function () {
-    $('.profile-list__areas').trigger('resize');
-    $('.profile-list__areas').slick({
-      slide: 'div',
-      infinite: false,
-      setPosition: 0,
-      slidesToShow: $petProfiles.length - 1,
+    $($petAreas).slick('resize');
+    $($petAreas).slick('refresh');
+    $($petAreas).slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
       arrows: false
     })
   });
+
 }

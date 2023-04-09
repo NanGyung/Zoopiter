@@ -91,6 +91,6 @@
 
 - 04.10
 
-  - 병원회원 마이페이지 추가 : 병원 정보 관리(mypage_h-main.html), 병원 등록(mypage_h-add.html), 병원 정보 수정, 병원 정보 신규 등록 페이지 필요
+  - 병원회원 마이페이지 추가 : 병원 정보 관리(mypage_h-main.html), 병원 등록(mypage_h-add.html), 병원 정보 수정 (mypage_h-modify.html)
 
   - 일반회원 마이페이지 : 반려동물 정보 2개 이상 추가 시 이미지 슬라이드 적용 중 -> mypage_main.html

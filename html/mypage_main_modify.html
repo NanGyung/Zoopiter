@@ -16,7 +16,7 @@
 
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 
 <body>
@@ -32,26 +32,25 @@
             </a>
           </li>
           <li class="hd__menu__list1__item list1-item1">
-            <a href="#">펫병원</a>
+            <a href="findBymap.html">펫병원</a>
             <ul class="hd__menu__list1__item__submenu">
-              <li><a href="#">병원찾기</a></li>
+              <li><a href="findBymap.html">병원찾기</a></li>
             </ul>
           </li>
           <li class="hd__menu__list1__item list1-item2">
-            <a href="#">게시판</a>
+            <a href="board_all.html">게시판</a>
             <ul class="hd__menu__list1__item__submenu">
-              <li><a href="#">커뮤니티</a></li>
-              <li><a href="#">병원후기</a></li>
-              <li><a href="#">펫가이드</a></li>
+              <li><a href="board_com.html">커뮤니티</a></li>
+              <li><a href="board_review.html">병원후기</a></li>
             </ul>
           </li>
           <li class="hd__menu__list1__item list1-item3" id="myPage">
             <a href="#">마이페이지</a>
           </li>
           <div class="hd__menu__list1__item list1-item4" id="join">
-            <li><a href="#">로그인</a></li>
+            <li><a href="member_login.html">로그인</a></li>
             |
-            <li><a href="#">회원가입</a></li>
+            <li><a href="member_join.html">회원가입</a></li>
           </div>
         </ul>
         <a href="#" id="hamburger">
@@ -112,31 +111,22 @@
               <div class="myprofile-list-image">
                 <!-- <img src="" alt="" /> -->
                 <div class="contents">
-                    <div class="upload-box">
-                      <div id="dropFile" class="drag-file">
-                        <img
-                          src="../img/img_profile1.png"
-                          alt=""
-                          class="image"
-                        />
+                  <div class="upload-box">
+                    <div id="dropFile" class="drag-file">
+                      <img src="../img/img_profile1.png" alt="" class="image" />
                       <li>
                         <div class="myprofile-list-text">
                           회원님을 알수있는 사진을 등록해주세요
                         </div>
                       </li>
-                        <img src="" alt="미리보기 이미지" class="preview" />
-                      </div>
-                      <label class="file-label" for="chooseFile">사진업로드</label>
-                      <input
-                        class="file"
-                        id="chooseFile"
-                        type="file"
-                        onchange="dropFile.handleFiles(this.files)"
-                        accept="image/png, image/jpeg, image/gif"
-                      />
+                      <img src="" alt="미리보기 이미지" class="preview" />
                     </div>
+                    <label class="file-label" for="chooseFile">사진업로드</label>
+                    <input class="file" id="chooseFile" type="file" onchange="dropFile.handleFiles(this.files)"
+                      accept="image/png, image/jpeg, image/gif" />
                   </div>
-                
+                </div>
+
               </div>
             </div>
             <div class="myprofile-button">
@@ -237,7 +227,7 @@
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
     </main>
@@ -272,18 +262,15 @@
     <!-- 햄버거 메뉴 구현 -->
     <script src="../js/hambuger.js"></script>
     <!-- my page modify -->
-    <script src="../js/mypage_main_modify.js"></script>
+    <script src="../js/mypage_h-modify.js"></script>
 </body>
-    <!-- jquery CDN -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.4.min.js"
-      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      $(function () {
-        $('#mypagePcGnb').children().eq(0).find('a').addClass('on');
-      });
-    </script>
+<!-- jquery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+  integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script>
+  $(function () {
+    $('#mypagePcGnb').children().eq(0).find('a').addClass('on');
+  });
+</script>
 
 </html>
