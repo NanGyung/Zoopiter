@@ -162,6 +162,10 @@ li {
   margin-bottom: 30px;
 }
 
+.myprofile-top h3{
+  margin-bottom: 20px;
+}
+
 .myprofile-list {
   /* display: flex; */
   align-items: center;

@@ -14,7 +14,8 @@
   <!--  폰트 어썸 : 로고 -->
   <script src="https://kit.fontawesome.com/6631aa96e6.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-
+  <!-- 주소찾기 다음 api -->
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
 
 <body>
@@ -195,7 +196,7 @@
               <input type="text" id="hetc">
             </div>
 
-            <button id="addHospital">수정완료</button>
+            <button id="addHospital" onclick="modify()">수정완료</button>
           </form>
         </div>
       </div>
