@@ -49,40 +49,19 @@ function petModify() {
   });
 }
 
-// function petAdd() {
-//   Swal.fire({
-//     title: '반려동물정보를 추가 하시겠습니까?',
-//     text: '신규등록하러 이동합니다',
-//     icon: 'warning',
-//     showCancelButton: true,
-//     confirmButtonColor: '#333',
-//     cancelButtonColor: '#ffd88f',
-//     confirmButtonText: '등록하기',
-//     cancelButtonText: '취소하기',
-//   }).then(result => {
-//     if (result.isConfirmed) {
-//       location.replace('./mypage_pet_reg.html');
-//     }
-//   });
-// }
 
-// 이미지 슬라이드 할 영역 
-const $petAreas = document.querySelector('.profile-list__areas');
-// 펫등록 정보(슬라이드 할 아이템)
-const $petProfiles = document.querySelectorAll('.profile-area');
-
-// 아이템 갯수
-const totalSlides = $petProfiles.length;
-
-if (totalSlides >= 2) {
-  $(function () {
-    $($petAreas).slick('resize');
-    $($petAreas).slick('refresh');
-    $($petAreas).slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
+// 반려동물 정보 추가(2개이상) 되면 이미지 슬라이드
+$(document).ready(function(){
+  const profileAreas = $('.profile-area');
+   const profileList = $('.profile-list__areas');
+  if (profileAreas.length > 2) { // profile-area 태그가 2개 이상일 때
+    $('.profile-list__areas').slick({ // slick 라이브러리를 적용할 부분 선택자
+      slidesToShow: 2, // 한 화면에 보여줄 슬라이드 개수
+      slidesToScroll: 1, // 슬라이드 이동 시 이동할 슬라이드 개수
       arrows: false
-    })
-  });
-
-}
+    });
+  }else{
+    profileList.css('width','40%');
+    profileAreas.css('width','70%');
+  }
+});

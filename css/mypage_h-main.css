@@ -76,15 +76,12 @@ button {
   justify-content: center;
   position: relative;
   margin: 10px;
-  box-sizing: border-box; /*반응형 추가*/
+  box-sizing: border-box; 
 }
 .user-profile .profile-area {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  /* position: relative;
-  left: 180px;
-  top: -60px; */
   width: 300px;
   height: 150px;
   max-width: 100%;
@@ -109,6 +106,9 @@ button {
   min-width: 80px;
   height: auto;
 }
+/* .upload-area img{
+  width: 100%; height: 100%;
+} */
 
 .user-profile .profile-area .pet-name,
 .user-profile .profile-area .pet-info {
