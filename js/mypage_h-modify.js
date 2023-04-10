@@ -15,6 +15,12 @@ function modify() {
     });
 }
 
+const $completeBtn = document.getElementById("addHospital");
+$completeBtn.addEventListener('click', e=>{
+    e.preventDefault();
+    location.href = "./mypage_h-main.html";
+});
+
 /* 사진업로드 */
 function DropFile(dropAreaId, fileListId) {
     let dropArea = document.getElementById(dropAreaId);
