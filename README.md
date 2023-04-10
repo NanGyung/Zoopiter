@@ -93,4 +93,7 @@
 
   - 병원회원 마이페이지 추가 : 병원 정보 관리(mypage_h-main.html), 병원 등록(mypage_h-add.html), 병원 정보 수정 (mypage_h-modify.html)
 
-  - 일반회원 마이페이지 : 반려동물 정보 2개 이상 추가 시 이미지 슬라이드 적용 중 -> mypage_main.html
+  - 일반회원 마이페이지 : 반려동물 정보 2개 이상 추가 시 이미지 슬라이드 적용 완료
+    - 해당 파일: mypage_main.html, mypage_main_modify.html, mypage_pet_reg.html, mypage_pet_modify.html, mypage_scheduler.html
+      해당 html의 css, js또한 변경 됨(html 파일명과 동일)
+  - board_all.html, css, js 는 전체 게시판 목록 파일 : 전체 게시판 목록, 구현하기엔 sql 테이블 구조를 변경해야하므로 무시하셔도 됩니다!

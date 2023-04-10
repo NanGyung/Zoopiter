@@ -8,6 +8,17 @@
     <meta name="keywords" content="pet hospital search" />
     <meta name="author" content="2팀" />
     <title>펫정보조회</title>
+    <!--  이미지슬라이더 js -->
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
     <!--  마이페이지 css -->
     <link rel="stylesheet" href="../css/mypage_pet_reg.css" />
     <!--  폰트 어썸 : 로고 -->
@@ -67,17 +78,38 @@
           <p>마이페이지</p>
           <h2>반가워요</h2>
           <div class="profile-list">
-            <div class="profile-area" onclick="petModify()">
-              <div class="upload-area">
-                <img src="../img/img_profile1.png" alt="" />
+            <div class="profile-list__areas">
+              <div class="profile-area" onclick="petModify()">
+                <div class="upload-area">
+                  <img src="../img/img_profile1.png" alt="" />
+                </div>
+                <div class="upload-area2" id="">
+                  <div class="pet-name">반려동물이름</div>
+                  <div class="pet-info">정보</div>
+                </div>
               </div>
-              <div class="upload-area2" id="">
-                <div class="pet-name">반려동물이름</div>
-                <div class="pet-info">정보</div>
+              <!-- 반려동물 정보 추가 될 부분 -->
+              <!-- <div class="profile-area" onclick="petModify()">
+                <div class="upload-area">
+                  <img src="../img/img_profile1.png" alt="" />
+                </div>
+                <div class="upload-area2" id="">
+                  <div class="pet-name">반려동물이름</div>
+                  <div class="pet-info">정보</div>
+                </div>
               </div>
+              <div class="profile-area" onclick="petModify()">
+                <div class="upload-area">
+                  <img src="../img/img_profile1.png" alt="" />
+                </div>
+                <div class="upload-area2" id="">
+                  <div class="pet-name">반려동물이름</div>
+                  <div class="pet-info">정보</div>
+                </div>
+              </div> -->
             </div>
-            <div class="profile-make">
-              <a href="./mypage_pet_modify.html">
+            <div class="profile-make" onclick="petAdd()">
+              <a href="./mypage_pet_reg.html">
                 <img src="../img/add_circle.png" alt="" />
               </a>
             </div>

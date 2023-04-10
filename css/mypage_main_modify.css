@@ -60,31 +60,36 @@ button {
   padding: 10px;
 }
 
-/* 마이페이지 메인부분 */
+/* 반려동물 정보 목록 - 시작*/
 .profile-list {
-  display: flex;
+   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   margin: 10px;
-  box-sizing: border-box; /*반응형 추가*/
+  box-sizing: border-box;    /*반응형 추가*/
+  overflow: hidden;
 }
+.profile-list .profile-list__areas {
+  width : 70%;
+}
+.profile-list .profile-area {
+  width: 30%;
+}
+
 .user-profile .profile-area {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  /* position: relative;
-  left: 180px;
-  top: -60px; */
   width: 300px;
   height: 150px;
   max-width: 100%;
   margin-bottom: 24px;
-  border-radius: 5%;
+  margin-left: 10px;
+  border-radius: 20px;
   box-shadow: 0 3px 20px 0 rgb(0 0 0 / 6%);
-  /* 수정-난경 */
   background-color: var(--color-background);
-  box-sizing: border-box; /*반응형 추가*/
+  box-sizing: border-box; 
 }
 
 .user-profile .profile-area .upload-area2 {
@@ -107,21 +112,19 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  /* position: relative; */
-  left: 180px;
+  left: 140px;
   top: -60px;
   width: 300px;
   height: 150px;
   max-width: 100%;
   margin-bottom: 24px;
-  border-radius: 5%;
+  border-radius: 20px;
   box-shadow: 0 3px 20px 0 rgb(0 0 0 / 6%);
   opacity: 70%;
-
-  /* 레이아웃 조정 - 난경 */
   background-color: var(--color-background);
   margin-left: 20px;
 }
+/* 반려동물 정보 목록 - 끝*/
 
 /* 메인영역 */
 .main {

@@ -280,3 +280,20 @@ function calendarInit() {
 $(function () {
   $('#pc').children().eq(0).find('a').addClass('on');
 });
+
+
+// 반려동물 정보 추가(2개이상) 되면 이미지 슬라이드
+$(document).ready(function(){
+  const profileAreas = $('.profile-area');
+   const profileList = $('.profile-list__areas');
+  if (profileAreas.length > 2) { // profile-area 태그가 2개 이상일 때
+    $('.profile-list__areas').slick({ // slick 라이브러리를 적용할 부분 선택자
+      slidesToShow: 2, // 한 화면에 보여줄 슬라이드 개수
+      slidesToScroll: 1, // 슬라이드 이동 시 이동할 슬라이드 개수
+      arrows: false
+    });
+  }else{
+    profileList.css('width','40%');
+    profileAreas.css('width','70%');
+  }
+});
