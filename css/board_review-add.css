@@ -19,7 +19,7 @@ p {
 
 /* 메인 컨텐츠 */
 .main-list {
-  grid-area: main-list;
+  /* grid-area: main-list; */
   width: 100%;
 }
 .main-list div {
@@ -28,7 +28,6 @@ p {
   align-items: baseline;
 }
 .main-list .list .main {
-  /* height: 50px; */
   font-size: 1.6rem;
   font-weight: bold;
   margin-bottom: 20px 0;
@@ -43,7 +42,6 @@ p {
 }
 .main-list .list .selectBox .select {
   width: inherit;
-  /* display: none; */
   height: inherit;
   background: transparent;
   border: 0 none;
@@ -51,7 +49,6 @@ p {
   padding: 0 5px;
   position: relative;
   z-index: 3;
-  /* opacity: 0; */
   appearance: none; /* 기록 */
 }
 
@@ -142,16 +139,13 @@ p {
 }
 
 .sort div {
-  /* display: flex; */
   align-items: center;
   font-weight: bold;
   font-size: 1rem;
-  /* margin-left: 10px; */
 }
 
 .sort .search .input input {
   height: 20px;
-  /* width: 70%; */
   font-size: 15px;
   border-radius: 4px;
   border: 2px solid var(--color-main-point);
@@ -159,7 +153,6 @@ p {
 }
 .sort .search .input {
   display: flex;
-  /* margin-right: 50px; */
 }
 .sort .search .input button {
   margin-left: 10px;
@@ -184,7 +177,6 @@ p {
 
 .sort .search .left .selectBox .select {
   width: inherit;
-  /* display: none; */
   height: inherit;
   background: transparent;
   border: 0 none;
@@ -192,7 +184,6 @@ p {
   padding: 0 5px;
   position: relative;
   z-index: 3;
-  /* opacity: 0; */
   appearance: none; /* 기록 */
 }
 
@@ -227,11 +218,6 @@ p {
   width: 50%;
   transition: 0.3s;
 }
-
-/* .sort .search .left .selectBox .icoArrow img {
-  width: 50%;
-  transition: 0.3s;
-} */
 
 .sort .search .left .selectBox .select:focus + .icoArrow img {
   transform: rotate(180deg);
@@ -298,7 +284,7 @@ p {
 
 /* 제목입력창 */
 .main-title {
-  grid-area: main-title;
+  /* grid-area: main-title; */
   width: 100%;
   margin-bottom: 20px;
 }
@@ -308,13 +294,12 @@ p {
   font-size: 15px;
   border-radius: 4px;
   padding: 0;
-  /* border: 0; */
   border-color: #ffd65f;
 }
 
 /* 동물병원 검색창 */
 .hos-search {
-  grid-area: hos-search;
+  /* grid-area: hos-search; */
   width: 100%;
   margin-top: 20px;
   margin-bottom: 3rem;
@@ -342,7 +327,7 @@ p {
 
 /* 본문입력창 */
 .body-write {
-  grid-area: body-write;
+  /* grid-area: body-write; */
   width: 100%;
   margin-bottom: 20px;
 }
@@ -361,8 +346,7 @@ p {
 
 /* 첨부파일버튼 */
 .file {
-  grid-area: file;
-  /* width: 100%; */
+  /* grid-area: file; */
   font-size: 17px;
   font-weight: bold;
   padding: 20px;
@@ -373,7 +357,7 @@ p {
 
 /* 사진첨부 */
 .pic {
-  grid-area: pic;
+  /* grid-area: pic; */
   width: 100%;
   margin-bottom: 40px;
 }
@@ -408,7 +392,7 @@ p {
 
 /* 등록,목록 버튼 */
 .btn {
-  grid-area: btn;
+  /* grid-area: btn; */
   width: 100%;
   margin-bottom: 30px;
   display: flex;
@@ -437,7 +421,6 @@ p {
 /* 모달 버튼 만들기 */
 button {
   background-color: #ffd65f;
-  /* padding: 5px 10px; */
   border-radius: 4px;
   cursor: pointer;
   border: none;
@@ -476,7 +459,6 @@ button {
   display: flex;
   flex-direction: row;
   height: 40px;
-  /* background-color: yellow; */
   justify-content: space-evenly;
   align-items: center;
   margin-bottom: 10px;
