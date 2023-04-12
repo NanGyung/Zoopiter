@@ -7,18 +7,7 @@
     <meta name="description" content="메인화면" />
     <meta name="keywords" content="pet hospital search" />
     <meta name="author" content="2팀" />
-    <title>펫정보수정</title>
-    <!--  이미지슬라이더 js -->
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-    />
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
-    />
+    <title>my page</title>
     <!--  마이페이지 css -->
     <link rel="stylesheet" href="../css/mypage_pet_modify.css" />
     <!--  폰트 어썸 : 로고 -->
@@ -28,85 +17,67 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   </head>
+  <!-- 이미지 파일 img 폴더에 넣었습니다. -->
+  <!-- mypage_pet_reg.css 안에 @import './theme/layout.css'; 추가해주시면 헤더, 푸터 css 적용 됩니다. -->
 
   <body>
     <div class="wrap">
       <div class="hd-l"></div>
-       <header class="hd">
-      <nav class="hd__menu">
-        <ul class="hd__menu__list1">
-          <li id="logo">
-            <a href="index.html">
-              <i class="fa-solid fa-dog fa-2x"></i>
-              <h3>슬기로운 반려생활</h3>
-            </a>
-          </li>
-          <li class="hd__menu__list1__item list1-item1">
-            <a href="findBymap.html">펫병원</a>
-            <ul class="hd__menu__list1__item__submenu">
-              <li><a href="findBymap.html">병원찾기</a></li>
-            </ul>
-          </li>
-          <li class="hd__menu__list1__item list1-item2">
-            <a href="board_all.html">게시판</a>
-            <ul class="hd__menu__list1__item__submenu">
-              <li><a href="./board_com.html">커뮤니티</a></li>
-              <li><a href="./board_review.html">병원후기</a></li>
-            </ul>
-          </li>
-          <li class="hd__menu__list1__item list1-item3" id="myPage">
-            <a href="./mypage_main.html">마이페이지</a>
-          </li>
-          <div class="hd__menu__list1__item list1-item4" id="join">
-            <li><a href="./member_login.html">로그인</a></li>
-            |
-            <li><a href="./member_join.html">회원가입</a></li>
-          </div>
-        </ul>
-        <a href="#" id="hamburger">
-          <i class="fa-solid fa-bars"></i>
-        </a>
-      </nav>
-    </header>
+      <header class="hd">
+        <nav class="hd__menu">
+          <ul class="hd__menu__list1">
+            <li id="logo">
+              <a href="index.html">
+                <i class="fa-solid fa-dog fa-2x"></i>
+                <h3>슬기로운 반려생활</h3>
+              </a>
+            </li>
+            <li class="hd__menu__list1__item list1-item1">
+              <a href="#">펫병원</a>
+              <ul class="hd__menu__list1__item__submenu">
+                <li><a href="#">병원찾기</a></li>
+              </ul>
+            </li>
+            <li class="hd__menu__list1__item list1-item2">
+              <a href="#">게시판</a>
+              <ul class="hd__menu__list1__item__submenu">
+                <li><a href="#">커뮤니티</a></li>
+                <li><a href="#">병원후기</a></li>
+                <li><a href="#">펫가이드</a></li>
+              </ul>
+            </li>
+            <li class="hd__menu__list1__item list1-item3" id="myPage">
+              <a href="#">마이페이지</a>
+            </li>
+            <div class="hd__menu__list1__item list1-item4" id="join">
+              <li><a href="#">로그인</a></li>
+              |
+              <li><a href="#">회원가입</a></li>
+            </div>
+          </ul>
+          <a href="#" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+          </a>
+        </nav>
+      </header>
       <div class="hd-r"></div>
 
       <div class="fg-l"></div>
-     <figure class="fg-banner">
+      <figure class="fg-banner">
         <div class="user-profile">
           <p>마이페이지</p>
           <h2>반가워요</h2>
           <div class="profile-list">
-            <div class="profile-list__areas">
-              <div class="profile-area" onclick="petModify()">
-                <div class="upload-area">
-                  <img src="../img/img_profile1.png" alt="" />
-                </div>
-                <div class="upload-area2" id="">
-                  <div class="pet-name">반려동물이름</div>
-                  <div class="pet-info">정보</div>
-                </div>
+            <div class="profile-area" onclick="petModify()">
+              <div class="upload-area">
+                <img src="../img/img_profile1.png" alt="" />
               </div>
-              <!-- 반려동물 정보 추가 될 부분 -->
-              <!-- <div class="profile-area" onclick="petModify()">
-                <div class="upload-area">
-                  <img src="../img/img_profile1.png" alt="" />
-                </div>
-                <div class="upload-area2" id="">
-                  <div class="pet-name">반려동물이름</div>
-                  <div class="pet-info">정보</div>
-                </div>
+              <div class="upload-area2" id="">
+                <div class="pet-name">반려동물이름</div>
+                <div class="pet-info">정보</div>
               </div>
-              <div class="profile-area" onclick="petModify()">
-                <div class="upload-area">
-                  <img src="../img/img_profile1.png" alt="" />
-                </div>
-                <div class="upload-area2" id="">
-                  <div class="pet-name">반려동물이름</div>
-                  <div class="pet-info">정보</div>
-                </div>
-              </div> -->
             </div>
-            <div class="profile-make" onclick="petAdd()">
+            <div class="profile-make">
               <a href="./mypage_pet_reg.html">
                 <img src="../img/add_circle.png" alt="" />
               </a>
@@ -312,10 +283,9 @@
     </div>
     <!-- 햄버거 메뉴 구현 -->
     <script src="../js/hambuger.js"></script>
-    <!-- footer 모달 구현 -->
-    <script src="../js/ft_modal.js"></script>
     <!-- my page -->
     <script src="../js/mypage_pet_modify.js"></script>
+    <script src="../js/mypage_main.js"></script>
   </body>
       <!-- jquery CDN -->
     <script

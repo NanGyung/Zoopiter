@@ -49,19 +49,19 @@ function petModify() {
   });
 }
 
-
-// 반려동물 정보 추가(2개이상) 되면 이미지 슬라이드
-$(document).ready(function(){
-  const profileAreas = $('.profile-area');
-   const profileList = $('.profile-list__areas');
-  if (profileAreas.length > 2) { // profile-area 태그가 2개 이상일 때
-    $('.profile-list__areas').slick({ // slick 라이브러리를 적용할 부분 선택자
-      slidesToShow: 2, // 한 화면에 보여줄 슬라이드 개수
-      slidesToScroll: 1, // 슬라이드 이동 시 이동할 슬라이드 개수
-      arrows: false
-    });
-  }else{
-    profileList.css('width','40%');
-    profileAreas.css('width','70%');
-  }
-});
+// function petAdd() {
+//   Swal.fire({
+//     title: '반려동물정보를 추가 하시겠습니까?',
+//     text: '신규등록하러 이동합니다',
+//     icon: 'warning',
+//     showCancelButton: true,
+//     confirmButtonColor: '#333',
+//     cancelButtonColor: '#ffd88f',
+//     confirmButtonText: '등록하기',
+//     cancelButtonText: '취소하기',
+//   }).then(result => {
+//     if (result.isConfirmed) {
+//       location.replace('./mypage_pet_reg.html');
+//     }
+//   });
+// }

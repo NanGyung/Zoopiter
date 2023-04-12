@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko"xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="UTF-8" />
@@ -11,7 +11,7 @@
   <!--  폰트 어썸 : 로고 -->
   <script src="https://kit.fontawesome.com/6631aa96e6.js" crossorigin="anonymous"></script>
   <!--  회원가입 css -->
-  <link rel="stylesheet" href="../css/member.css" />
+  <link rel="stylesheet" href="/css/member.css" />
   <title>약관동의</title>
 </head>
 
@@ -29,7 +29,7 @@
     <main class="container">
       <div id="mainTitle">
         <i class="fa-solid fa-dog fa-2x"></i>
-        <h2 style="font-weight: bold"><a href="index.html">슬기로운 반려생활</a></h2>
+        <h2 style="font-weight: bold"><a href="index.html" th:href="@{/}">슬기로운 반려생활</a></h2>
       </div>
 
       <div class="scroll-boxs box1">
@@ -125,15 +125,13 @@
           <div class="joinbox__title__owner">
             <p>펫오너</p>
             <p style="font-size: 1em; font-weight: 300; text-align: left;">슬기로운 반려생활을 위해 지금 바로 가입하세요!</p>
-            <button class="signBtn signUp" disabled="true">
-              <a href="./member_signup.html" onclick="location">펫오너로 가입</a>
-            </button>
+              <a href="./member_signup.html" onclick="location" th:href="@{/members/add}"><button class="signBtn signUp" disabled="true">펫오너로 가입</button></a>
           </div>
           <div class="joinbox__title__hospital">
             <p>펫병원</p>
             <p style="font-size: 1em; font-weight: 300; text-align: left;"> 병원을 무료로 홍보할 수 있는 서비스를 이용할 수 있습니다. :)</p>
             <div class="joinbox__btns__choice1">
-              <button class="signBtn signUpH" disabled="true"><a href="./member_signup2.html" onclick="location">펫병원으로 가입</a></button>
+              <a href="./member_signup2.html" onclick="location" th:href="@{/members/add2}"><button class="signBtn signUpH" disabled="true">펫병원으로 가입</button></a>
             </div>
           </div>
         </aside>
